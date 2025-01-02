@@ -5,7 +5,7 @@
       <li Class="PatchOperationAdd" MayRequire="vanillaexpanded.vnutriente">
         <xpath>/Defs/ThingDef[defName = "VNPE_NutrientPasteFeeder"]/comps</xpath>
         <value>
-          <li Class="HyperUnity.CompProperties_PreventDeterioratingOrRotting"/>
+          <li Class="Nova.CompProperties_PreventDeterioratingOrRotting"/>
         </value>
       </li>
     </operations>

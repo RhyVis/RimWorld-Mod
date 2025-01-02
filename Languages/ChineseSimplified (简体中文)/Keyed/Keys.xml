@@ -105,6 +105,7 @@
     <Nova_Building_BodypartRemove_Gizmo5_Desc>立即通过破坏大脑来处决</Nova_Building_BodypartRemove_Gizmo5_Desc>
     <Nova_Building_BodypartRemove_Mote1>床上没有小人</Nova_Building_BodypartRemove_Mote1>
     <Nova_Building_BodypartRemove_Mote2>没有足够药品</Nova_Building_BodypartRemove_Mote2>
+    <Nova_Building_BodypartRemove_Mote3>移除失败</Nova_Building_BodypartRemove_Mote3>
 
     <!-- Wealth PipeSystem -->
     <Nova_PipeStorageWealthInspection>储备财富计入</Nova_PipeStorageWealthInspection>

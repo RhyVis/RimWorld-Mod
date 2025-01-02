@@ -39,6 +39,17 @@
     </comps>
   </HediffDef>
   <HediffDef ParentName="Nova_MiscHediffBase">
+    <defName>Nova_BodyPartWorking</defName>
+    <label>身体部件移除</label>
+    <description>不会死亡。</description>
+    <preventsDeath>True</preventsDeath>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>900~900</disappearsAfterTicks>
+      </li>
+    </comps>
+  </HediffDef>
+  <HediffDef ParentName="Nova_MiscHediffBase">
     <defName>Nova_NoDamageHediff</defName>
     <label>无伤</label>
     <description>不再受到任何伤害。</description>
@@ -72,7 +83,7 @@
       <li Class="HediffCompProperties_Disappears">
         <disappearsAfterTicks>900~900</disappearsAfterTicks>
       </li>
-      <li Class="HyperUnity.HediffCompProperties_FixWorstCycle"/>
+      <li Class="Nova.HediffCompProperties_FixWorstCycle"/>
     </comps>
   </HediffDef>
   <HediffDef ParentName="Nova_MiscHediffBase">
@@ -319,7 +330,7 @@
       <li Class="HediffCompProperties_Disappears">
         <disappearsAfterTicks>3600~3600</disappearsAfterTicks>
       </li>
-      <li Class="HyperUnity.HediffCompProperties_SkillDeplete">
+      <li Class="Nova.HediffCompProperties_SkillDeplete">
         <checkInterval>1250</checkInterval>
         <depleteAmount>10000</depleteAmount>
       </li>

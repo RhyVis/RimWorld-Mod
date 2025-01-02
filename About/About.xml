@@ -1,21 +1,32 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
-    <name>Hyper Unity Tech</name>
-    <author>Rhynia</author>
-    <packageId>Rhynia.Works.HyperUnity</packageId>
-    <supportedVersions>
-        <li>1.5</li>
-    </supportedVersions>
-    <description>Such an evil mod</description>
-    <modDependencies>
-        <li>
-            <packageId>brrainz.harmony</packageId>
-            <displayName>Harmony</displayName>
-            <downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
-            <steamWorkshopUrl>https://steamcommunity.com/workshop/filedetails/?id=2009463077</steamWorkshopUrl>
-        </li>
-    </modDependencies>
-    <loadAfter>
-        <li>brrainz.harmony</li>
-    </loadAfter>
+  <name>Nova</name>
+  <author>Rhynia</author>
+  <packageId>Rhynia.Works.Nova</packageId>
+  <supportedVersions>
+    <li>1.5</li>
+  </supportedVersions>
+  <description>Self Use</description>
+  <modDependencies>
+    <li>
+      <packageId>brrainz.harmony</packageId>
+      <displayName>Harmony</displayName>
+      <downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
+      <steamWorkshopUrl>https://steamcommunity.com/workshop/filedetails/?id=2009463077</steamWorkshopUrl>
+    </li>
+    <li>
+      <packageId>oskarpotocki.vanillafactionsexpanded.core</packageId>
+      <displayName>Vanilla Expanded Framework</displayName>
+    </li>
+    <li>
+      <packageId>adaptive.storage.framework</packageId>
+      <displayName>Adaptive Storage Framework</displayName>
+    </li>
+  </modDependencies>
+  <loadAfter>
+    <li>brrainz.harmony</li>
+    <li>oskarpotocki.vanillafactionsexpanded.core</li>
+    <li>adaptive.storage.framework</li>
+    <li>vanillaexpanded.vnutriente</li>
+  </loadAfter>
 </ModMetaData>

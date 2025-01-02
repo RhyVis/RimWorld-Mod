@@ -46,7 +46,7 @@
         <showFuelGizmo>True</showFuelGizmo>
         <showAllowAutoRefuelToggle>True</showAllowAutoRefuelToggle>
       </li>
-      <li Class="HyperUnity.CompProperties_HarvestBed"/>
+      <li Class="Nova.CompProperties_HarvestBed"/>
     </comps>
     <size>(1,2)</size>
     <stuffCategories>

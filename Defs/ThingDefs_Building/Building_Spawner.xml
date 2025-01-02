@@ -46,7 +46,7 @@
       <Chemfuel>200</Chemfuel>
     </costList>
     <comps>
-      <li Class="HyperUnity.CompProperties_SpawnIntoNet">
+      <li Class="Nova.CompProperties_SpawnIntoNet">
         <pipeNet>VCHE_ChemfuelNet</pipeNet>
         <spawnCount>500</spawnCount>
         <interval>2500</interval>
@@ -67,7 +67,7 @@
       <Neutroamine>200</Neutroamine>
     </costList>
     <comps>
-      <li Class="HyperUnity.CompProperties_SpawnIntoNet">
+      <li Class="Nova.CompProperties_SpawnIntoNet">
         <pipeNet>VREA_NeutroamineNet</pipeNet>
         <spawnCount>500</spawnCount>
         <interval>2500</interval>
@@ -88,7 +88,7 @@
       <HemogenPack>30</HemogenPack>
     </costList>
     <comps>
-      <li Class="HyperUnity.CompProperties_SpawnIntoNet">
+      <li Class="Nova.CompProperties_SpawnIntoNet">
         <pipeNet>VRE_HemogenNet</pipeNet>
         <spawnCount>200</spawnCount>
         <interval>2500</interval>

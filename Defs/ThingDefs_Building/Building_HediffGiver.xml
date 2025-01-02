@@ -68,7 +68,7 @@
     <description>这个装置向周围所有生物释放不死效果，不受心灵敏感度影响。</description>
     <specialDisplayRadius>1</specialDisplayRadius>
     <comps>
-      <li Class="HyperUnity.CompProperties_HediffGiver">
+      <li Class="Nova.CompProperties_HediffGiver">
         <hediffDef>Nova_ImmortalHediff</hediffDef>
         <severityAdjust>1.0</severityAdjust>
         <radius>1</radius>
@@ -82,7 +82,7 @@
     <description>这个装置向周围所有生物释放无伤效果，不受心灵敏感度影响。</description>
     <specialDisplayRadius>2.9</specialDisplayRadius>
     <comps>
-      <li Class="HyperUnity.CompProperties_HediffGiver">
+      <li Class="Nova.CompProperties_HediffGiver">
         <hediffDef>Nova_NoDamageHediff</hediffDef>
         <severityAdjust>1.0</severityAdjust>
         <radius>2.9</radius>
@@ -95,7 +95,7 @@
     <label>复生装置</label>
     <description>这个装置向周围所有生物释放无伤效果，不受心灵敏感度影响。</description>
     <comps>
-      <li Class="HyperUnity.CompProperties_HediffGiver">
+      <li Class="Nova.CompProperties_HediffGiver">
         <hediffDef>Nova_RecoverHediff</hediffDef>
         <severityAdjust>1.0</severityAdjust>
         <radius>4.9</radius>
@@ -108,7 +108,7 @@
     <label>再生装置</label>
     <description>这个装置向周围所有生物释放再生效果，受心灵敏感度影响。</description>
     <comps>
-      <li Class="HyperUnity.CompProperties_HediffGiver">
+      <li Class="Nova.CompProperties_HediffGiver">
         <hediffDef>Nova_RegenerationGreatHediff</hediffDef>
         <severityAdjust>1.0</severityAdjust>
         <radius>4.9</radius>
@@ -123,7 +123,7 @@
     <label>活力装置</label>
     <description>这个装置向周围所有生物释放活力水效果，受心灵敏感度影响。</description>
     <comps>
-      <li Class="HyperUnity.CompProperties_HediffGiver">
+      <li Class="Nova.CompProperties_HediffGiver">
         <hediffDef>GoJuiceHigh</hediffDef>
         <severityAdjust>0.7</severityAdjust>
         <radius>4.9</radius>
@@ -139,7 +139,7 @@
     <label>恒温装置</label>
     <description>这个装置向周围所有生物释放恒温效果，不受心灵敏感度影响。</description>
     <comps>
-      <li Class="HyperUnity.CompProperties_HediffGiver">
+      <li Class="Nova.CompProperties_HediffGiver">
         <hediffDef>Nova_TemperatureHediff</hediffDef>
         <severityAdjust>1.0</severityAdjust>
         <radius>4.9</radius>
@@ -152,7 +152,7 @@
     <label>抗毒装置</label>
     <description>这个装置向周围所有生物释放抗毒效果，不受心灵敏感度影响。</description>
     <comps>
-      <li Class="HyperUnity.CompProperties_HediffGiver">
+      <li Class="Nova.CompProperties_HediffGiver">
         <hediffDef>Nova_ToxicResistenceHediff</hediffDef>
         <severityAdjust>1.0</severityAdjust>
         <radius>4.9</radius>
@@ -165,7 +165,7 @@
     <label>免需装置</label>
     <description>这个装置向周围所有生物释放免需效果，不受心灵敏感度影响。</description>
     <comps>
-      <li Class="HyperUnity.CompProperties_HediffGiver">
+      <li Class="Nova.CompProperties_HediffGiver">
         <hediffDef>Nova_OverNeededHediff</hediffDef>
         <severityAdjust>1.0</severityAdjust>
         <radius>4.9</radius>
@@ -178,7 +178,7 @@
     <label>超感装置</label>
     <description>这个装置向周围所有生物释放超感效果，不受心灵敏感度影响。</description>
     <comps>
-      <li Class="HyperUnity.CompProperties_HediffGiver">
+      <li Class="Nova.CompProperties_HediffGiver">
         <hediffDef>Nova_ConsciousnessUpHediff</hediffDef>
         <severityAdjust>1.0</severityAdjust>
         <radius>4.9</radius>
@@ -192,7 +192,7 @@
     <description>这个装置让周围所有生物怀孕，不受心灵敏感度影响。</description>
     <specialDisplayRadius>1</specialDisplayRadius>
     <comps>
-      <li Class="HyperUnity.CompProperties_HediffGiver">
+      <li Class="Nova.CompProperties_HediffGiver">
         <hediffDef>Pregnant</hediffDef>
         <radius>1</radius>
         <severityAdjust>0.3</severityAdjust>
@@ -208,7 +208,7 @@
     <label>失血装置</label>
     <description>这个装置向周围所有生物释放失血效果，受心灵敏感度影响。</description>
     <comps>
-      <li Class="HyperUnity.CompProperties_HediffGiver">
+      <li Class="Nova.CompProperties_HediffGiver">
         <hediffDef>BloodLoss</hediffDef>
         <severityAdjust>0.3</severityAdjust>
         <radius>4.9</radius>
@@ -225,7 +225,7 @@
     <label>扭曲装置</label>
     <description>这个装置向周围所有生物释放扭曲效果，受心灵敏感度影响。</description>
     <comps>
-      <li Class="HyperUnity.CompProperties_HediffGiver">
+      <li Class="Nova.CompProperties_HediffGiver">
         <hediffDef>Nova_RegenerationGreatHediff</hediffDef>
         <severityAdjust>1.0</severityAdjust>
         <radius>4.9</radius>
@@ -242,7 +242,7 @@
     <label>饥饿装置</label>
     <description>这个装置向周围所有生物释放失血效果，受心灵敏感度影响。</description>
     <comps>
-      <li Class="HyperUnity.CompProperties_HediffGiver">
+      <li Class="Nova.CompProperties_HediffGiver">
         <hediffDef>Nova_HungerHediff</hediffDef>
         <severityAdjust>1.0</severityAdjust>
         <radius>4.9</radius>
@@ -259,7 +259,7 @@
     <label>狂躁装置</label>
     <description>这个装置向周围所有生物释放失血效果，受心灵敏感度影响。</description>
     <comps>
-      <li Class="HyperUnity.CompProperties_HediffGiver">
+      <li Class="Nova.CompProperties_HediffGiver">
         <hediffDef>Nova_BerserkHediff</hediffDef>
         <severityAdjust>1.0</severityAdjust>
         <radius>4.9</radius>
@@ -276,7 +276,7 @@
     <label>呕吐装置</label>
     <description>这个装置向周围所有生物释放失血效果，受心灵敏感度影响。</description>
     <comps>
-      <li Class="HyperUnity.CompProperties_HediffGiver">
+      <li Class="Nova.CompProperties_HediffGiver">
         <hediffDef>Nova_VomitHediff</hediffDef>
         <severityAdjust>1.0</severityAdjust>
         <radius>4.9</radius>
@@ -293,7 +293,7 @@
     <label>冲击装置</label>
     <description>这个装置向周围所有生物释放心灵冲击效果，受心灵敏感度影响。</description>
     <comps>
-      <li Class="HyperUnity.CompProperties_HediffGiver">
+      <li Class="Nova.CompProperties_HediffGiver">
         <hediffDef>CatatonicBreakdown</hediffDef>
         <severityAdjust>0.5</severityAdjust>
         <radius>4.9</radius>
@@ -310,7 +310,7 @@
     <label>麻醉装置</label>
     <description>这个装置向周围所有生物释放麻醉效果，不受心灵敏感度影响。</description>
     <comps>
-      <li Class="HyperUnity.CompProperties_HediffGiver">
+      <li Class="Nova.CompProperties_HediffGiver">
         <hediffDef>Anesthetic</hediffDef>
         <severityAdjust>0.3</severityAdjust>
         <radius>4.9</radius>
@@ -324,7 +324,7 @@
     <label>毒害装置</label>
     <description>这个装置向周围所有生物释放剧毒效果，不受心灵敏感度影响。</description>
     <comps>
-      <li Class="HyperUnity.CompProperties_HediffGiver">
+      <li Class="Nova.CompProperties_HediffGiver">
         <hediffDef>ToxicBuildup</hediffDef>
         <severityAdjust>0.3</severityAdjust>
         <radius>4.9</radius>
@@ -338,7 +338,7 @@
     <label>压制装置</label>
     <description>这个装置向周围所有生物释放压制效果，不受心灵敏感度影响。</description>
     <comps>
-      <li Class="HyperUnity.CompProperties_HediffGiver">
+      <li Class="Nova.CompProperties_HediffGiver">
         <hediffDef>Nova_SuppressedHediff</hediffDef>
         <severityAdjust>1.0</severityAdjust>
         <radius>4.9</radius>
@@ -353,7 +353,7 @@
     <description>这个装置通过降低意识使周围生物死亡，不受心灵敏感度影响。</description>
     <specialDisplayRadius>2.9</specialDisplayRadius>
     <comps>
-      <li Class="HyperUnity.CompProperties_HediffGiver">
+      <li Class="Nova.CompProperties_HediffGiver">
         <hediffDef>Nova_DeathHediff</hediffDef>
         <severityAdjust>2.0</severityAdjust>
         <radius>2.9</radius>

@@ -31,11 +31,11 @@
       <ComponentSpacer>8</ComponentSpacer>
     </costList>
     <placeWorkers>
-      <li>HyperUnity.PlaceWorker_RoomEdgeCyan</li>
+      <li>Nova.PlaceWorker_RoomEdgeCyan</li>
     </placeWorkers>
     <drawPlaceWorkersWhileSelected>True</drawPlaceWorkersWhileSelected>
     <comps>
-      <li Class="HyperUnity.CompProperties_ThingGuardian"/>
+      <li Class="Nova.CompProperties_ThingGuardian"/>
       <li Class="CompProperties_Glower">
         <glowRadius>5</glowRadius>
         <glowColor>(255,255,255,0)</glowColor>

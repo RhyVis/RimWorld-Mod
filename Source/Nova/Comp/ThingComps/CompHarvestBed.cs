@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
 using Verse;
@@ -20,13 +21,13 @@ public class CompProperties_HarvestBed : CompProperties
 
 public class CompHarvestBed : ThingComp
 {
-  private CompRefuelable _refuelable;
+  private CompRefuelable _fuelComp;
   private CompProperties_HarvestBed Props => (CompProperties_HarvestBed)props;
 
   public override void PostSpawnSetup(bool respawningAfterLoad)
   {
     base.PostSpawnSetup(respawningAfterLoad);
-    _refuelable = parent.TryGetComp<CompRefuelable>();
+    _fuelComp = parent.TryGetComp<CompRefuelable>();
   }
 
   public override IEnumerable<Gizmo> CompGetGizmosExtra()
@@ -73,7 +74,7 @@ public class CompHarvestBed : ThingComp
   {
     if (parent is Building_Bed bed && bed.CurOccupants.FirstOrDefault() != null)
     {
-      if (_refuelable.Fuel < Props.harvestFullCost)
+      if (_fuelComp.Fuel < Props.harvestFullCost)
       {
         MoteMaker.ThrowText(bed.TrueCenter() + Utility.RightUp, bed.Map,
           "Nova_Building_BodypartRemove_Mote2".Translate());
@@ -82,18 +83,29 @@ public class CompHarvestBed : ThingComp
 
       var pawn = bed.CurOccupants.First();
       pawn.ApplyHediff(NovaHediffDefOf.Nova_BodyPartWorking);
-      pawn.health.hediffSet.GetNotMissingParts()
-        .Where(record => record.def.spawnThingOnRemoved != null)
-        .ToList()
-        .ForEach(record =>
-        {
-          var partToSpawn = ThingMaker.MakeThing(record.def.spawnThingOnRemoved);
-          partToSpawn.stackCount = 1;
-          GenPlace.TryPlaceThing(partToSpawn, parent.Position, parent.Map, ThingPlaceMode.Near);
-          pawn.DamageBodyPart(record);
-        });
-      pawn.RemoveHediff(NovaHediffDefOf.Nova_BodyPartWorking);
-      _refuelable.ConsumeFuel(Props.harvestFullCost);
+      try
+      {
+        pawn.health.hediffSet.GetNotMissingParts()
+          .Where(record => record.def.spawnThingOnRemoved != null)
+          .ToList()
+          .ForEach(record =>
+          {
+            var partToSpawn = ThingMaker.MakeThing(record.def.spawnThingOnRemoved);
+            partToSpawn.stackCount = 1;
+            GenPlace.TryPlaceThing(partToSpawn, parent.Position, parent.Map, ThingPlaceMode.Near);
+            pawn.DamageBodyPart(record);
+          });
+        _fuelComp.ConsumeFuel(Props.harvestFullCost);
+      }
+      catch (Exception e)
+      {
+        Msg.E(e.ToString());
+        bed.ThrowMote("Nova_Building_BodypartRemove_Mote3".Translate());
+      }
+      finally
+      {
+        pawn.RemoveHediff(NovaHediffDefOf.Nova_BodyPartWorking);
+      }
     }
     else
     {
@@ -106,31 +118,41 @@ public class CompHarvestBed : ThingComp
   {
     if (parent is Building_Bed bed && bed.CurOccupants.FirstOrDefault() != null)
     {
-      if (_refuelable.Fuel < Props.harvestLegCost)
+      if (_fuelComp.Fuel < Props.harvestLegCost)
       {
-        MoteMaker.ThrowText(bed.TrueCenter() + Utility.RightUp, bed.Map,
-          "Nova_Building_BodypartRemove_Mote2".Translate());
+        bed.ThrowMote("Nova_Building_BodypartRemove_Mote2".Translate());
         return;
       }
 
       var pawn = bed.CurOccupants.First();
       pawn.ApplyHediff(NovaHediffDefOf.Nova_BodyPartWorking);
-      pawn.health.hediffSet.GetNotMissingParts()
-        .Where(record => record.def.defName.Contains("Leg"))
-        .ToList()
-        .ForEach(record =>
-        {
-          if (record.def.spawnThingOnRemoved != null)
+      try
+      {
+        pawn.health.hediffSet.GetNotMissingParts()
+          .Where(record => record.def.defName.Contains("Leg"))
+          .ToList()
+          .ForEach(record =>
           {
-            var partToSpawn = ThingMaker.MakeThing(record.def.spawnThingOnRemoved);
-            partToSpawn.stackCount = 1;
-            GenPlace.TryPlaceThing(partToSpawn, parent.Position, parent.Map, ThingPlaceMode.Near);
-          }
+            if (record.def.spawnThingOnRemoved != null)
+            {
+              var partToSpawn = ThingMaker.MakeThing(record.def.spawnThingOnRemoved);
+              partToSpawn.stackCount = 1;
+              GenPlace.TryPlaceThing(partToSpawn, parent.Position, parent.Map, ThingPlaceMode.Near);
+            }
 
-          pawn.DamageBodyPart(record);
-        });
-      pawn.RemoveHediff(NovaHediffDefOf.Nova_BodyPartWorking);
-      _refuelable.ConsumeFuel(Props.harvestLegCost);
+            pawn.DamageBodyPart(record);
+          });
+        _fuelComp.ConsumeFuel(Props.harvestLegCost);
+      }
+      catch (Exception e)
+      {
+        Msg.E(e.ToString());
+        bed.ThrowMote("Nova_Building_BodypartRemove_Mote3".Translate());
+      }
+      finally
+      {
+        pawn.RemoveHediff(NovaHediffDefOf.Nova_BodyPartWorking);
+      }
     }
     else
     {
@@ -143,50 +165,58 @@ public class CompHarvestBed : ThingComp
   {
     if (parent is Building_Bed bed && bed.CurOccupants.FirstOrDefault() != null)
     {
-      if (_refuelable.Fuel < Props.harvestEyeCost)
+      if (_fuelComp.Fuel < Props.harvestEyeCost)
       {
-        MoteMaker.ThrowText(bed.TrueCenter() + Utility.RightUp, bed.Map,
-          "Nova_Building_BodypartRemove_Mote2".Translate());
+        bed.ThrowMote("Nova_Building_BodypartRemove_Mote2".Translate());
         return;
       }
 
       var pawn = bed.CurOccupants.First();
       pawn.ApplyHediff(NovaHediffDefOf.Nova_BodyPartWorking);
-      pawn.health.hediffSet.GetNotMissingParts()
-        .Where(record => record.def.defName.Contains("Eye"))
-        .ToList()
-        .ForEach(record =>
-        {
-          if (record.def.spawnThingOnRemoved != null)
+      try
+      {
+        pawn.health.hediffSet.GetNotMissingParts()
+          .Where(record => record.def.defName.Contains("Eye"))
+          .ToList()
+          .ForEach(record =>
           {
-            var partToSpawn = ThingMaker.MakeThing(record.def.spawnThingOnRemoved);
-            partToSpawn.stackCount = 1;
-            GenPlace.TryPlaceThing(partToSpawn, parent.Position, parent.Map, ThingPlaceMode.Near);
-          }
+            if (record.def.spawnThingOnRemoved != null)
+            {
+              var partToSpawn = ThingMaker.MakeThing(record.def.spawnThingOnRemoved);
+              partToSpawn.stackCount = 1;
+              GenPlace.TryPlaceThing(partToSpawn, parent.Position, parent.Map, ThingPlaceMode.Near);
+            }
 
-          pawn.DamageBodyPart(record);
-        });
-      pawn.RemoveHediff(NovaHediffDefOf.Nova_BodyPartWorking);
-      _refuelable.ConsumeFuel(Props.harvestEyeCost);
+            pawn.DamageBodyPart(record);
+          });
+        _fuelComp.ConsumeFuel(Props.harvestEyeCost);
+      }
+      catch (Exception e)
+      {
+        Msg.E(e.ToString());
+        bed.ThrowMote("Nova_Building_BodypartRemove_Mote3".Translate());
+      }
+      finally
+      {
+        pawn.RemoveHediff(NovaHediffDefOf.Nova_BodyPartWorking);
+      }
     }
     else
     {
-      MoteMaker.ThrowText(parent.TrueCenter() + Utility.RightUp, parent.Map,
-        "Nova_Building_BodypartRemove_Mote1".Translate());
+      parent.ThrowMote("Nova_Building_BodypartRemove_Mote1".Translate());
     }
   }
 
   private void RandomDamage()
   {
-    if (parent is Building_Bed bed && bed.CurOccupants.FirstOrDefault() != null)
+    if (parent is Building_Bed bed && bed.CurOccupants.FirstOrDefault() is not null)
     {
       var pawn = bed.CurOccupants.First();
       pawn.DamageRandomBodyPart();
     }
     else
     {
-      MoteMaker.ThrowText(parent.TrueCenter() + Utility.RightUp, parent.Map,
-        "Nova_Building_BodypartRemove_Mote1".Translate());
+      parent.ThrowMote("Nova_Building_BodypartRemove_Mote1".Translate());
     }
   }
 
@@ -199,14 +229,15 @@ public class CompHarvestBed : ThingComp
         .Where(record => record.def.defName.Contains("Brain"))
         .ToList()
         .ForEach(record => pawn.DamageBodyPart(record));
-      var result = ThingMaker.MakeThing(ThingDefOf.HemogenPack);
-      result.stackCount = 2;
-      GenPlace.TryPlaceThing(result, parent.Position, parent.Map, ThingPlaceMode.Near);
+
+      var makeThing = ThingMaker.MakeThing(ThingDefOf.Meat_Human);
+      makeThing.stackCount = 5;
+
+      GenPlace.TryPlaceThing(makeThing, parent.Position, parent.Map, ThingPlaceMode.Near);
     }
     else
     {
-      MoteMaker.ThrowText(parent.TrueCenter() + Utility.RightUp, parent.Map,
-        "Nova_Building_BodypartRemove_Mote1".Translate());
+      parent.ThrowMote("Nova_Building_BodypartRemove_Mote1".Translate());
     }
   }
 }

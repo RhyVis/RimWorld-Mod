@@ -76,7 +76,7 @@
     <graphicData>
       <texPath>Nova/Things/Building/Fortress/FortressWall</texPath>
     </graphicData>
-    <uiIconPath>HU/Things/Building/Fortress/FortressWallIcon</uiIconPath>
+    <uiIconPath>Nova/Things/Building/Fortress/FortressWallIcon</uiIconPath>
     <fillPercent>1</fillPercent>
     <building>
       <blueprintGraphicData>
@@ -92,7 +92,7 @@
     <graphicData>
       <texPath>Nova/Things/Building/Fortress/FortressEmbrasure</texPath>
     </graphicData>
-    <uiIconPath>HU/Things/Building/Fortress/FortressEmbrasureIcon</uiIconPath>
+    <uiIconPath>Nova/Things/Building/Fortress/FortressEmbrasureIcon</uiIconPath>
     <fillPercent>0.75</fillPercent>
     <disableImpassableShotOverConfigError>True</disableImpassableShotOverConfigError>
     <building>
@@ -201,7 +201,7 @@
         <compClass>CompPowerTrader</compClass>
         <basePowerConsumption>20</basePowerConsumption>
       </li>
-      <li Class="HyperUnity.CompProperties_RemoteDoor"/>
+      <li Class="Nova.CompProperties_RemoteDoor"/>
     </comps>
     <researchPrerequisites>
       <li>Autodoors</li>
@@ -230,14 +230,14 @@
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>(1.05, 1)</drawSize>
       <damageData>
-        <enabled>false</enabled>
+        <enabled>False</enabled>
       </damageData>
       <color>(255,255,255)</color>
     </graphicData>
     <size>(2, 1)</size>
     <uiIconPath>Things/Building/RB_Door/RB_DoubleDoor_VanillaMenuIcon</uiIconPath>
-    <useBlueprintGraphicAsGhost>true</useBlueprintGraphicAsGhost>
-    <rotatable>true</rotatable>
+    <useBlueprintGraphicAsGhost>True</useBlueprintGraphicAsGhost>
+    <rotatable>True</rotatable>
     <costList>
       <Plasteel>48</Plasteel>
       <Steel>60</Steel>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Defs>
   <ThingDef Name="Nova_WealthCovertBase" ParentName="AdaptiveStorageMinifiableBase" Abstract="True">
-    <thingClass>HyperUnity.Building_WealthCovert</thingClass>
+    <thingClass>Nova.Building_WealthCovert</thingClass>
     <graphicData>
       <texPath>Nova/Things/Building/Various/WealthCovert/WealthCovert</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
