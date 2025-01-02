@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+  <DesignatorDropdownGroupDef>
+    <label>超空间反应釜</label>
+    <defName>Nova_SpawnerNetDropdown</defName>
+  </DesignatorDropdownGroupDef>
+
+  <ThingDef Name="Nova_SpawnerNetBase" ParentName="Nova_FurnBase" Abstract="True">
+    <statBases>
+      <MarketValue>2500</MarketValue>
+      <MaxHitPoints>500</MaxHitPoints>
+      <WorkToBuild>3500</WorkToBuild>
+      <Mass>18</Mass>
+      <Flammability>0</Flammability>
+    </statBases>
+    <tickerType>Normal</tickerType>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.6</fillPercent>
+    <size>(2,2)</size>
+    <rotatable>False</rotatable>
+    <costList Inherit="False">
+      <Steel>350</Steel>
+      <ComponentIndustrial>12</ComponentIndustrial>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>800</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+    </comps>
+    <designatorDropdown>Nova_SpawnerNetDropdown</designatorDropdown>
+  </ThingDef>
+
+  <ThingDef ParentName="Nova_SpawnerNetBase" MayRequire="vanillaexpanded.vchemfuele">
+    <defName>Nova_ChemfuelSpawner</defName>
+    <label>超空间反应釜（燃料）</label>
+    <description>由另一个世界提取燃料。</description>
+    <graphicData>
+      <texPath>Nova/Things/Building/Production/MachineRed</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2,2)</drawSize>
+    </graphicData>
+    <size>(2,2)</size>
+    <costList>
+      <Chemfuel>200</Chemfuel>
+    </costList>
+    <comps>
+      <li Class="HyperUnity.CompProperties_SpawnIntoNet">
+        <pipeNet>VCHE_ChemfuelNet</pipeNet>
+        <spawnCount>500</spawnCount>
+        <interval>2500</interval>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="Nova_SpawnerNetBase" MayRequire="vanillaracesexpanded.android">
+    <defName>Nova_NeutroamineSpawner</defName>
+    <label>超空间反应釜（中性胺）</label>
+    <description>由另一个世界提取中性胺。</description>
+    <graphicData>
+      <texPath>Nova/Things/Building/Production/MachineBlue</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2,2)</drawSize>
+    </graphicData>
+    <size>(2,2)</size>
+    <costList>
+      <Neutroamine>200</Neutroamine>
+    </costList>
+    <comps>
+      <li Class="HyperUnity.CompProperties_SpawnIntoNet">
+        <pipeNet>VREA_NeutroamineNet</pipeNet>
+        <spawnCount>500</spawnCount>
+        <interval>2500</interval>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="Nova_SpawnerNetBase" MayRequire="vanillaracesexpanded.sanguophage">
+    <defName>Nova_HemogenSpawner</defName>
+    <label>超空间反应釜（血原）</label>
+    <description>由另一个世界提取血原。</description>
+    <graphicData>
+      <texPath>Nova/Things/Building/Production/MachineDarkRed</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2,2)</drawSize>
+    </graphicData>
+    <size>(2,2)</size>
+    <costList>
+      <HemogenPack>30</HemogenPack>
+    </costList>
+    <comps>
+      <li Class="HyperUnity.CompProperties_SpawnIntoNet">
+        <pipeNet>VRE_HemogenNet</pipeNet>
+        <spawnCount>200</spawnCount>
+        <interval>2500</interval>
+      </li>
+    </comps>
+  </ThingDef>
+</Defs>

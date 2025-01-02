@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+    <!-- Setting -->
+    <Nova_SettingCat_Label>Hyper Unity</Nova_SettingCat_Label>
+    <Nova_SettingCat_DebugMsg_Label>调试信息</Nova_SettingCat_DebugMsg_Label>
+
+    <!-- Comps -->
+    <Nova_CompSwitchGizmo_Gizmo_Label>切换开关</Nova_CompSwitchGizmo_Gizmo_Label>
+    <Nova_CompSwitchGizmo_Gizmo_Desc>调整设备是否启动</Nova_CompSwitchGizmo_Gizmo_Desc>
+
+    <Nova_CompPawnSuppressor_Mote>已压制</Nova_CompPawnSuppressor_Mote>
+
+    <Nova_CompRemoteDoor_Gizmo_Label>控制门</Nova_CompRemoteDoor_Gizmo_Label>
+    <Nova_CompRemoteDoor_Gizmo_Desc>远程控制门的开关</Nova_CompRemoteDoor_Gizmo_Desc>
+
+    <Nova_CompUltimateReactor_Gizmo_Label>目标 ({0})</Nova_CompUltimateReactor_Gizmo_Label>
+    <Nova_CompUltimateReactor_Gizmo_Desc>选择超越反应器耗电生成的目标，当前为{0}
+    </Nova_CompUltimateReactor_Gizmo_Desc>
+    <Nova_CompUltimateReactor_TargetName>目标物品</Nova_CompUltimateReactor_TargetName>
+    <Nova_CompUltimateReactor_AmountKeep>数量保持</Nova_CompUltimateReactor_AmountKeep>
+    <Nova_CompUltimateReactor_PowerUse>物品耗能</Nova_CompUltimateReactor_PowerUse>
+
+    <Nova_CompGasEmit_Gizmo_Label>气体释放</Nova_CompGasEmit_Gizmo_Label>
+    <Nova_CompGasEmit_Gizmo_Desc>调整是否释放气体</Nova_CompGasEmit_Gizmo_Desc>
+
+    <Nova_CompFieldTrap_Gizmo_Label1>控制力场</Nova_CompFieldTrap_Gizmo_Label1>
+    <Nova_CompFieldTrap_Gizmo_Desc1>调整是否启动力场</Nova_CompFieldTrap_Gizmo_Desc1>
+    <Nova_CompFieldTrap_Gizmo_Label2>传送</Nova_CompFieldTrap_Gizmo_Label2>
+    <Nova_CompFieldTrap_Gizmo_Desc2>调整是否将敌人传送至装置</Nova_CompFieldTrap_Gizmo_Desc2>
+    <Nova_CompFieldTrap_Gizmo_Label3>高速模式</Nova_CompFieldTrap_Gizmo_Label3>
+    <Nova_CompFieldTrap_Gizmo_Desc3>高速模式下每秒激活一次</Nova_CompFieldTrap_Gizmo_Desc3>
+
+    <Nova_HediffComp_SkillDeplete_Mote>退行: {0} XP -{1}</Nova_HediffComp_SkillDeplete_Mote>
+
+    <Nova_CompResourceCovert_Gizmo_Label>立即转化</Nova_CompResourceCovert_Gizmo_Label>
+    <Nova_CompResourceCovert_Gizmo_Desc>立即将容器内的物品转化为贮存财富</Nova_CompResourceCovert_Gizmo_Desc>
+    <Nova_CompResourceCovert_GizmoP_Label>立即放置</Nova_CompResourceCovert_GizmoP_Label>
+    <Nova_CompResourceCovert_GizmoP_Desc>立即将容器内贮存的财富放置为白银或黄金</Nova_CompResourceCovert_GizmoP_Desc>
+    <Nova_CompResourceCovert_Gizmo1_Label>当前模式: {0}</Nova_CompResourceCovert_Gizmo1_Label>
+    <Nova_CompResourceCovert_Gizmo1_Desc>决定转化为的目标</Nova_CompResourceCovert_Gizmo1_Desc>
+    <Nova_CompResourceCovert_GizmoA_Label>自动转化: {0}</Nova_CompResourceCovert_GizmoA_Label>
+    <Nova_CompResourceCovert_GizmoA_Desc>当前自动转化状态为: {0}</Nova_CompResourceCovert_GizmoA_Desc>
+    <Nova_CompResourceCovert_GizmoAP_Label>自动放置: {0}</Nova_CompResourceCovert_GizmoAP_Label>
+    <Nova_CompResourceCovert_GizmoAP_Desc>当前自动放置状态为: {0}</Nova_CompResourceCovert_GizmoAP_Desc>
+    <Nova_CompResourceCovert_Mote>转化财富: {0}</Nova_CompResourceCovert_Mote>
+    <Nova_CompResourceCovert_MoteFailure>放置财富失败, 剩余: {0}</Nova_CompResourceCovert_MoteFailure>
+    <Nova_CompResourceCovert_Info>储存财富: {0}</Nova_CompResourceCovert_Info>
+
+    <Nova_CompExplosiveTrigger_Gizmo_Label>引爆</Nova_CompExplosiveTrigger_Gizmo_Label>
+    <Nova_CompExplosiveTrigger_Gizmo_Desc>立即准备引爆爆炸物</Nova_CompExplosiveTrigger_Gizmo_Desc>
+
+    <Nova_CompHediffGiver_Gizmo_Desc>选择效果附加的范围</Nova_CompHediffGiver_Gizmo_Desc>
+    <Nova_CompHediffGiver_Gizmo_LabelA>停止</Nova_CompHediffGiver_Gizmo_LabelA>
+    <Nova_CompHediffGiver_Gizmo_LabelB>所有</Nova_CompHediffGiver_Gizmo_LabelB>
+    <Nova_CompHediffGiver_Gizmo_LabelC>敌对</Nova_CompHediffGiver_Gizmo_LabelC>
+    <Nova_CompHediffGiver_Gizmo_LabelD>非玩家</Nova_CompHediffGiver_Gizmo_LabelD>
+    <Nova_CompHediffGiver_Gizmo_LabelE>囚犯</Nova_CompHediffGiver_Gizmo_LabelE>
+
+    <Nova_CompThingGuardian_Gizmo_Label1>维护</Nova_CompThingGuardian_Gizmo_Label1>
+    <Nova_CompThingGuardian_Gizmo_Desc1>切换是否允许修复范围内物品</Nova_CompThingGuardian_Gizmo_Desc1>
+    <Nova_CompThingGuardian_Gizmo_Label2>仅殖民地</Nova_CompThingGuardian_Gizmo_Label2>
+    <Nova_CompThingGuardian_Gizmo_Desc2>切换是否只允许修复属于殖民地派系的物品
+    </Nova_CompThingGuardian_Gizmo_Desc2>
+    <Nova_CompThingGuardian_Gizmo_Label3>清除气体</Nova_CompThingGuardian_Gizmo_Label3>
+    <Nova_CompThingGuardian_Gizmo_Desc3>切换是否清除房间内的气体</Nova_CompThingGuardian_Gizmo_Desc3>
+    <Nova_CompThingGuardian_Gizmo_Label4>清除污物</Nova_CompThingGuardian_Gizmo_Label4>
+    <Nova_CompThingGuardian_Gizmo_Desc4>切换是否清除房间内的污物</Nova_CompThingGuardian_Gizmo_Desc4>
+    <Nova_CompThingGuardian_Mote1>不在房间内</Nova_CompThingGuardian_Mote1>
+
+    <Nova_CompTempSet_Mote1>不在房间内</Nova_CompTempSet_Mote1>
+    <Nova_CompTempSet_Mote2>当前温度: {0}℃</Nova_CompTempSet_Mote2>
+    <Nova_CompTempSet_Gizmo_Act_Label>激活</Nova_CompTempSet_Gizmo_Act_Label>
+    <Nova_CompTempSet_Gizmo_Act_Desc>启动或禁用温度控制</Nova_CompTempSet_Gizmo_Act_Desc>
+    <Nova_CompTempSet_Gizmo_Reset_Label>重置</Nova_CompTempSet_Gizmo_Reset_Label>
+    <Nova_CompTempSet_Gizmo_Reset_Desc>重置到默认温度</Nova_CompTempSet_Gizmo_Reset_Desc>
+
+    <Nova_CompVomitCollect_Mote1>收集到{0}份呕吐物</Nova_CompVomitCollect_Mote1>
+    <Nova_CompVomitCollect_Mote2>生成{0}份包装呕吐物</Nova_CompVomitCollect_Mote2>
+    <Nova_CompVomitCollect_Mote3>不在房间内</Nova_CompVomitCollect_Mote3>
+    <Nova_CompVomitCollect_Inspect1>累积原料: {0}</Nova_CompVomitCollect_Inspect1>
+    <Nova_CompVomitCollect_Inspect2>生成包装:</Nova_CompVomitCollect_Inspect2>
+    <Nova_CompVomitCollect_Gizmo1_Label>生成包装呕吐物</Nova_CompVomitCollect_Gizmo1_Label>
+    <Nova_CompVomitCollect_Gizmo1_Desc>启动或禁用包装呕吐物生成</Nova_CompVomitCollect_Gizmo1_Desc>
+    <Nova_CompVomitCollect_Gizmo2_Label>清空呕吐物</Nova_CompVomitCollect_Gizmo2_Label>
+    <Nova_CompVomitCollect_Gizmo2_Desc>清空装置内的呕吐物</Nova_CompVomitCollect_Gizmo2_Desc>
+    <Nova_CompVomitCollect_Gizmo3_Label>收集呕吐物</Nova_CompVomitCollect_Gizmo3_Label>
+    <Nova_CompVomitCollect_Gizmo3_Desc>收集房间内的呕吐物</Nova_CompVomitCollect_Gizmo3_Desc>
+
+    <Nova_CompEnemyStunner_Gizmo_Label>激活</Nova_CompEnemyStunner_Gizmo_Label>
+    <Nova_CompEnemyStunner_Gizmo_Desc>对地图上的敌人造成眩晕</Nova_CompEnemyStunner_Gizmo_Desc>
+
+    <Nova_CompSpawnIntoNet_Inspect1>距离下一次生成:</Nova_CompSpawnIntoNet_Inspect1>
+
+    <!-- Building -->
+    <Nova_Building_BodypartRemove_Gizmo1_Label>移除全部</Nova_Building_BodypartRemove_Gizmo1_Label>
+    <Nova_Building_BodypartRemove_Gizmo1_Desc>立即尝试批量移除全部身体部位</Nova_Building_BodypartRemove_Gizmo1_Desc>
+    <Nova_Building_BodypartRemove_Gizmo2_Label>移除腿</Nova_Building_BodypartRemove_Gizmo2_Label>
+    <Nova_Building_BodypartRemove_Gizmo2_Desc>立即尝试批量移除腿部部位</Nova_Building_BodypartRemove_Gizmo2_Desc>
+    <Nova_Building_BodypartRemove_Gizmo3_Label>移除眼</Nova_Building_BodypartRemove_Gizmo3_Label>
+    <Nova_Building_BodypartRemove_Gizmo3_Desc>立即尝试批量移除眼部部位</Nova_Building_BodypartRemove_Gizmo3_Desc>
+    <Nova_Building_BodypartRemove_Gizmo4_Label>随机伤害</Nova_Building_BodypartRemove_Gizmo4_Label>
+    <Nova_Building_BodypartRemove_Gizmo4_Desc>随机伤害一个部位</Nova_Building_BodypartRemove_Gizmo4_Desc>
+    <Nova_Building_BodypartRemove_Gizmo5_Label>处决</Nova_Building_BodypartRemove_Gizmo5_Label>
+    <Nova_Building_BodypartRemove_Gizmo5_Desc>立即通过破坏大脑来处决</Nova_Building_BodypartRemove_Gizmo5_Desc>
+    <Nova_Building_BodypartRemove_Mote1>床上没有小人</Nova_Building_BodypartRemove_Mote1>
+    <Nova_Building_BodypartRemove_Mote2>没有足够药品</Nova_Building_BodypartRemove_Mote2>
+
+    <!-- Wealth PipeSystem -->
+    <Nova_PipeStorageWealthInspection>储备财富计入</Nova_PipeStorageWealthInspection>
+    <Nova_ExtractWealth>提取500份白银</Nova_ExtractWealth>
+    <Nova_ExtractWealthDesc>从财富容器中提取500份白银实体</Nova_ExtractWealthDesc>
+
+    <!-- Universal -->
+    <Nova_U_Enable>启用</Nova_U_Enable>
+    <Nova_U_Disable>禁用</Nova_U_Disable>
+</LanguageData>

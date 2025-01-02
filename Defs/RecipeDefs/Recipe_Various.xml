@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+  <!-- Base -->
+
+  <RecipeDef Name="Nova_WorkSiteRecipeBase" Abstract="True">
+    <description>应用聚合微械技术来合成物品。</description>
+    <jobString>正在构造聚合微械。</jobString>
+    <workAmount>1</workAmount>
+    <workSkill>Crafting</workSkill>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Cremate</effectWorking>
+    <soundWorking>Recipe_Cremate</soundWorking>
+    <allowMixingIngredients>True</allowMixingIngredients>
+    <skillRequirements>
+      <Crafting>1</Crafting>
+    </skillRequirements>
+    <recipeUsers>
+      <li>Nova_CraftingSpot</li>
+    </recipeUsers>
+  </RecipeDef>
+
+  <RecipeDef Name="Nova_WorkSiteCostRecipeBase" ParentName="Nova_WorkSiteRecipeBase" Abstract="True">
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Nova_NanoAssembly</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Nova_NanoAssembly</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+  </RecipeDef>
+
+  <!-- No Cost -->
+
+  <RecipeDef ParentName="Nova_WorkSiteRecipeBase">
+    <defName>R_NanoChipRecipe</defName>
+    <label>构造聚合微械 x100</label>
+    <products>
+      <Nova_NanoAssembly>100</Nova_NanoAssembly>
+    </products>
+  </RecipeDef>
+
+</Defs>

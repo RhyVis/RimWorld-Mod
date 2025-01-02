@@ -1,0 +1,9 @@
+﻿.idea
+Source/Nova/bin
+Source/Nova/obj
+
+*.DotSettings
+*.DotSettings.user
+
+*.dds
+*.code-workspace

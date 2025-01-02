@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+  <ThingDef ParentName="BuildingBase">
+    <defName>Nova_QNuclearGenerator</defName>
+    <label>同位素发电机</label>
+    <description>一个同位素发电机。</description>
+    <thingClass>Building</thingClass>
+    <graphicData>
+      <texPath>Nova/Things/Building/Production/MiniNuclearGenerator</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2,2)</drawSize>
+      <damageData>
+        <rect>(0.3,0,5.4,6)</rect>
+      </damageData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <pathCost>70</pathCost>
+    <passability>PassThroughOnly</passability>
+    <castEdgeShadows>True</castEdgeShadows>
+    <fillPercent>1</fillPercent>
+    <canOverlapZones>False</canOverlapZones>
+    <rotatable>False</rotatable>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <building>
+      <soundAmbient>GeothermalPlant_Ambience</soundAmbient>
+      <ai_chillDestination>False</ai_chillDestination>
+    </building>
+    <statBases>
+      <MaxHitPoints>800</MaxHitPoints>
+      <WorkToBuild>2000</WorkToBuild>
+      <Flammability>0</Flammability>
+      <Beauty>0</Beauty>
+      <Mass>10</Mass>
+    </statBases>
+    <tickerType>Rare</tickerType>
+    <size>(1,1)</size>
+    <selectable>true</selectable>
+    <costList>
+      <Steel>500</Steel>
+      <Uranium>80</Uranium>
+      <ComponentIndustrial>8</ComponentIndustrial>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerPlant</compClass>
+        <basePowerConsumption>-80000</basePowerConsumption>
+        <transmitsPower>True</transmitsPower>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_Glower">
+        <glowRadius>1</glowRadius>
+        <glowColor>(14,223,49,0)</glowColor>
+      </li>
+    </comps>
+    <designationCategory>Nova_MainCategory</designationCategory>
+    <constructEffect>ConstructMetal</constructEffect>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <thingCategories>
+      <li>BuildingsPower</li>
+    </thingCategories>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>Nova_QBattery</defName>
+    <label>量子聚能电池</label>
+    <description>一台储备庞大能量的电池，它永远不会短路或故障。</description>
+    <thingClass>Building_Battery</thingClass>
+    <graphicData>
+      <texPath>Nova/Things/Building/Production/Battery</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(4,4)</drawSize>
+      <drawOffset>(0,0,0.25)</drawOffset>
+      <damageData>
+        <enabled>False</enabled>
+      </damageData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <pathCost>70</pathCost>
+    <passability>PassThroughOnly</passability>
+    <castEdgeShadows>True</castEdgeShadows>
+    <fillPercent>1</fillPercent>
+    <canOverlapZones>False</canOverlapZones>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <building>
+      <destroySound>BuildingDestroyed_Metal_Medium</destroySound>
+      <ai_chillDestination>False</ai_chillDestination>
+    </building>
+    <statBases>
+      <MaxHitPoints>1800</MaxHitPoints>
+      <WorkToBuild>6000</WorkToBuild>
+      <Flammability>0</Flammability>
+      <Beauty>0</Beauty>
+      <Mass>60</Mass>
+    </statBases>
+    <tickerType>Normal</tickerType>
+    <size>(2,3)</size>
+    <selectable>True</selectable>
+    <costList>
+      <Nova_NanoAssembly>200</Nova_NanoAssembly>
+      <Steel>800</Steel>
+      <Uranium>400</Uranium>
+      <ComponentSpacer>10</ComponentSpacer>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Battery">
+        <storedEnergyMax>2000000</storedEnergyMax>
+        <efficiency>1</efficiency>
+        <shortCircuitInRain>False</shortCircuitInRain>
+        <transmitsPower>True</transmitsPower>
+      </li>
+      <li Class="CompProperties_Glower">
+        <glowRadius>1</glowRadius>
+        <glowColor>(14,223,49,0)</glowColor>
+      </li>
+    </comps>
+    <designationCategory>Nova_MainCategory</designationCategory>
+    <constructEffect>ConstructMetal</constructEffect>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <thingCategories>
+      <li>BuildingsPower</li>
+    </thingCategories>
+  </ThingDef>
+</Defs>
