@@ -226,12 +226,12 @@ public class CompHarvestBed : ThingComp
     {
       var pawn = bed.CurOccupants.First();
       pawn.health.hediffSet.GetNotMissingParts()
-        .Where(record => record.def.defName.Contains("Brain"))
+        .Where(record => record.def.defName.ContainsIgnoreCase("brain"))
         .ToList()
         .ForEach(record => pawn.DamageBodyPart(record));
 
       var makeThing = ThingMaker.MakeThing(ThingDefOf.Meat_Human);
-      makeThing.stackCount = 5;
+      makeThing.stackCount = new Random().Next(3, 6);
 
       GenPlace.TryPlaceThing(makeThing, parent.Position, parent.Map, ThingPlaceMode.Near);
     }

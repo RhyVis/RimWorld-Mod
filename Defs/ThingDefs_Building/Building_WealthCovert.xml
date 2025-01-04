@@ -3,7 +3,7 @@
   <ThingDef Name="Nova_WealthCovertBase" ParentName="AdaptiveStorageMinifiableBase" Abstract="True">
     <thingClass>Nova.Building_WealthCovert</thingClass>
     <graphicData>
-      <texPath>Nova/Things/Building/Various/WealthCovert/WealthCovert</texPath>
+      <texPath>Nova/Things/Building/Machine/M2</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
       <drawSize>(2,2)</drawSize>
       <drawRotated>True</drawRotated>
@@ -64,7 +64,7 @@
     <graphics>
       <li>
         <graphicData>
-          <texPath>Nova/Things/Building/Various/WealthCovert/WealthCovert</texPath>
+          <texPath>Nova/Things/Building/Machine/M2</texPath>
           <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>(2,2)</drawSize>
           <drawRotated>True</drawRotated>

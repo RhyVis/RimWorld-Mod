@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
 using Verse;
@@ -23,6 +24,7 @@ public class CompFieldTrap : ThingComp
   private bool _activated;
   private bool _highSpeed;
   private bool _teleport;
+  private bool _attack;
   private CompProperties_FieldTrap Props => (CompProperties_FieldTrap)props;
 
   private int interval => _highSpeed ? Props.checkInterval / 2 : Props.checkInterval;
@@ -33,6 +35,7 @@ public class CompFieldTrap : ThingComp
     Scribe_Values.Look(ref _activated, "emitActivated");
     Scribe_Values.Look(ref _teleport, "emitTeleport");
     Scribe_Values.Look(ref _highSpeed, "emitHighSpeed");
+    Scribe_Values.Look(ref _attack, "emitAttack");
   }
 
   public override IEnumerable<Gizmo> CompGetGizmosExtra()
@@ -59,6 +62,14 @@ public class CompFieldTrap : ThingComp
       defaultLabel = "Nova_CompFieldTrap_Gizmo_Label3".Translate(),
       defaultDesc = "Nova_CompFieldTrap_Gizmo_Desc3".Translate(),
       icon = TexCommand.DesirePower,
+      isActive = () => _highSpeed,
+      toggleAction = delegate { _highSpeed = !_highSpeed; }
+    };
+    yield return new Command_Toggle
+    {
+      defaultLabel = "Nova_CompFieldTrap_Gizmo_Label4".Translate(),
+      defaultDesc = "Nova_CompFieldTrap_Gizmo_Desc4".Translate(),
+      icon = TexCommand.Attack,
       isActive = () => _highSpeed,
       toggleAction = delegate { _highSpeed = !_highSpeed; }
     };
@@ -90,6 +101,14 @@ public class CompFieldTrap : ThingComp
                        (pawn.AnimalOrWildMan() && pawn.InAggroMentalState))
         .Where(pawn => !pawn.IsPrisoner)
         .ToList();
+    
+    var des = parent.Map.designationManager.SpawnedDesignationsOfDef(NovaDefOf.Nova_FieldTeleportD);
+    foreach (var d in des)
+    {
+      var pawn = (Pawn)d.target.Thing;
+      if (!pawns.Contains(pawn))
+        pawns.Add(pawn);
+    }
 
     if (pawns.Count == 0)
       return;
@@ -103,6 +122,15 @@ public class CompFieldTrap : ThingComp
         pawn.Position = targetPos;
         pawn.jobs.StopAll();
         pawn.stances.stunner.StunFor(Props.stunTick, parent, true, !pawn.stances.stunner.Stunned);
+        if (pawn.Downed)
+          parent.Map.designationManager.TryRemoveDesignationOn(pawn, NovaDefOf.Nova_FieldTeleportD);
+        if (!_attack)
+          return;
+        pawn.health.hediffSet.GetNotMissingParts()
+          .Where(record => record.def.defName.ContainsAnyOfIgnoreCase("brain", "heart", "processor"))
+          .ToList()
+          .ForEach(record => pawn.DamageBodyPart(record));
+        _attack = false;
       }
     else
       foreach (var pawn in pawns)
@@ -110,6 +138,15 @@ public class CompFieldTrap : ThingComp
         pawn.ApplyHediff(NovaHediffDefOf.Nova_SlowHediff);
         pawn.jobs.StopAll();
         pawn.stances.stunner.StunFor(Props.stunTick, parent, true, !pawn.stances.stunner.Stunned);
+        if (pawn.Downed)
+          parent.Map.designationManager.TryRemoveDesignationOn(pawn, NovaDefOf.Nova_FieldTeleportD);
+        if (!_attack)
+          return;
+        pawn.health.hediffSet.GetNotMissingParts()
+          .Where(record => record.def.defName.ContainsAnyOfIgnoreCase("brain", "heart", "processor"))
+          .ToList()
+          .ForEach(record => pawn.DamageBodyPart(record));
+        _attack = false;
       }
   }
 }

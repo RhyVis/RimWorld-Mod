@@ -62,12 +62,15 @@
         <Compile Include="Comp\ThingComps\CompSpawnIntoNet.cs" />
         <Compile Include="Comp\ThingComps\CompTempSet.cs" />
         <Compile Include="Comp\ThingComps\CompThingGuardian.cs" />
+        <Compile Include="Def\NovaDefOf.cs" />
         <Compile Include="Def\NovaHediffDefOf.cs" />
         <Compile Include="Def\NovaThingDefOf.cs" />
+        <Compile Include="Designation\Designator_FieldTeleport.cs" />
         <Compile Include="Harmony\Init.cs" />
         <Compile Include="Harmony\Patch_PreventDeterioratingOrRotting.cs" />
         <Compile Include="Ingestible\IngestionOutcomeDoer_AgeTweaker.cs" />
         <Compile Include="Mod\Nova_Mod.cs" />
+        <Compile Include="PlaceWorker\PlaceWorker_CheckFieldTrap.cs" />
         <Compile Include="PlaceWorker\PlaceWorker_RoomEdgeCyan.cs" />
         <Compile Include="PlaceWorker\PlaceWorker_RoomEdgePurple.cs" />
         <Compile Include="Properties\AssemblyInfo.cs"/>

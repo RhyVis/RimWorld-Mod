@@ -3,7 +3,7 @@
   <ThingDef ParentName="BuildingBase">
     <defName>Nova_CraftingSpot</defName>
     <label>空间加工点</label>
-    <description>用于生产Nova产品。</description>
+    <description>用于生产Nova产品</description>
     <thingClass>Building_WorkTable</thingClass>
     <graphicData>
       <texPath>Nova/Things/Building/Production/CraftingSpot</texPath>

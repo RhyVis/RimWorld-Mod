@@ -1,4 +1,5 @@
-﻿using HarmonyLib;
+﻿using System.Reflection;
+using HarmonyLib;
 using Verse;
 
 namespace Nova;
@@ -8,7 +9,7 @@ public static class Init
 {
   static Init()
   {
-    var harmony = new Harmony("Rhynia.Works.Nova");
-    harmony.PatchAll();
+    var harmony = new Harmony("Rhynia.Works.Nova.Harmony");
+    harmony.PatchAll(Assembly.GetExecutingAssembly());
   }
 }

@@ -73,7 +73,7 @@
       <MarketValue>1200</MarketValue>
       <MaxHitPoints>500</MaxHitPoints>
       <WorkToBuild>2000</WorkToBuild>
-      <Mass>30</Mass>
+      <Mass>10</Mass>
       <Flammability>0</Flammability>
     </statBases>
     <castEdgeShadows>False</castEdgeShadows>

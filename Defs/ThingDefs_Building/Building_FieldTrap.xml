@@ -7,9 +7,9 @@
 
   <ThingDef Name="Nova_FieldTrapBase" ParentName="Nova_FloorStructureBase" Abstract="True">
     <graphicData>
-      <texPath>Nova/Things/Building/Security/FieldTrap</texPath>
+      <texPath>Nova/Things/Building/Security/FieldMask</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>(0.8)</drawSize>
+      <drawSize>(0.95)</drawSize>
     </graphicData>
     <statBases>
       <MarketValue>5000</MarketValue>
@@ -94,6 +94,9 @@
       <ComponentIndustrial>30</ComponentIndustrial>
       <ComponentSpacer>18</ComponentSpacer>
     </costList>
+    <placeWorkers>
+      <li>Nova.PlaceWorker_CheckFieldTrap</li>
+    </placeWorkers>
     <comps>
       <li Class="Nova.CompProperties_FieldTrap">
         <ignoreDistance>True</ignoreDistance>
