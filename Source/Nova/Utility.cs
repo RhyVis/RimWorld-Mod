@@ -184,11 +184,12 @@ public static class Utility
     return pawn?.health.hediffSet.GetFirstHediffOfDef(hediff) != null;
   }
 
-  public static void DamageBodyPart(this Pawn pawn, BodyPartRecord bodyPart, float amount = 9999f, float armorPenetration = 999f)
+  public static void DamageBodyPart(this Pawn pawn, BodyPartRecord bodyPart, DamageDef def = null, float amount = 9999f,
+    float armorPenetration = 999f)
   {
     Msg.D("Doing damage to " + bodyPart.def.label);
     pawn.TakeDamage(new DamageInfo(
-      DamageDefOf.SurgicalCut,
+      def ?? DamageDefOf.SurgicalCut,
       amount,
       armorPenetration,
       -1f,
@@ -285,12 +286,12 @@ public static class Utility
   {
     return f > min && f < max;
   }
-  
+
   public static bool ContainsIgnoreCase(this string s, string target)
   {
     return s.IndexOf(target, StringComparison.OrdinalIgnoreCase) >= 0;
   }
-  
+
   public static bool ContainsAnyOfIgnoreCase(this string s, params string[] targets)
   {
     return targets.Any(s.ContainsIgnoreCase);

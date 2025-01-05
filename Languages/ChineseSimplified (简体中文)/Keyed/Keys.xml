@@ -107,6 +107,13 @@
   <Nova_Building_BodypartRemove_Mote1>床上没有小人</Nova_Building_BodypartRemove_Mote1>
   <Nova_Building_BodypartRemove_Mote2>没有足够药品</Nova_Building_BodypartRemove_Mote2>
   <Nova_Building_BodypartRemove_Mote3>移除失败</Nova_Building_BodypartRemove_Mote3>
+  
+  <Nova_Building_SpawnThing_Gizmo1_Desc>立即生成{0}</Nova_Building_SpawnThing_Gizmo1_Desc>
+  <Nova_Building_SpawnThing_Gizmo2_Label>自动生成</Nova_Building_SpawnThing_Gizmo2_Label>
+  <Nova_Building_SpawnThing_Gizmo2_Desc>游戏内每1小时都会尝试补充物品</Nova_Building_SpawnThing_Gizmo2_Desc>
+  <Nova_Building_SpawnThing_Mote1>成功补充物品: {0}</Nova_Building_SpawnThing_Mote1>
+  <Nova_Building_SpawnThing_Mote2>成功生成物品</Nova_Building_SpawnThing_Mote2>
+  <Nova_Building_SpawnThing_Mote3>存储物品类型错误, 期望: {0}, 实际: {1}</Nova_Building_SpawnThing_Mote3>
 
   <!-- Wealth PipeSystem -->
   <Nova_PipeStorageWealthInspection>储备财富计入</Nova_PipeStorageWealthInspection>

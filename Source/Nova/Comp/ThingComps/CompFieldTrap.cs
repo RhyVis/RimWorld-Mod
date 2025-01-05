@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
 using Verse;
@@ -8,7 +7,6 @@ namespace Nova;
 
 public class CompProperties_FieldTrap : CompProperties
 {
-  public int checkInterval = 120;
   public bool ignoreDistance = false;
   public float range = 1;
   public int stunTick = 180;
@@ -27,7 +25,7 @@ public class CompFieldTrap : ThingComp
   private bool _attack;
   private CompProperties_FieldTrap Props => (CompProperties_FieldTrap)props;
 
-  private int interval => _highSpeed ? Props.checkInterval / 2 : Props.checkInterval;
+  private int Interval => _highSpeed ? 60 : 120;
 
   public override void PostExposeData()
   {
@@ -70,15 +68,15 @@ public class CompFieldTrap : ThingComp
       defaultLabel = "Nova_CompFieldTrap_Gizmo_Label4".Translate(),
       defaultDesc = "Nova_CompFieldTrap_Gizmo_Desc4".Translate(),
       icon = TexCommand.Attack,
-      isActive = () => _highSpeed,
-      toggleAction = delegate { _highSpeed = !_highSpeed; }
+      isActive = () => _attack,
+      toggleAction = delegate { _attack = !_attack; }
     };
   }
 
   public override void CompTick()
   {
     base.CompTick();
-    if (!parent.IsHashIntervalTick(interval) || !_activated ||
+    if (!parent.IsHashIntervalTick(Interval) || !_activated ||
         !parent.Spawned) return;
     DoStun();
   }
@@ -91,17 +89,17 @@ public class CompFieldTrap : ThingComp
     if (Props.ignoreDistance)
       pawns = parent.Map.mapPawns.AllPawnsSpawned
         .Where(pawn => !pawn.health.Dead)
-        .Where(pawn => (pawn.Faction != null && pawn.Faction.HostileTo(Faction.OfPlayer)) ||
+        .Where(pawn => (pawn.Faction is not null && pawn.Faction.HostileTo(Faction.OfPlayer)) ||
                        (pawn.AnimalOrWildMan() && pawn.InAggroMentalState))
         .Where(pawn => !pawn.IsPrisoner)
         .ToList();
     else
       pawns = this.FindPawnsAliveInRange(Props.range)
-        .Where(pawn => (pawn.Faction != null && pawn.Faction.HostileTo(Faction.OfPlayer)) ||
+        .Where(pawn => (pawn.Faction is not null && pawn.Faction.HostileTo(Faction.OfPlayer)) ||
                        (pawn.AnimalOrWildMan() && pawn.InAggroMentalState))
         .Where(pawn => !pawn.IsPrisoner)
         .ToList();
-    
+
     var des = parent.Map.designationManager.SpawnedDesignationsOfDef(NovaDefOf.Nova_FieldTeleportD);
     foreach (var d in des)
     {
@@ -113,8 +111,6 @@ public class CompFieldTrap : ThingComp
     if (pawns.Count == 0)
       return;
 
-    //SoundDefOf.Psycast_Skip_Entry.PlayOneShot(new TargetInfo(parent.Position, parent.Map));
-
     if (_teleport)
       foreach (var pawn in pawns)
       {
@@ -124,13 +120,6 @@ public class CompFieldTrap : ThingComp
         pawn.stances.stunner.StunFor(Props.stunTick, parent, true, !pawn.stances.stunner.Stunned);
         if (pawn.Downed)
           parent.Map.designationManager.TryRemoveDesignationOn(pawn, NovaDefOf.Nova_FieldTeleportD);
-        if (!_attack)
-          return;
-        pawn.health.hediffSet.GetNotMissingParts()
-          .Where(record => record.def.defName.ContainsAnyOfIgnoreCase("brain", "heart", "processor"))
-          .ToList()
-          .ForEach(record => pawn.DamageBodyPart(record));
-        _attack = false;
       }
     else
       foreach (var pawn in pawns)
@@ -140,13 +129,15 @@ public class CompFieldTrap : ThingComp
         pawn.stances.stunner.StunFor(Props.stunTick, parent, true, !pawn.stances.stunner.Stunned);
         if (pawn.Downed)
           parent.Map.designationManager.TryRemoveDesignationOn(pawn, NovaDefOf.Nova_FieldTeleportD);
-        if (!_attack)
-          return;
-        pawn.health.hediffSet.GetNotMissingParts()
-          .Where(record => record.def.defName.ContainsAnyOfIgnoreCase("brain", "heart", "processor"))
-          .ToList()
-          .ForEach(record => pawn.DamageBodyPart(record));
-        _attack = false;
       }
+
+    if (!_attack)
+      return;
+    foreach (var pawn in pawns)
+      pawn.health.hediffSet.GetNotMissingParts()
+        .Where(record => record.def.defName.ContainsAnyOfIgnoreCase("brain", "heart", "processor"))
+        .ToList()
+        .ForEach(record => pawn.DamageBodyPart(record, DamageDefOf.Cut));
+    _attack = false;
   }
 }

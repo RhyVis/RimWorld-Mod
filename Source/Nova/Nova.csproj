@@ -49,6 +49,7 @@
         </Reference>
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="Building\Building_SpawnThing.cs" />
         <Compile Include="Building\Building_WealthCovert.cs" />
         <Compile Include="Building\Building_WithoutZoneSettings.cs" />
         <Compile Include="Comp\HediffComps\HediffComp_FixWorstCycle.cs" />
