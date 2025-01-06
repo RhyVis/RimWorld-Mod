@@ -23,7 +23,7 @@ public class Designator_FieldTeleport : Designator
   {
     if (!loc.InBounds(Map) || loc.Fogged(Map))
       return false;
-    
+
     var pawnFirst = loc.GetFirstPawn(Map);
     if (pawnFirst is null)
       return "Nova_Designation_FieldTeleport_Msg_MustPawn".Translate();
@@ -51,6 +51,6 @@ public class Designator_FieldTeleport : Designator
   public override void DesignateThing(Thing t)
   {
     Map.designationManager.RemoveAllDesignationsOn(t);
-    Map.designationManager.AddDesignation(new Verse.Designation(t, Designation));
+    Map.designationManager.AddDesignation(new Designation(t, Designation));
   }
 }

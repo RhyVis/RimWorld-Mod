@@ -1,9 +1,10 @@
 ﻿using System.Collections.Generic;
+using AdaptiveStorage;
 using Verse;
 
 namespace Nova;
 
-public class Building_WithoutZoneSettings : AdaptiveStorage.ThingClass
+public class Building_WithoutZoneSettings : ThingClass
 {
   public override IEnumerable<Gizmo> GetGizmos()
   {

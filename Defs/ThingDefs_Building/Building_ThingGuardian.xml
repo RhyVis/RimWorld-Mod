@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Defs>
   <ThingDef Name="Nova_ThingGuardianBase" ParentName="Nova_FurnBase" Abstract="True">
+    <thingClass>Nova.Building_ThingGuardian</thingClass>
     <graphicData>
       <texPath>Nova/Things/Building/Various/ThingGuardian</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -35,7 +36,6 @@
     </placeWorkers>
     <drawPlaceWorkersWhileSelected>True</drawPlaceWorkersWhileSelected>
     <comps>
-      <li Class="Nova.CompProperties_ThingGuardian"/>
       <li Class="CompProperties_Glower">
         <glowRadius>5</glowRadius>
         <glowColor>(255,255,255,0)</glowColor>

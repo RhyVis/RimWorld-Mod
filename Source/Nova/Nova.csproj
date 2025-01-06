@@ -26,56 +26,64 @@
     </PropertyGroup>
     <ItemGroup>
         <Reference Include="0Harmony">
-          <HintPath>..\..\..\..\..\..\workshop\content\294100\2009463077\Current\Assemblies\0Harmony.dll</HintPath>
+            <HintPath>..\..\..\..\..\..\workshop\content\294100\2009463077\Current\Assemblies\0Harmony.dll</HintPath>
         </Reference>
         <Reference Include="AdaptiveStorageFramework">
-          <HintPath>..\..\..\..\..\..\workshop\content\294100\3033901359\1.5\Assemblies\AdaptiveStorageFramework.dll</HintPath>
+            <HintPath>..\..\..\..\..\..\workshop\content\294100\3033901359\1.5\Assemblies\AdaptiveStorageFramework.dll</HintPath>
         </Reference>
         <Reference Include="Assembly-CSharp">
-          <HintPath>..\..\..\..\RimWorldWin64_Data\Managed\Assembly-CSharp.dll</HintPath>
+            <HintPath>..\..\..\..\RimWorldWin64_Data\Managed\Assembly-CSharp.dll</HintPath>
         </Reference>
         <Reference Include="PipeSystem">
-          <HintPath>..\..\..\..\..\..\workshop\content\294100\2023507013\1.5\Assemblies\PipeSystem.dll</HintPath>
+            <HintPath>..\..\..\..\..\..\workshop\content\294100\2023507013\1.5\Assemblies\PipeSystem.dll</HintPath>
         </Reference>
         <Reference Include="System"/>
         <Reference Include="System.Core"/>
         <Reference Include="System.Data"/>
         <Reference Include="System.Xml"/>
         <Reference Include="UnityEngine">
-          <HintPath>..\..\..\..\RimWorldWin64_Data\Managed\UnityEngine.dll</HintPath>
+            <HintPath>..\..\..\..\RimWorldWin64_Data\Managed\UnityEngine.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine.CoreModule">
-          <HintPath>..\..\..\..\RimWorldWin64_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+            <HintPath>..\..\..\..\RimWorldWin64_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
         </Reference>
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="Building\Building_SpawnThing.cs" />
-        <Compile Include="Building\Building_WealthCovert.cs" />
-        <Compile Include="Building\Building_WithoutZoneSettings.cs" />
-        <Compile Include="Comp\HediffComps\HediffComp_FixWorstCycle.cs" />
-        <Compile Include="Comp\HediffComps\HediffComp_SkillDeplete.cs" />
-        <Compile Include="Comp\ThingComps\CompFieldTrap.cs" />
-        <Compile Include="Comp\ThingComps\CompGasEmit.cs" />
-        <Compile Include="Comp\ThingComps\CompHarvestBed.cs" />
-        <Compile Include="Comp\ThingComps\CompHediffGiver.cs" />
-        <Compile Include="Comp\ThingComps\CompPreventDeterioratingOrRotting.cs" />
-        <Compile Include="Comp\ThingComps\CompRemoteDoor.cs" />
-        <Compile Include="Comp\ThingComps\CompSpawnIntoNet.cs" />
-        <Compile Include="Comp\ThingComps\CompTempSet.cs" />
-        <Compile Include="Comp\ThingComps\CompThingGuardian.cs" />
-        <Compile Include="Def\NovaDefOf.cs" />
-        <Compile Include="Def\NovaHediffDefOf.cs" />
-        <Compile Include="Def\NovaThingDefOf.cs" />
-        <Compile Include="Designation\Designator_FieldTeleport.cs" />
-        <Compile Include="Harmony\Init.cs" />
-        <Compile Include="Harmony\Patch_PreventDeterioratingOrRotting.cs" />
-        <Compile Include="Ingestible\IngestionOutcomeDoer_AgeTweaker.cs" />
-        <Compile Include="Mod\Nova_Mod.cs" />
-        <Compile Include="PlaceWorker\PlaceWorker_CheckFieldTrap.cs" />
-        <Compile Include="PlaceWorker\PlaceWorker_RoomEdgeCyan.cs" />
-        <Compile Include="PlaceWorker\PlaceWorker_RoomEdgePurple.cs" />
+        <Compile Include="Building\Building_SpawnThing.cs"/>
+        <Compile Include="Building\Building_ThingGuardian.cs"/>
+        <Compile Include="Building\Building_WealthCovert.cs"/>
+        <Compile Include="Building\Building_WithoutZoneSettings.cs"/>
+        <Compile Include="Comp\HediffComps\HediffComp_FixWorstCycle.cs"/>
+        <Compile Include="Comp\HediffComps\HediffComp_SkillDeplete.cs"/>
+        <Compile Include="Comp\ThingComps\CompFieldTrap.cs"/>
+        <Compile Include="Comp\ThingComps\CompGasEmit.cs"/>
+        <Compile Include="Comp\ThingComps\CompHarvestBed.cs"/>
+        <Compile Include="Comp\ThingComps\CompHediffGiver.cs"/>
+        <Compile Include="Comp\ThingComps\CompKeepSafePos.cs"/>
+        <Compile Include="Comp\ThingComps\CompRemoteDoor.cs"/>
+        <Compile Include="Comp\ThingComps\CompSpawnIntoNet.cs"/>
+        <Compile Include="Comp\ThingComps\CompTempSet.cs"/>
+        <Compile Include="Def\NovaDefOf.cs"/>
+        <Compile Include="Def\NovaHediffDefOf.cs"/>
+        <Compile Include="Def\NovaThingDefOf.cs"/>
+        <Compile Include="Designation\Designator_FieldTeleport.cs"/>
+        <Compile Include="Harmony\HarmonyInit.cs"/>
+        <Compile Include="Harmony\Patch_KeepSafe.cs"/>
+        <Compile Include="Ingestible\IngestionOutcomeDoer_AgeTweaker.cs"/>
+        <Compile Include="Mod\Nova_Mod.cs"/>
+        <Compile Include="PlaceWorker\PlaceWorker_CheckFieldTrap.cs"/>
+        <Compile Include="PlaceWorker\PlaceWorker_RoomEdgeCyan.cs"/>
+        <Compile Include="PlaceWorker\PlaceWorker_RoomEdgePurple.cs"/>
         <Compile Include="Properties\AssemblyInfo.cs"/>
-        <Compile Include="Utility.cs" />
+        <Compile Include="Utility\Constant.cs"/>
+        <Compile Include="Utility\Msg.cs"/>
+        <Compile Include="Utility\ObjectExtension.cs" />
+        <Compile Include="Utility\PawnExtension.cs"/>
+        <Compile Include="Utility\ReflectionHelper.cs"/>
+        <Compile Include="Utility\SkillExtension.cs"/>
+        <Compile Include="Utility\StringExtension.cs"/>
+        <Compile Include="Utility\ThingExtension.cs"/>
+        <Compile Include="Utility\TranslateUtil.cs"/>
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

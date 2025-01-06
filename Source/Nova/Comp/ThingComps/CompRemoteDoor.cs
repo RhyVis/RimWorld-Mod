@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using RimWorld;
-using UnityEngine;
 using Verse;
 
 namespace Nova;
@@ -20,6 +19,12 @@ public class CompRemoteDoor : ThingComp
   public override void PostSpawnSetup(bool respawningAfterLoad)
   {
     base.PostSpawnSetup(respawningAfterLoad);
+    if (parent is not Building_Door)
+    {
+      Msg.E($"CompRemoteDoor must be attached to a Building_Door, but was attached to {nameof(parent.def.thingClass)}");
+      parent.Destroy();
+    }
+
     _powerTrader = parent.TryGetComp<CompPowerTrader>();
 
     if (_powerTrader == null) Msg.E($"No CompPowerTrader set with CompRemoteDoor at {parent.Position}");
@@ -34,17 +39,13 @@ public class CompRemoteDoor : ThingComp
       defaultDesc = "Nova_CompRemoteDoor_Gizmo_Desc".Translate(),
       icon = TexCommand.HoldOpen,
       hotKey = KeyBindingDefOf.Misc6,
-      isActive = () => parent is Building_Door door && door.Open,
+      isActive = () => ((Building_Door)parent).Open,
       toggleAction = delegate
       {
-        if (_powerTrader != null && _powerTrader.PowerOn)
-        {
-          if (parent is Building_Door door) SetDoorState(!door.Open);
-        }
+        if (_powerTrader is not null && _powerTrader.PowerOn)
+          SetDoorState(!((Building_Door)parent).Open);
         else
-        {
-          MoteMaker.ThrowText(parent.TrueCenter() + new Vector3(0.5f, 0.5f, 0.5f), parent.Map, "未通电");
-        }
+          parent.ThrowMote("未通电");
       }
     };
   }

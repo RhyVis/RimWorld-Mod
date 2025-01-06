@@ -1,16 +1,17 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using AdaptiveStorage;
 using RimWorld;
 using Verse;
 
 namespace Nova;
 
-public class Building_SpawnThing : AdaptiveStorage.ThingClass
+public class Building_SpawnThing : ThingClass
 {
-  private int _ticker = 1250;
   private bool _active = true;
   private ThingDef _spawnThingDef;
-  
+  private int _ticker = 1250;
+
   private int StackLimit => _spawnThingDef.stackLimit;
 
   public override void SpawnSetup(Map map, bool respawningAfterLoad)
@@ -81,7 +82,7 @@ public class Building_SpawnThing : AdaptiveStorage.ThingClass
 
   private void TickMethod(int t)
   {
-    if (!_active)
+    if (!_active || !Spawned)
       return;
 
     _ticker -= t;
@@ -105,14 +106,16 @@ public class Building_SpawnThing : AdaptiveStorage.ThingClass
       this.ThrowMote("Nova_Building_SpawnThing_Mote2".Translate());
       return;
     }
+
     if (t.def.defName != _spawnThingDef.defName)
     {
       this.ThrowMote("Nova_Building_SpawnThing_Mote3".Translate(_spawnThingDef.label, t.Label));
       _active = false;
       return;
-    } 
+    }
+
     if (t.stackCount >= StackLimit) return; // No need to spawn more
-    
+
     this.ThrowMote("Nova_Building_SpawnThing_Mote1".Translate(StackLimit - t.stackCount));
     t.stackCount = StackLimit;
   }

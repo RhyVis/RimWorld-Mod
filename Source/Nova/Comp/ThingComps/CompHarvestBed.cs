@@ -76,7 +76,7 @@ public class CompHarvestBed : ThingComp
     {
       if (_fuelComp.Fuel < Props.harvestFullCost)
       {
-        MoteMaker.ThrowText(bed.TrueCenter() + Utility.RightUp, bed.Map,
+        MoteMaker.ThrowText(bed.TrueCenter() + Constant.RightUp, bed.Map,
           "Nova_Building_BodypartRemove_Mote2".Translate());
         return;
       }
@@ -109,7 +109,7 @@ public class CompHarvestBed : ThingComp
     }
     else
     {
-      MoteMaker.ThrowText(parent.TrueCenter() + Utility.RightUp, parent.Map,
+      MoteMaker.ThrowText(parent.TrueCenter() + Constant.RightUp, parent.Map,
         "Nova_Building_BodypartRemove_Mote1".Translate());
     }
   }
@@ -156,7 +156,7 @@ public class CompHarvestBed : ThingComp
     }
     else
     {
-      MoteMaker.ThrowText(parent.TrueCenter() + Utility.RightUp, parent.Map,
+      MoteMaker.ThrowText(parent.TrueCenter() + Constant.RightUp, parent.Map,
         "Nova_Building_BodypartRemove_Mote1".Translate());
     }
   }

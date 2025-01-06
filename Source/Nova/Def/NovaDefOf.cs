@@ -7,6 +7,9 @@ namespace Nova;
 public static class NovaDefOf
 {
   public static DesignationDef Nova_FieldTeleportD;
-  
-  static NovaDefOf() => DefOfHelper.EnsureInitializedInCtor(typeof(NovaDefOf));
+
+  static NovaDefOf()
+  {
+    DefOfHelper.EnsureInitializedInCtor(typeof(NovaDefOf));
+  }
 }

@@ -213,7 +213,6 @@
         <severityAdjust>0.3</severityAdjust>
         <radius>4.9</radius>
         <checkInterval>60</checkInterval>
-        <danger>True</danger>
         <stats>
           <li>PsychicSensitivity</li>
         </stats>
@@ -230,7 +229,6 @@
         <severityAdjust>1.0</severityAdjust>
         <radius>4.9</radius>
         <checkInterval>3600</checkInterval>
-        <danger>True</danger>
         <stats>
           <li>PsychicSensitivity</li>
         </stats>
@@ -247,7 +245,6 @@
         <severityAdjust>1.0</severityAdjust>
         <radius>4.9</radius>
         <checkInterval>60</checkInterval>
-        <danger>True</danger>
         <stats>
           <li>PsychicSensitivity</li>
         </stats>
@@ -264,7 +261,6 @@
         <severityAdjust>1.0</severityAdjust>
         <radius>4.9</radius>
         <checkInterval>60</checkInterval>
-        <danger>True</danger>
         <stats>
           <li>PsychicSensitivity</li>
         </stats>
@@ -281,7 +277,6 @@
         <severityAdjust>1.0</severityAdjust>
         <radius>4.9</radius>
         <checkInterval>60</checkInterval>
-        <danger>True</danger>
         <stats>
           <li>PsychicSensitivity</li>
         </stats>
@@ -298,7 +293,6 @@
         <severityAdjust>0.5</severityAdjust>
         <radius>4.9</radius>
         <checkInterval>60</checkInterval>
-        <danger>True</danger>
         <stats>
           <li>PsychicSensitivity</li>
         </stats>
@@ -315,7 +309,6 @@
         <severityAdjust>0.3</severityAdjust>
         <radius>4.9</radius>
         <checkInterval>60</checkInterval>
-        <danger>True</danger>
       </li>
     </comps>
   </ThingDef>
@@ -329,7 +322,6 @@
         <severityAdjust>0.3</severityAdjust>
         <radius>4.9</radius>
         <checkInterval>60</checkInterval>
-        <danger>True</danger>
       </li>
     </comps>
   </ThingDef>
@@ -343,7 +335,6 @@
         <severityAdjust>1.0</severityAdjust>
         <radius>4.9</radius>
         <checkInterval>60</checkInterval>
-        <danger>True</danger>
       </li>
     </comps>
   </ThingDef>
@@ -358,7 +349,6 @@
         <severityAdjust>2.0</severityAdjust>
         <radius>2.9</radius>
         <checkInterval>60</checkInterval>
-        <danger>True</danger>
       </li>
     </comps>
   </ThingDef>

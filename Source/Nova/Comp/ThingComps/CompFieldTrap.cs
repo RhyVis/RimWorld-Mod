@@ -20,9 +20,9 @@ public class CompProperties_FieldTrap : CompProperties
 public class CompFieldTrap : ThingComp
 {
   private bool _activated;
+  private bool _attack;
   private bool _highSpeed;
   private bool _teleport;
-  private bool _attack;
   private CompProperties_FieldTrap Props => (CompProperties_FieldTrap)props;
 
   private int Interval => _highSpeed ? 60 : 120;
