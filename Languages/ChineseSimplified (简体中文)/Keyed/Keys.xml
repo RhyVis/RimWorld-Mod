@@ -131,4 +131,5 @@
   <!-- Universal -->
   <Nova_U_Enable>启用</Nova_U_Enable>
   <Nova_U_Disable>禁用</Nova_U_Disable>
+  <Nova_MiniProduction_LabelPrefix>小型</Nova_MiniProduction_LabelPrefix>
 </LanguageData>

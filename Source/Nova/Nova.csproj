@@ -71,6 +71,7 @@
         <Compile Include="Harmony\Patch_KeepSafe.cs"/>
         <Compile Include="Ingestible\IngestionOutcomeDoer_AgeTweaker.cs"/>
         <Compile Include="Mod\Nova_Mod.cs"/>
+        <Compile Include="Mod\Nova_MiniProduction.cs" />
         <Compile Include="PlaceWorker\PlaceWorker_CheckFieldTrap.cs"/>
         <Compile Include="PlaceWorker\PlaceWorker_RoomEdgeCyan.cs"/>
         <Compile Include="PlaceWorker\PlaceWorker_RoomEdgePurple.cs"/>

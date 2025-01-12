@@ -17,10 +17,12 @@
     <li>
       <packageId>oskarpotocki.vanillafactionsexpanded.core</packageId>
       <displayName>Vanilla Expanded Framework</displayName>
+      <steamWorkshopUrl>https://steamcommunity.com/workshop/filedetails/?id=2023507013</steamWorkshopUrl>
     </li>
     <li>
       <packageId>adaptive.storage.framework</packageId>
       <displayName>Adaptive Storage Framework</displayName>
+      <steamWorkshopUrl>https://steamcommunity.com/workshop/filedetails/?id=3033901359</steamWorkshopUrl>
     </li>
   </modDependencies>
   <loadAfter>
@@ -28,5 +30,6 @@
     <li>oskarpotocki.vanillafactionsexpanded.core</li>
     <li>adaptive.storage.framework</li>
     <li>vanillaexpanded.vnutriente</li>
+    <li>vanillaexpanded.vfeproduction</li>
   </loadAfter>
 </ModMetaData>
