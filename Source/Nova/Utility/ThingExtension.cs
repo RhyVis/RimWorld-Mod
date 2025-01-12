@@ -24,12 +24,12 @@ public static class ThingExtension
     var powerComp = comp.parent.TryGetComp<CompPowerTrader>();
     if (!(powerComp?.PowerOn ?? false)) return false;
 
-    Msg.D("ConsumePower: Start power check.");
+    Msg.Debug("ConsumePower: Start power check.");
     var powerSum = powerComp.PowerNet.CurrentStoredEnergy();
 
     if (powerSum < requiredVal)
     {
-      Msg.D("ConsumePower: Insufficient power.");
+      Msg.Debug("ConsumePower: Insufficient power.");
       return false;
     }
 
@@ -39,25 +39,25 @@ public static class ThingExtension
       if (battery.StoredEnergy > toConsume)
       {
         battery.SetStoredEnergyPct((battery.StoredEnergy - toConsume) / battery.Props.storedEnergyMax);
-        Msg.D("ConsumePower: Clear.");
+        Msg.Debug("ConsumePower: Clear.");
         return true;
       }
 
       toConsume -= battery.StoredEnergy;
       battery.SetStoredEnergyPct(0f);
-      Msg.D("ConsumePower: Cost " + battery.StoredEnergy);
+      Msg.Debug("ConsumePower: Cost " + battery.StoredEnergy);
 
       if (toConsume > 0f)
       {
-        Msg.D("ConsumePower: Next battery.");
+        Msg.Debug("ConsumePower: Next battery.");
         continue;
       }
 
-      Msg.D("ConsumePower: Clear.");
+      Msg.Debug("ConsumePower: Clear.");
       return true;
     }
 
-    Msg.D("ConsumePower: Unexpected failure.");
+    Msg.Debug("ConsumePower: Unexpected failure.");
     return false;
   }
 
@@ -66,14 +66,14 @@ public static class ThingExtension
   {
     if (!(comp.parent is IHaulDestination))
     {
-      Msg.E("CompSpawnThingWithPowerCost: Parent is not IHaulDestination.");
+      Msg.Error("CompSpawnThingWithPowerCost: Parent is not IHaulDestination.");
       return;
     }
 
     var slotGroup = comp.parent.GetSlotGroup();
     if (slotGroup is null)
     {
-      Msg.E("CompSpawnThingWithPowerCost: SlotGroup is null.");
+      Msg.Error("CompSpawnThingWithPowerCost: SlotGroup is null.");
       return;
     }
 
@@ -83,14 +83,14 @@ public static class ThingExtension
 
     if (presentCount >= minCount)
     {
-      Msg.D("CompSpawnThingWithPowerCost: Sufficient count.");
+      Msg.Debug("CompSpawnThingWithPowerCost: Sufficient count.");
       return;
     }
 
     var targetDef = ThingDef.Named(defName);
     if (targetDef == null)
     {
-      Msg.E($"CompSpawnThingWithPowerCost: There's no thing named {defName} at {comp.parent.Position} setting.");
+      Msg.Error($"CompSpawnThingWithPowerCost: There's no thing named {defName} at {comp.parent.Position} setting.");
       return;
     }
 
@@ -101,7 +101,7 @@ public static class ThingExtension
 
     if (!comp.ConsumePower(addUpVal * eachItemCost))
     {
-      Msg.D("CompSpawnThingWithPowerCost: Insufficient power.");
+      Msg.Debug("CompSpawnThingWithPowerCost: Insufficient power.");
       return;
     }
 

@@ -172,7 +172,7 @@ public class Building_WealthCovert : ThingClass
           }
           else
           {
-            Msg.E($"Failed to place silver {silverLimit} at {Position}");
+            Msg.Error($"Failed to place silver {silverLimit} at {Position}");
             this.ThrowMote("Nova_CompResourceCovert_MoteFailure".Translate(_leftoverSilverValue));
             _autoPlace = false;
             break;
@@ -187,7 +187,7 @@ public class Building_WealthCovert : ThingClass
           }
           else
           {
-            Msg.E($"Failed to place silver {_leftoverSilverValue} at {Position}");
+            Msg.Error($"Failed to place silver {_leftoverSilverValue} at {Position}");
             this.ThrowMote("Nova_CompResourceCovert_MoteFailure".Translate(_leftoverSilverValue));
             _autoPlace = false;
             break;
@@ -212,7 +212,7 @@ public class Building_WealthCovert : ThingClass
           }
           else
           {
-            Msg.E($"Failed to place gold {goldLimit} at {Position}");
+            Msg.Error($"Failed to place gold {goldLimit} at {Position}");
             this.ThrowMote("Nova_CompResourceCovert_MoteFailure".Translate(_leftoverSilverValue));
             _autoPlace = false;
             break;
@@ -228,7 +228,7 @@ public class Building_WealthCovert : ThingClass
           }
           else
           {
-            Msg.E($"Failed to place gold {goldCount} at {Position}");
+            Msg.Error($"Failed to place gold {goldCount} at {Position}");
             this.ThrowMote("Nova_CompResourceCovert_MoteFailure".Translate(_leftoverSilverValue));
             _autoPlace = false;
             break;

@@ -56,7 +56,7 @@ public static class PawnExtension
   public static void DamageBodyPart(this Pawn pawn, BodyPartRecord bodyPart, DamageDef def = null, float amount = 9999f,
     float armorPenetration = 999f)
   {
-    Msg.D("Doing damage to " + bodyPart.def.label);
+    Msg.Debug("Doing damage to " + bodyPart.def.label);
     pawn.TakeDamage(new DamageInfo(
       def ?? DamageDefOf.SurgicalCut,
       amount,
@@ -78,7 +78,7 @@ public static class PawnExtension
   {
     var target = pawn.health.hediffSet.GetNotMissingParts().RandomElement();
     if (target == null) return;
-    Msg.D("Doing damage to " + target.def.label);
+    Msg.Debug("Doing damage to " + target.def.label);
     pawn.TakeDamage(new DamageInfo(
       DamageDefOf.SurgicalCut,
       amount,

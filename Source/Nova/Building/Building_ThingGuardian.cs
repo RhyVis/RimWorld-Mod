@@ -84,7 +84,7 @@ public class Building_ThingGuardian : Building
   private void ClearGas()
   {
     var density = Traverse.Create(MapHeld.gasGrid).Field("gasDensity").GetValue<uint[]>();
-    Msg.D($"GasDensity Index: {density.Length}");
+    Msg.Debug($"GasDensity Index: {density.Length}");
     foreach (var c in this.GetRoom().Cells)
       density[Map.cellIndices.CellToIndex(c)] = 0U;
     Map.mapDrawer.WholeMapChanged((ulong)MapMeshFlagDefOf.Gas);

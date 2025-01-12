@@ -21,13 +21,13 @@ public class CompRemoteDoor : ThingComp
     base.PostSpawnSetup(respawningAfterLoad);
     if (parent is not Building_Door)
     {
-      Msg.E($"CompRemoteDoor must be attached to a Building_Door, but was attached to {nameof(parent.def.thingClass)}");
+      Msg.Error($"CompRemoteDoor must be attached to a Building_Door, but was attached to {nameof(parent.def.thingClass)}");
       parent.Destroy();
     }
 
     _powerTrader = parent.TryGetComp<CompPowerTrader>();
 
-    if (_powerTrader == null) Msg.E($"No CompPowerTrader set with CompRemoteDoor at {parent.Position}");
+    if (_powerTrader == null) Msg.Error($"No CompPowerTrader set with CompRemoteDoor at {parent.Position}");
   }
 
   public override IEnumerable<Gizmo> CompGetGizmosExtra()

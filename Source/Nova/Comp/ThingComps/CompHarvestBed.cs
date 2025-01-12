@@ -99,7 +99,7 @@ public class CompHarvestBed : ThingComp
       }
       catch (Exception e)
       {
-        Msg.E(e.ToString());
+        Msg.Error(e.ToString());
         bed.ThrowMote("Nova_Building_BodypartRemove_Mote3".Translate());
       }
       finally
@@ -146,7 +146,7 @@ public class CompHarvestBed : ThingComp
       }
       catch (Exception e)
       {
-        Msg.E(e.ToString());
+        Msg.Error(e.ToString());
         bed.ThrowMote("Nova_Building_BodypartRemove_Mote3".Translate());
       }
       finally
@@ -193,7 +193,7 @@ public class CompHarvestBed : ThingComp
       }
       catch (Exception e)
       {
-        Msg.E(e.ToString());
+        Msg.Error(e.ToString());
         bed.ThrowMote("Nova_Building_BodypartRemove_Mote3".Translate());
       }
       finally

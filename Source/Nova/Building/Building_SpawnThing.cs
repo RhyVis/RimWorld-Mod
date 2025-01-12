@@ -22,12 +22,12 @@ public class Building_SpawnThing : ThingClass
 
     if (_spawnThingDef is null)
     {
-      Msg.E($"Unable to find allowed thing def for {def.defName}");
+      Msg.Error($"Unable to find allowed thing def for {def.defName}");
       Destroy();
     }
     else if (def.building.maxItemsInCell > 1)
     {
-      Msg.E($"Only single item stacks are supported for {def.defName}");
+      Msg.Error($"Only single item stacks are supported for {def.defName}");
       Destroy();
     }
   }

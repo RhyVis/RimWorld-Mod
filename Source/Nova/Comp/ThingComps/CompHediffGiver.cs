@@ -106,7 +106,7 @@ public class CompHediffGiver : ThingComp
       }
       default:
       {
-        Msg.E($"Unexpected Type of {_factionType}");
+        Msg.Error($"Unexpected Type of {_factionType}");
         this.ThrowMote("Unexpected Type");
         _factionType = 0;
         break;
