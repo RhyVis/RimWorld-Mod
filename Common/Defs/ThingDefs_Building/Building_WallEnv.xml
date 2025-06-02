@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+  <DesignatorDropdownGroupDef>
+    <defName>Overclock_WallEnv_Good</defName>
+  </DesignatorDropdownGroupDef>
+
+  <DesignatorDropdownGroupDef>
+    <defName>Overclock_WallEnv_Bad</defName>
+  </DesignatorDropdownGroupDef>
+
+  <ThingDef Name="Overclock_WallEnvBase" ParentName="Overclock_WallBuildingBase" Abstract="True">
+    <thingClass>Building</thingClass>
+    <graphicData>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawOffsetNorth>(0,0,0.95)</drawOffsetNorth>
+      <drawOffsetSouth>(0,0,-0.9)</drawOffsetSouth>
+      <drawOffsetWest>(-0.9,0,0)</drawOffsetWest>
+      <drawOffsetEast>(0.9,0,0)</drawOffsetEast>
+      <damageData>
+        <enabled>False</enabled>
+      </damageData>
+    </graphicData>
+    <overrideMinifiedRot>North</overrideMinifiedRot>
+    <minifiedDrawOffset>(0, 0, 0.2)</minifiedDrawOffset>
+    <statBases>
+      <WorkToBuild>800</WorkToBuild>
+      <MaxHitPoints>300</MaxHitPoints>
+      <Mass>5</Mass>
+      <Flammability>0</Flammability>
+    </statBases>
+    <tickerType>Rare</tickerType>
+    <placeWorkers>
+      <li>Placeworker_AttachedToWall</li>
+    </placeWorkers>
+    <comps>
+      <li Class="CompProperties_Glower">
+        <glowRadius>3</glowRadius>
+        <glowColor>(153,255,255,0)</glowColor>
+      </li>
+    </comps>
+    <researchPrerequisites>
+      <li>Electricity</li>
+    </researchPrerequisites>
+    <constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+  </ThingDef>
+
+  <ThingDef Name="Overclock_WallEnvGoodBase" ParentName="Overclock_WallEnvBase" Abstract="True">
+    <designatorDropdown>Overclock_WallEnv_Good</designatorDropdown>
+    <graphicData>
+      <texPath>Overclock/Things/Building/Furniture/WallEnv/WallEnv_Good</texPath>
+    </graphicData>
+    <uiIconPath>Overclock/Things/Building/Furniture/WallEnv/WallEnv_Good_MenuIcon</uiIconPath>
+  </ThingDef>
+
+  <ThingDef Name="Overclock_WallEnvBadBase" ParentName="Overclock_WallEnvBase" Abstract="True">
+    <designatorDropdown>Overclock_WallEnv_Bad</designatorDropdown>
+    <graphicData>
+      <texPath>Overclock/Things/Building/Furniture/WallEnv/WallEnv_Bad</texPath>
+    </graphicData>
+    <uiIconPath>Overclock/Things/Building/Furniture/WallEnv/WallEnv_Bad_MenuIcon</uiIconPath>
+  </ThingDef>
+
+  <!-- Good -->
+
+  <ThingDef ParentName="Overclock_WallEnvGoodBase">
+    <defName>Overclock_WallEnvGood_Beauty</defName>
+    <label>壁挂美学装置</label>
+    <description>一个壁挂式装置，可以大幅提升房间美观度。</description>
+    <statBases>
+      <Beauty>500000</Beauty>
+    </statBases>
+    <costList>
+      <Steel>100</Steel>
+      <Gold>150</Gold>
+      <ComponentIndustrial>1</ComponentIndustrial>
+    </costList>
+  </ThingDef>
+  <ThingDef ParentName="Overclock_WallEnvGoodBase">
+    <defName>Overclock_WallEnvGood_Clean</defName>
+    <label>壁挂超净装置</label>
+    <description>一个壁挂式装置，可以大幅提升房间清洁度。</description>
+    <statBases>
+      <Cleanliness>500</Cleanliness>
+    </statBases>
+    <costList>
+      <Steel>100</Steel>
+      <Silver>150</Silver>
+      <ComponentIndustrial>1</ComponentIndustrial>
+    </costList>
+  </ThingDef>
+
+  <!-- Bad -->
+
+  <ThingDef ParentName="Overclock_WallEnvBadBase">
+    <defName>Overclock_WallEnvBad_Beauty</defName>
+    <label>壁挂丑恶装置</label>
+    <description>一个壁挂式装置，可以大幅降低房间美观度。</description>
+    <statBases>
+      <Beauty>-500000</Beauty>
+    </statBases>
+    <costList>
+      <Steel>100</Steel>
+      <Gold>150</Gold>
+      <ComponentIndustrial>1</ComponentIndustrial>
+    </costList>
+  </ThingDef>
+  <ThingDef ParentName="Overclock_WallEnvBadBase">
+    <defName>Overclock_WallEnvBad_Clean</defName>
+    <label>壁挂污秽装置</label>
+    <description>一个壁挂式装置，可以大幅降低房间清洁度。</description>
+    <statBases>
+      <Cleanliness>-500</Cleanliness>
+    </statBases>
+    <costList>
+      <Steel>100</Steel>
+      <Silver>150</Silver>
+      <ComponentIndustrial>1</ComponentIndustrial>
+    </costList>
+  </ThingDef>
+</Defs>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+  <DesignatorDropdownGroupDef>
+    <label>超空间反应釜</label>
+    <defName>Overclock_SpawnerNetDropdown</defName>
+  </DesignatorDropdownGroupDef>
+
+  <ThingDef Name="Overclock_SpawnerNetBase" ParentName="Overclock_FurnBase" Abstract="True">
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1,1)</drawSize>
+    </graphicData>
+    <statBases>
+      <MarketValue>2500</MarketValue>
+      <MaxHitPoints>500</MaxHitPoints>
+      <WorkToBuild>3500</WorkToBuild>
+      <Mass>18</Mass>
+      <Flammability>0</Flammability>
+    </statBases>
+    <tickerType>Normal</tickerType>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.6</fillPercent>
+    <size>(1,1)</size>
+    <rotatable>False</rotatable>
+    <costList Inherit="False">
+      <Steel>350</Steel>
+      <ComponentIndustrial>12</ComponentIndustrial>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>800</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+    </comps>
+    <designatorDropdown>Overclock_SpawnerNetDropdown</designatorDropdown>
+  </ThingDef>
+
+  <ThingDef ParentName="Overclock_SpawnerNetBase" MayRequire="vanillaexpanded.vchemfuele">
+    <defName>Overclock_ChemfuelSpawner</defName>
+    <label>超空间反应釜（燃料）</label>
+    <description>由另一个世界提取燃料，补充至网络中。需要电力。</description>
+    <graphicData>
+      <texPath>Overclock/Things/Building/Production/MachineRed</texPath>
+    </graphicData>
+    <costList>
+      <Chemfuel>200</Chemfuel>
+    </costList>
+    <comps>
+      <li Class="Overclock.CompProperties_SpawnIntoNet">
+        <pipeNet>VCHE_ChemfuelNet</pipeNet>
+        <spawnCount>500</spawnCount>
+        <interval>2500</interval>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="Overclock_SpawnerNetBase" MayRequire="vanillaracesexpanded.android">
+    <defName>Overclock_NeutroamineSpawner</defName>
+    <label>超空间反应釜（中性胺）</label>
+    <description>由另一个世界提取中性胺，补充至网络中。需要电力。</description>
+    <graphicData>
+      <texPath>Overclock/Things/Building/Production/MachineBlue</texPath>
+    </graphicData>
+    <costList>
+      <Neutroamine>200</Neutroamine>
+    </costList>
+    <comps>
+      <li Class="Overclock.CompProperties_SpawnIntoNet">
+        <pipeNet>VREA_NeutroamineNet</pipeNet>
+        <spawnCount>500</spawnCount>
+        <interval>2500</interval>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="Overclock_SpawnerNetBase" MayRequire="vanillaracesexpanded.sanguophage">
+    <defName>Overclock_HemogenSpawner</defName>
+    <label>超空间反应釜（血原）</label>
+    <description>由另一个世界提取血原，补充至网络中。需要电力。</description>
+    <graphicData>
+      <texPath>Overclock/Things/Building/Production/MachineDarkRed</texPath>
+    </graphicData>
+    <costList>
+      <HemogenPack>30</HemogenPack>
+    </costList>
+    <comps>
+      <li Class="Overclock.CompProperties_SpawnIntoNet">
+        <pipeNet>VRE_HemogenNet</pipeNet>
+        <spawnCount>200</spawnCount>
+        <interval>2500</interval>
+      </li>
+    </comps>
+  </ThingDef>
+</Defs>

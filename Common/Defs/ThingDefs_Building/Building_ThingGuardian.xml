@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+  <!--<ThingDef Name="Overclock_ThingGuardianBase" ParentName="Overclock_FurnBase" Abstract="True">
+    <thingClass>Overclock.Building_ThingGuardian</thingClass>
+    <graphicData>
+      <texPath>Overclock/Things/Building/Various/ThingGuardian</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(0.95)</drawSize>
+    </graphicData>
+    <statBases>
+      <MarketValue>2000</MarketValue>
+      <MaxHitPoints>1000</MaxHitPoints>
+      <WorkToBuild>2000</WorkToBuild>
+      <Mass>30</Mass>
+      <Flammability>0</Flammability>
+    </statBases>
+    <fillPercent>0.6</fillPercent>
+    <size>(1,1)</size>
+    <tickerType>Normal</tickerType>
+    <useHitPoints>False</useHitPoints>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <designationCategory>Overclock_MainCategory</designationCategory>
+  </ThingDef>
+
+  <ThingDef ParentName="Overclock_ThingGuardianBase">
+    <defName>Overclock_ThingGuardian_Room</defName>
+    <label>纳米维护器</label>
+    <description>纳米维护器会每秒维护室内物品，恢复其耐久，甚至可以使腐烂物品重现生机。同时，它也能清除房间内的气体。</description>
+    <costList>
+      <Plasteel>400</Plasteel>
+      <Steel>120</Steel>
+      <ComponentSpacer>8</ComponentSpacer>
+    </costList>
+    <placeWorkers>
+      <li>Overclock.PlaceWorker_RoomEdgeCyan</li>
+    </placeWorkers>
+    <drawPlaceWorkersWhileSelected>True</drawPlaceWorkersWhileSelected>
+    <comps>
+      <li Class="CompProperties_Glower">
+        <glowRadius>5</glowRadius>
+        <glowColor>(255,255,255,0)</glowColor>
+      </li>
+    </comps>
+  </ThingDef>-->
+</Defs>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+  <!--<ThingDef ParentName="BedWithQualityBase">
+    <defName>Overclock_HarvestBed</defName>
+    <label>自动手术舱</label>
+    <description>一张可以收肺的床，一次性清空哦。每次消耗8草药。</description>
+    <graphicData>
+      <texPath>Overclock/Things/Building/Furniture/CryptoBed/CryptoBed</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+      <drawSize>(2,2)</drawSize>
+    </graphicData>
+    <castEdgeShadows>True</castEdgeShadows>
+    <statBases>
+      <MaxHitPoints>150</MaxHitPoints>
+      <WorkToBuild>2800</WorkToBuild>
+      <Mass>50</Mass>
+      <Flammability>0</Flammability>
+      <BedRestEffectiveness>1</BedRestEffectiveness>
+      <Comfort>0.95</Comfort>
+      <ImmunityGainSpeedFactor>1.20</ImmunityGainSpeedFactor>
+      <MedicalTendQualityOffset>0.10</MedicalTendQualityOffset>
+      <SurgerySuccessChanceFactor>1.1</SurgerySuccessChanceFactor>
+      <BirthRitualQualityOffset MayRequire="Ludeon.RimWorld.Biotech">5</BirthRitualQualityOffset>
+    </statBases>
+    <tickerType>Normal</tickerType>
+    <comps>
+      <li Class="CompProperties_AffectedByFacilities">
+        <linkableFacilities>
+          <li>VitalsMonitor</li>
+          <li>EndTable</li>
+          <li>Dresser</li>
+          <li MayRequire="Ludeon.RimWorld.Ideology">SleepAccelerator</li>
+        </linkableFacilities>
+      </li>
+      <li Class="CompProperties_Refuelable">
+        <fuelConsumptionRate>0.0</fuelConsumptionRate>
+        <fuelCapacity>40.0</fuelCapacity>
+        <fuelFilter>
+          <thingDefs>
+            <li>MedicineHerbal</li>
+          </thingDefs>
+        </fuelFilter>
+        <initialFuelPercent>1</initialFuelPercent>
+        <consumeFuelOnlyWhenUsed>True</consumeFuelOnlyWhenUsed>
+        <showFuelGizmo>True</showFuelGizmo>
+        <showAllowAutoRefuelToggle>True</showAllowAutoRefuelToggle>
+      </li>
+      <li Class="Overclock.CompProperties_HarvestBed"/>
+    </comps>
+    <size>(1,2)</size>
+    <stuffCategories>
+      <li>Metallic</li>
+    </stuffCategories>
+    <costStuffCount>180</costStuffCount>
+    <costList>
+      <Plasteel>100</Plasteel>
+      <Steel>120</Steel>
+      <ComponentIndustrial>10</ComponentIndustrial>
+    </costList>
+    <building>
+      <bed_showSleeperBody>False</bed_showSleeperBody>
+      <bed_healPerDay>10</bed_healPerDay>
+      <buildingSizeCategory>Small</buildingSizeCategory>
+      <paintable>True</paintable>
+    </building>
+    <fillPercent>0.4</fillPercent>
+    <pathCost>42</pathCost>
+    <leaveResourcesWhenKilled>True</leaveResourcesWhenKilled>
+    <staticSunShadowHeight>0.17</staticSunShadowHeight>
+    <researchPrerequisites>
+      <li>HospitalBed</li>
+    </researchPrerequisites>
+    <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+    <techLevel>Spacer</techLevel>
+    <uiIconScale>0.90</uiIconScale>
+    <designationCategory>Overclock_MainCategory</designationCategory>
+  </ThingDef>-->
+</Defs>

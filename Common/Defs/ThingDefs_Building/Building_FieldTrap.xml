@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+  <!--<DesignatorDropdownGroupDef>
+    <defName>Overclock_FieldTrapDropdown</defName>
+    <label>制约装置</label>
+  </DesignatorDropdownGroupDef>
+
+  <ThingDef Name="Overclock_FieldTrapBase" ParentName="Overclock_FloorStructureBase" Abstract="True">
+    <graphicData>
+      <texPath>Overclock/Things/Building/Security/FieldMask</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(0.95)</drawSize>
+    </graphicData>
+    <statBases>
+      <MarketValue>5000</MarketValue>
+      <MaxHitPoints>300</MaxHitPoints>
+      <WorkToBuild>1000</WorkToBuild>
+      <Mass>15</Mass>
+      <Flammability>0</Flammability>
+    </statBases>
+    <size>(1,1)</size>
+    <tickerType>Normal</tickerType>
+    <useHitPoints>False</useHitPoints>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <designationCategory>Overclock_MainCategory</designationCategory>
+    <designatorDropdown>Overclock_FieldTrapDropdown</designatorDropdown>
+    <thingCategories>
+      <li>BuildingsMisc</li>
+    </thingCategories>
+    <comps>
+      <li Class="CompProperties_Flickable"/>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="Overclock_FieldTrapBase">
+    <defName>Overclock_FieldTrap_Normal</defName>
+    <label>制约装置</label>
+    <description>这个装置将周围所有敌对对象吸引至其位置上，并对其造成约3秒的眩晕。</description>
+    <specialDisplayRadius>4.9</specialDisplayRadius>
+    <costList Inherit="False">
+      <Steel>20</Steel>
+      <Uranium>5</Uranium>
+      <ComponentIndustrial>3</ComponentIndustrial>
+    </costList>
+    <comps>
+      <li Class="Overclock.CompProperties_FieldTrap">
+        <range>4.9</range>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="Overclock_FieldTrapBase">
+    <defName>Overclock_FieldTrap_Large</defName>
+    <label>制约装置（大型）</label>
+    <description>这个装置将周围所有敌对对象吸引至其位置上，并对其造成约3秒的眩晕，这个版本的制约力场范围更大。</description>
+    <specialDisplayRadius>7.9</specialDisplayRadius>
+    <costList Inherit="False">
+      <Steel>40</Steel>
+      <Uranium>8</Uranium>
+      <ComponentIndustrial>5</ComponentIndustrial>
+    </costList>
+    <comps>
+      <li Class="Overclock.CompProperties_FieldTrap">
+        <range>7.9</range>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="Overclock_FieldTrapBase">
+    <defName>Overclock_FieldTrap_Huge</defName>
+    <label>制约装置（巨型）</label>
+    <description>这个装置将周围所有敌对对象吸引至其位置上，并对其造成约3秒的眩晕，这个版本的制约力场范围极大。</description>
+    <specialDisplayRadius>14.9</specialDisplayRadius>
+    <costList Inherit="False">
+      <Steel>100</Steel>
+      <Uranium>20</Uranium>
+      <ComponentIndustrial>12</ComponentIndustrial>
+    </costList>
+    <comps>
+      <li Class="Overclock.CompProperties_FieldTrap">
+        <range>14.9</range>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="Overclock_FieldTrapBase">
+    <defName>Overclock_FieldTrap_Extreme</defName>
+    <label>制约力场（广域）</label>
+    <description>这个装置将周围所有敌对对象吸引至其位置上，并对其造成约3秒的眩晕，这个版本的制约力场范围大到整个地图。</description>
+    <costList Inherit="False">
+      <Steel>5000</Steel>
+      <Plasteel>2500</Plasteel>
+      <Uranium>850</Uranium>
+      <ComponentIndustrial>30</ComponentIndustrial>
+      <ComponentSpacer>18</ComponentSpacer>
+    </costList>
+    <placeWorkers>
+      <li>Overclock.PlaceWorker_CheckFieldTrap</li>
+    </placeWorkers>
+    <comps>
+      <li Class="Overclock.CompProperties_FieldTrap">
+        <ignoreDistance>True</ignoreDistance>
+      </li>
+    </comps>
+  </ThingDef>-->
+</Defs>

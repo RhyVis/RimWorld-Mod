@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+  <PawnKindDef Name="Overclock_MechanoidBase" Abstract="True">
+    <defaultFactionType>PlayerColony</defaultFactionType>
+    <aiAvoidCover>False</aiAvoidCover>
+    <destroyGearOnDrop>True</destroyGearOnDrop>
+    <canStrip>False</canStrip>
+    <minGenerationAge MayRequire="Ludeon.Rimworld.Biotech">1</minGenerationAge>
+    <maxGenerationAge MayRequire="Ludeon.Rimworld.Biotech">100</maxGenerationAge>
+    <forceWeaponQuality>Normal</forceWeaponQuality>
+    <allowInMechClusters>False</allowInMechClusters>
+    <techHediffsChance>1</techHediffsChance>
+    <techHediffsMoney>9999~9999</techHediffsMoney>
+    <weaponMoney>9999~9999</weaponMoney>
+  </PawnKindDef>
+
+  <ThingDef Name="Overclock_MechanoidWalker" ParentName="BaseMechanoidWalker" Abstract="True">
+    <statBases>
+      <ComfyTemperatureMin>-273</ComfyTemperatureMin>
+      <ComfyTemperatureMax>1000</ComfyTemperatureMax>
+      <ArmorRating_Sharp>8.00</ArmorRating_Sharp>
+      <ArmorRating_Blunt>8.00</ArmorRating_Blunt>
+      <BandwidthCost>12</BandwidthCost>
+      <CarryingCapacity>300</CarryingCapacity>
+      <EMPResistance>1.0</EMPResistance>
+      <MoveSpeed>7.5</MoveSpeed>
+      <MechEnergyLossPerHP>0.10</MechEnergyLossPerHP>
+      <WorkSpeedGlobal>5.0</WorkSpeedGlobal>
+      <WastepacksPerRecharge>15</WastepacksPerRecharge>
+      <PsychicSensitivity>0</PsychicSensitivity>
+    </statBases>
+
+    <butcherProducts>
+      <Steel>40</Steel>
+      <Plasteel>20</Plasteel>
+      <ComponentIndustrial>4</ComponentIndustrial>
+    </butcherProducts>
+
+    <tools>
+      <li>
+        <label>左拳</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>30.0</power>
+        <cooldownTime>1</cooldownTime>
+        <linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
+        <alwaysTreatAsWeapon>True</alwaysTreatAsWeapon>
+      </li>
+      <li>
+        <label>右拳</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>30.0</power>
+        <cooldownTime>1</cooldownTime>
+        <linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
+        <alwaysTreatAsWeapon>True</alwaysTreatAsWeapon>
+      </li>
+      <li>
+        <label>头</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>8</power>
+        <cooldownTime>1</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>True</ensureLinkedBodyPartsGroupAlwaysUsable>
+        <chanceFactor>0.2</chanceFactor>
+      </li>
+    </tools>
+
+    <race>
+      <baseHealthScale>1.25</baseHealthScale>
+      <body>Lancer</body>
+      <soundMeleeHitPawn>Pawn_Melee_Punch_HitPawn</soundMeleeHitPawn>
+      <soundMeleeHitBuilding>Pawn_Melee_Punch_HitBuilding</soundMeleeHitBuilding>
+      <soundMeleeMiss>Pawn_Melee_Punch_Miss</soundMeleeMiss>
+    </race>
+  </ThingDef>
+
+  <ThingDef Name="Overclock_MechanoidWalker_Civilian" ParentName="Overclock_MechanoidWalker" Abstract="True">
+    <race>
+      <baseHealthScale>30</baseHealthScale>
+    </race>
+    <statBases>
+      <ArmorRating_Sharp>0.3</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.2</ArmorRating_Blunt>
+      <EMPResistance>0.5</EMPResistance>
+    </statBases>
+  </ThingDef>
+</Defs>

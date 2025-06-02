@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+  <ThingDef ParentName="Overclock_ResourceBase">
+    <defName>Overclock_HyperMedicine</defName>
+    <label>星辉医药</label>
+    <description>类似闪耀世界医药的超联结医药，效果与其不相上下。</description>
+    <thingClass>Medicine</thingClass>
+    <graphicData>
+      <texPath>Overclock/Things/Item/Medicine/OverclockHyperMedicine</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <drawSize>0.6</drawSize>
+    </graphicData>
+    <statBases>
+      <Mass>0.05</Mass>
+      <MarketValue>25</MarketValue>
+      <MedicalPotency>5000</MedicalPotency>
+      <MedicalQualityMax>50000</MedicalQualityMax>
+    </statBases>
+    <thingCategories>
+      <li>Medicine</li>
+    </thingCategories>
+    <comps>
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用{0_label}</useLabel>
+        <useDuration>0</useDuration>
+      </li>
+      <li Class="CompProperties_UseEffect">
+        <compClass>CompUseEffect_FixWorstHealthCondition</compClass>
+      </li>
+      <li Class="CompProperties_UseEffectPlaySound">
+        <soundOnUsed>MechSerumUsed</soundOnUsed>
+      </li>
+    </comps>
+  </ThingDef>
+</Defs>

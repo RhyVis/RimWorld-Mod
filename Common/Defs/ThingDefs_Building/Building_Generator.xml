@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+  <ThingDef ParentName="Overclock_FurnBase">
+    <defName>Overclock_QNuclearGenerator</defName>
+    <label>高能发电机</label>
+    <description>一个强度极高的发电机。不需要补充燃料。</description>
+    <graphicData>
+      <texPath>Overclock/Things/Building/Production/PortableGenerator</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1,1)</drawSize>
+    </graphicData>
+    <pathCost>30</pathCost>
+    <passability>PassThroughOnly</passability>
+    <castEdgeShadows>True</castEdgeShadows>
+    <fillPercent>0.5</fillPercent>
+    <canOverlapZones>False</canOverlapZones>
+    <rotatable>False</rotatable>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <building>
+      <soundAmbient>GeothermalPlant_Ambience</soundAmbient>
+      <ai_chillDestination>False</ai_chillDestination>
+    </building>
+    <statBases>
+      <MaxHitPoints>800</MaxHitPoints>
+      <WorkToBuild>2000</WorkToBuild>
+      <Flammability>0</Flammability>
+      <Beauty>0</Beauty>
+      <Mass>25</Mass>
+    </statBases>
+    <tickerType>Rare</tickerType>
+    <size>(1,1)</size>
+    <selectable>true</selectable>
+    <costList>
+      <Steel>500</Steel>
+      <Uranium>80</Uranium>
+      <ComponentIndustrial>8</ComponentIndustrial>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerPlant</compClass>
+        <basePowerConsumption>-80000</basePowerConsumption>
+        <transmitsPower>True</transmitsPower>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_Glower">
+        <glowRadius>1</glowRadius>
+        <glowColor>(14,223,49,0)</glowColor>
+      </li>
+    </comps>
+    <constructEffect>ConstructMetal</constructEffect>
+    <thingCategories Inherit="False">
+      <li>BuildingsPower</li>
+    </thingCategories>
+  </ThingDef>
+
+  <ThingDef ParentName="Overclock_FurnBase">
+    <defName>Overclock_QBattery</defName>
+    <label>量子聚能电池</label>
+    <description>一台储备庞大能量的电池，它永远不会短路或故障。</description>
+    <thingClass>Building_Battery</thingClass>
+    <graphicData>
+      <texPath>Overclock/Things/Building/Production/NucleaTower</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(3,3)</drawSize>
+      <shadowData>
+        <volume>(1.9,1,1.7)</volume>
+        <offset>(-0.03,0,-0.1)</offset>
+      </shadowData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <pathCost>60</pathCost>
+    <passability>PassThroughOnly</passability>
+    <castEdgeShadows>True</castEdgeShadows>
+    <fillPercent>0.7</fillPercent>
+    <canOverlapZones>False</canOverlapZones>
+    <rotatable>False</rotatable>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <building>
+      <destroySound>BuildingDestroyed_Metal_Medium</destroySound>
+      <ai_chillDestination>False</ai_chillDestination>
+    </building>
+    <statBases>
+      <MaxHitPoints>1800</MaxHitPoints>
+      <WorkToBuild>6000</WorkToBuild>
+      <Flammability>0</Flammability>
+      <Beauty>0</Beauty>
+      <Mass>60</Mass>
+    </statBases>
+    <tickerType>Normal</tickerType>
+    <size>(2,2)</size>
+    <costList>
+      <Steel>800</Steel>
+      <Uranium>140</Uranium>
+      <Overclock_NanoAssembly>200</Overclock_NanoAssembly>
+      <ComponentSpacer>10</ComponentSpacer>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Battery">
+        <storedEnergyMax>2000000</storedEnergyMax>
+        <efficiency>1</efficiency>
+        <shortCircuitInRain>False</shortCircuitInRain>
+        <transmitsPower>True</transmitsPower>
+      </li>
+    </comps>
+    <constructEffect>ConstructMetal</constructEffect>
+    <thingCategories Inherit="False">
+      <li>BuildingsPower</li>
+    </thingCategories>
+  </ThingDef>
+</Defs>

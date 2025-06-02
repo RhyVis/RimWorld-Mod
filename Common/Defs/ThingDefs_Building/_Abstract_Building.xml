@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+  <!-- Floor -->
+
+  <ThingDef Name="Overclock_FloorStructureBase" ParentName="BuildingBase" Abstract="True">
+    <thingClass>Building</thingClass>
+    <graphicData>
+      <shaderType>CutoutComplex</shaderType>
+      <damageData>
+        <enabled>False</enabled>
+      </damageData>
+    </graphicData>
+    <category>Building</category>
+    <altitudeLayer>FloorCoverings</altitudeLayer>
+    <rotatable>False</rotatable>
+    <castEdgeShadows>False</castEdgeShadows>
+    <canOverlapZones>True</canOverlapZones>
+    <blockWind>False</blockWind>
+    <fillPercent>0</fillPercent>
+    <pathCost>0</pathCost>
+    <passability>Standable</passability>
+    <terrainAffordanceNeeded IsNull="True" />
+    <blocksAltitudes>
+      <li>FloorCoverings</li>
+    </blocksAltitudes>
+    <building>
+      <isEdifice>False</isEdifice>
+    </building>
+  </ThingDef>
+
+  <!-- Wall Attachment -->
+
+  <ThingDef Name="Overclock_WallBuildingBase" ParentName="BuildingBase" Abstract="True">
+    <thingClass>Building</thingClass>
+    <altitudeLayer>BuildingOnTop</altitudeLayer>
+    <passability>Standable</passability>
+    <terrainAffordanceNeeded IsNull="True" />
+    <pathCost>0</pathCost>
+    <rotatable>True</rotatable>
+    <fillPercent>0.4</fillPercent>
+    <statBases>
+      <WorkToBuild>800</WorkToBuild>
+      <MaxHitPoints>300</MaxHitPoints>
+      <Mass>5</Mass>
+      <Flammability>0</Flammability>
+    </statBases>
+    <tickerType>Rare</tickerType>
+    <building>
+      <isEdifice>False</isEdifice>
+      <isAttachment>True</isAttachment>
+      <destroySound>BuildingDestroyed_Metal_Small</destroySound>
+    </building>
+    <placeWorkers>
+      <li>Placeworker_AttachedToWall</li>
+    </placeWorkers>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <designationCategory>Overclock_MainCategory</designationCategory>
+    <thingCategories>
+      <li>BuildingsMisc</li>
+    </thingCategories>
+  </ThingDef>
+
+  <!-- Furn -->
+
+  <ThingDef Name="Overclock_FurnBase" ParentName="BuildingBase" Abstract="True">
+    <graphicData>
+      <damageData>
+        <enabled>False</enabled>
+      </damageData>
+    </graphicData>
+    <statBases>
+      <MarketValue>1200</MarketValue>
+      <MaxHitPoints>500</MaxHitPoints>
+      <WorkToBuild>2000</WorkToBuild>
+      <Mass>10</Mass>
+      <Flammability>0</Flammability>
+    </statBases>
+    <castEdgeShadows>False</castEdgeShadows>
+    <blockWind>False</blockWind>
+    <blockLight>False</blockLight>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>Standable</passability>
+    <fillPercent>0.1</fillPercent>
+    <size>(1, 1)</size>
+    <costList Inherit="False" />
+    <useHitPoints>False</useHitPoints>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <designationCategory>Overclock_MainCategory</designationCategory>
+    <thingCategories>
+      <li>BuildingsMisc</li>
+    </thingCategories>
+  </ThingDef>
+</Defs>

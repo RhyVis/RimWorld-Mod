@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+  <ThingDef Name="Overclock_WealthCovertBase" ParentName="AdaptiveStorageMinifiableBase" Abstract="True">
+    <thingClass>Overclock.Building_WealthCovert</thingClass>
+    <graphicData>
+      <texPath>Overclock/Things/Building/Machine/M2</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(2,2)</drawSize>
+      <drawRotated>True</drawRotated>
+      <allowFlip>True</allowFlip>
+      <damageData>
+        <enabled>False</enabled>
+      </damageData>
+    </graphicData>
+    <size>(1, 1)</size>
+    <building>
+      <maxItemsInCell>16</maxItemsInCell>
+    </building>
+    <costList>
+      <Steel>300</Steel>
+      <Plasteel>25</Plasteel>
+      <Silver>120</Silver>
+    </costList>
+    <tickerType>Rare</tickerType>
+    <statBases>
+      <MaxHitPoints>250</MaxHitPoints>
+      <Mass>8</Mass>
+      <WorkToBuild>100</WorkToBuild>
+    </statBases>
+    <designationCategory>Overclock_MainCategory</designationCategory>
+  </ThingDef>
+
+  <ThingDef ParentName="Overclock_WealthCovertBase">
+    <defName>Overclock_WealthCovert</defName>
+    <label>财富转化器</label>
+    <description>可以将容器内物品转化为白银或黄金。</description>
+    <building>
+      <fixedStorageSettings>
+        <priority>Critical</priority>
+        <filter>
+          <categories>
+            <li>Root</li>
+          </categories>
+          <disallowedThingDefs>
+            <li>Silver</li>
+          </disallowedThingDefs>
+        </filter>
+      </fixedStorageSettings>
+      <defaultStorageSettings>
+        <priority>Critical</priority>
+        <filter>
+          <categories>
+            <li>BodyPartsNatural</li>
+          </categories>
+        </filter>
+      </defaultStorageSettings>
+    </building>
+  </ThingDef>
+
+  <AdaptiveStorage.GraphicsDef>
+    <defName>Overclock_WealthCovertGraphics</defName>
+    <targetDef>Overclock_WealthCovert</targetDef>
+    <showContainedItems>False</showContainedItems>
+    <graphics>
+      <li>
+        <graphicData>
+          <texPath>Overclock/Things/Building/Machine/M2</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>(2,2)</drawSize>
+          <drawRotated>True</drawRotated>
+          <allowFlip>True</allowFlip>
+        </graphicData>
+      </li>
+    </graphics>
+  </AdaptiveStorage.GraphicsDef>
+</Defs>

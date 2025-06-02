@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- Setting -->
+  <Overclock_SettingCat_Label>Hyper Unity</Overclock_SettingCat_Label>
+  <Overclock_SettingCat_DebugMsg_Label>调试信息</Overclock_SettingCat_DebugMsg_Label>
+
+  <!-- Comps -->
+  <Overclock_CompSwitchGizmo_Gizmo_Label>切换开关</Overclock_CompSwitchGizmo_Gizmo_Label>
+  <Overclock_CompSwitchGizmo_Gizmo_Desc>调整设备是否启动</Overclock_CompSwitchGizmo_Gizmo_Desc>
+
+  <Overclock_CompPawnSuppressor_Mote>已压制</Overclock_CompPawnSuppressor_Mote>
+
+  <Overclock_CompRemoteDoor_Gizmo_Label>控制门</Overclock_CompRemoteDoor_Gizmo_Label>
+  <Overclock_CompRemoteDoor_Gizmo_Desc>远程控制门的开关</Overclock_CompRemoteDoor_Gizmo_Desc>
+
+  <Overclock_CompUltimateReactor_Gizmo_Label>目标 ({0})</Overclock_CompUltimateReactor_Gizmo_Label>
+  <Overclock_CompUltimateReactor_Gizmo_Desc>选择超越反应器耗电生成的目标，当前为{0}
+  </Overclock_CompUltimateReactor_Gizmo_Desc>
+  <Overclock_CompUltimateReactor_TargetName>目标物品</Overclock_CompUltimateReactor_TargetName>
+  <Overclock_CompUltimateReactor_AmountKeep>数量保持</Overclock_CompUltimateReactor_AmountKeep>
+  <Overclock_CompUltimateReactor_PowerUse>物品耗能</Overclock_CompUltimateReactor_PowerUse>
+
+  <Overclock_CompGasEmit_Gizmo_Label>气体释放</Overclock_CompGasEmit_Gizmo_Label>
+  <Overclock_CompGasEmit_Gizmo_Desc>调整是否释放气体</Overclock_CompGasEmit_Gizmo_Desc>
+
+  <Overclock_CompFieldTrap_Gizmo_Label1>控制力场</Overclock_CompFieldTrap_Gizmo_Label1>
+  <Overclock_CompFieldTrap_Gizmo_Desc1>调整是否启动力场</Overclock_CompFieldTrap_Gizmo_Desc1>
+  <Overclock_CompFieldTrap_Gizmo_Label2>传送</Overclock_CompFieldTrap_Gizmo_Label2>
+  <Overclock_CompFieldTrap_Gizmo_Desc2>调整是否将敌人传送至装置</Overclock_CompFieldTrap_Gizmo_Desc2>
+  <Overclock_CompFieldTrap_Gizmo_Label3>高速模式</Overclock_CompFieldTrap_Gizmo_Label3>
+  <Overclock_CompFieldTrap_Gizmo_Desc3>高速模式下每秒激活一次</Overclock_CompFieldTrap_Gizmo_Desc3>
+  <Overclock_CompFieldTrap_Gizmo_Label4>攻击模式</Overclock_CompFieldTrap_Gizmo_Label4>
+  <Overclock_CompFieldTrap_Gizmo_Desc4>开启后在下次操作时额外进行一次针对“脑”类似部件的攻击</Overclock_CompFieldTrap_Gizmo_Desc4>
+
+  <Overclock_HediffComp_SkillDeplete_Mote>退行: {0} XP -{1}</Overclock_HediffComp_SkillDeplete_Mote>
+
+  <Overclock_CompResourceCovert_Gizmo_Label>立即转化</Overclock_CompResourceCovert_Gizmo_Label>
+  <Overclock_CompResourceCovert_Gizmo_Desc>立即将容器内的物品转化为贮存财富</Overclock_CompResourceCovert_Gizmo_Desc>
+  <Overclock_CompResourceCovert_GizmoP_Label>立即放置</Overclock_CompResourceCovert_GizmoP_Label>
+  <Overclock_CompResourceCovert_GizmoP_Desc>立即将容器内贮存的财富放置为白银或黄金</Overclock_CompResourceCovert_GizmoP_Desc>
+  <Overclock_CompResourceCovert_Gizmo1_Label>当前模式: {0}</Overclock_CompResourceCovert_Gizmo1_Label>
+  <Overclock_CompResourceCovert_Gizmo1_Desc>决定转化为的目标</Overclock_CompResourceCovert_Gizmo1_Desc>
+  <Overclock_CompResourceCovert_GizmoA_Label>自动转化: {0}</Overclock_CompResourceCovert_GizmoA_Label>
+  <Overclock_CompResourceCovert_GizmoA_Desc>当前自动转化状态为: {0}</Overclock_CompResourceCovert_GizmoA_Desc>
+  <Overclock_CompResourceCovert_GizmoAP_Label>自动放置: {0}</Overclock_CompResourceCovert_GizmoAP_Label>
+  <Overclock_CompResourceCovert_GizmoAP_Desc>当前自动放置状态为: {0}</Overclock_CompResourceCovert_GizmoAP_Desc>
+  <Overclock_CompResourceCovert_Mote>转化财富: {0}</Overclock_CompResourceCovert_Mote>
+  <Overclock_CompResourceCovert_MoteFailure>放置财富失败, 剩余: {0}</Overclock_CompResourceCovert_MoteFailure>
+  <Overclock_CompResourceCovert_Info>储存财富: {0}</Overclock_CompResourceCovert_Info>
+
+  <Overclock_CompExplosiveTrigger_Gizmo_Label>引爆</Overclock_CompExplosiveTrigger_Gizmo_Label>
+  <Overclock_CompExplosiveTrigger_Gizmo_Desc>立即准备引爆爆炸物</Overclock_CompExplosiveTrigger_Gizmo_Desc>
+
+  <Overclock_CompHediffGiver_Gizmo_Desc>选择效果附加的范围</Overclock_CompHediffGiver_Gizmo_Desc>
+  <Overclock_CompHediffGiver_Gizmo_LabelA>停止</Overclock_CompHediffGiver_Gizmo_LabelA>
+  <Overclock_CompHediffGiver_Gizmo_LabelB>所有</Overclock_CompHediffGiver_Gizmo_LabelB>
+  <Overclock_CompHediffGiver_Gizmo_LabelC>敌对</Overclock_CompHediffGiver_Gizmo_LabelC>
+  <Overclock_CompHediffGiver_Gizmo_LabelD>非玩家</Overclock_CompHediffGiver_Gizmo_LabelD>
+  <Overclock_CompHediffGiver_Gizmo_LabelE>囚犯</Overclock_CompHediffGiver_Gizmo_LabelE>
+
+  <Overclock_CompThingGuardian_Gizmo_Label1>维护</Overclock_CompThingGuardian_Gizmo_Label1>
+  <Overclock_CompThingGuardian_Gizmo_Desc1>切换是否允许修复范围内物品</Overclock_CompThingGuardian_Gizmo_Desc1>
+  <Overclock_CompThingGuardian_Gizmo_Label2>仅殖民地</Overclock_CompThingGuardian_Gizmo_Label2>
+  <Overclock_CompThingGuardian_Gizmo_Desc2>切换是否只允许修复属于殖民地派系的物品
+  </Overclock_CompThingGuardian_Gizmo_Desc2>
+  <Overclock_CompThingGuardian_Gizmo_Label3>清除气体</Overclock_CompThingGuardian_Gizmo_Label3>
+  <Overclock_CompThingGuardian_Gizmo_Desc3>切换是否清除房间内的气体</Overclock_CompThingGuardian_Gizmo_Desc3>
+  <Overclock_CompThingGuardian_Gizmo_Label4>清除污物</Overclock_CompThingGuardian_Gizmo_Label4>
+  <Overclock_CompThingGuardian_Gizmo_Desc4>切换是否清除房间内的污物</Overclock_CompThingGuardian_Gizmo_Desc4>
+  <Overclock_CompThingGuardian_Mote1>不在房间内</Overclock_CompThingGuardian_Mote1>
+
+  <Overclock_CompTempSet_Mote1>不在房间内</Overclock_CompTempSet_Mote1>
+  <Overclock_CompTempSet_Mote2>当前温度: {0}℃</Overclock_CompTempSet_Mote2>
+  <Overclock_CompTempSet_Gizmo_Act_Label>激活</Overclock_CompTempSet_Gizmo_Act_Label>
+  <Overclock_CompTempSet_Gizmo_Act_Desc>启动或禁用温度控制</Overclock_CompTempSet_Gizmo_Act_Desc>
+  <Overclock_CompTempSet_Gizmo_Reset_Label>重置</Overclock_CompTempSet_Gizmo_Reset_Label>
+  <Overclock_CompTempSet_Gizmo_Reset_Desc>重置到默认温度</Overclock_CompTempSet_Gizmo_Reset_Desc>
+
+  <Overclock_CompVomitCollect_Mote1>收集到{0}份呕吐物</Overclock_CompVomitCollect_Mote1>
+  <Overclock_CompVomitCollect_Mote2>生成{0}份包装呕吐物</Overclock_CompVomitCollect_Mote2>
+  <Overclock_CompVomitCollect_Mote3>不在房间内</Overclock_CompVomitCollect_Mote3>
+  <Overclock_CompVomitCollect_Inspect1>累积原料: {0}</Overclock_CompVomitCollect_Inspect1>
+  <Overclock_CompVomitCollect_Inspect2>生成包装:</Overclock_CompVomitCollect_Inspect2>
+  <Overclock_CompVomitCollect_Gizmo1_Label>生成包装呕吐物</Overclock_CompVomitCollect_Gizmo1_Label>
+  <Overclock_CompVomitCollect_Gizmo1_Desc>启动或禁用包装呕吐物生成</Overclock_CompVomitCollect_Gizmo1_Desc>
+  <Overclock_CompVomitCollect_Gizmo2_Label>清空呕吐物</Overclock_CompVomitCollect_Gizmo2_Label>
+  <Overclock_CompVomitCollect_Gizmo2_Desc>清空装置内的呕吐物</Overclock_CompVomitCollect_Gizmo2_Desc>
+  <Overclock_CompVomitCollect_Gizmo3_Label>收集呕吐物</Overclock_CompVomitCollect_Gizmo3_Label>
+  <Overclock_CompVomitCollect_Gizmo3_Desc>收集房间内的呕吐物</Overclock_CompVomitCollect_Gizmo3_Desc>
+
+  <Overclock_CompEnemyStunner_Gizmo_Label>激活</Overclock_CompEnemyStunner_Gizmo_Label>
+  <Overclock_CompEnemyStunner_Gizmo_Desc>对地图上的敌人造成眩晕</Overclock_CompEnemyStunner_Gizmo_Desc>
+
+  <Overclock_CompSpawnIntoNet_Inspect1>距离下一次生成:</Overclock_CompSpawnIntoNet_Inspect1>
+
+  <!-- Building -->
+  <Overclock_Building_BodypartRemove_Gizmo1_Label>移除全部</Overclock_Building_BodypartRemove_Gizmo1_Label>
+  <Overclock_Building_BodypartRemove_Gizmo1_Desc>立即尝试批量移除全部身体部位</Overclock_Building_BodypartRemove_Gizmo1_Desc>
+  <Overclock_Building_BodypartRemove_Gizmo2_Label>移除腿</Overclock_Building_BodypartRemove_Gizmo2_Label>
+  <Overclock_Building_BodypartRemove_Gizmo2_Desc>立即尝试批量移除腿部部位</Overclock_Building_BodypartRemove_Gizmo2_Desc>
+  <Overclock_Building_BodypartRemove_Gizmo3_Label>移除眼</Overclock_Building_BodypartRemove_Gizmo3_Label>
+  <Overclock_Building_BodypartRemove_Gizmo3_Desc>立即尝试批量移除眼部部位</Overclock_Building_BodypartRemove_Gizmo3_Desc>
+  <Overclock_Building_BodypartRemove_Gizmo4_Label>随机伤害</Overclock_Building_BodypartRemove_Gizmo4_Label>
+  <Overclock_Building_BodypartRemove_Gizmo4_Desc>随机伤害一个部位</Overclock_Building_BodypartRemove_Gizmo4_Desc>
+  <Overclock_Building_BodypartRemove_Gizmo5_Label>处决</Overclock_Building_BodypartRemove_Gizmo5_Label>
+  <Overclock_Building_BodypartRemove_Gizmo5_Desc>立即通过破坏大脑来处决</Overclock_Building_BodypartRemove_Gizmo5_Desc>
+  <Overclock_Building_BodypartRemove_Mote1>床上没有小人</Overclock_Building_BodypartRemove_Mote1>
+  <Overclock_Building_BodypartRemove_Mote2>没有足够药品</Overclock_Building_BodypartRemove_Mote2>
+  <Overclock_Building_BodypartRemove_Mote3>移除失败</Overclock_Building_BodypartRemove_Mote3>
+
+  <Overclock_Building_SpawnThing_Gizmo1_Desc>立即生成{0}</Overclock_Building_SpawnThing_Gizmo1_Desc>
+  <Overclock_Building_SpawnThing_Gizmo2_Label>自动生成</Overclock_Building_SpawnThing_Gizmo2_Label>
+  <Overclock_Building_SpawnThing_Gizmo2_Desc>游戏内每1小时都会尝试补充物品</Overclock_Building_SpawnThing_Gizmo2_Desc>
+  <Overclock_Building_SpawnThing_Mote1>成功补充物品: {0}</Overclock_Building_SpawnThing_Mote1>
+  <Overclock_Building_SpawnThing_Mote2>成功生成物品</Overclock_Building_SpawnThing_Mote2>
+  <Overclock_Building_SpawnThing_Mote3>存储物品类型错误, 期望: {0}, 实际: {1}</Overclock_Building_SpawnThing_Mote3>
+
+  <Overclock_Building_Collector_Gizmo1_Label>收集</Overclock_Building_Collector_Gizmo1_Label>
+  <Overclock_Building_Collector_Gizmo1_Desc>切换是否收集房间内物品</Overclock_Building_Collector_Gizmo1_Desc>
+  <Overclock_Building_Collector_Mote1>收集成功: {0}</Overclock_Building_Collector_Mote1>
+
+  <!-- Wealth PipeSystem -->
+  <Overclock_PipeStorageWealthInspection>储备财富计入</Overclock_PipeStorageWealthInspection>
+  <Overclock_ExtractWealth>提取500份白银</Overclock_ExtractWealth>
+  <Overclock_ExtractWealthDesc>从财富容器中提取500份白银实体</Overclock_ExtractWealthDesc>
+
+  <!-- Designation -->
+  <Overclock_Designation_FieldTeleport_Label>标记传送</Overclock_Designation_FieldTeleport_Label>
+  <Overclock_Designation_FieldTeleport_Desc>将标记的对象传送到制约力场</Overclock_Designation_FieldTeleport_Desc>
+  <Overclock_Designation_FieldTeleport_Msg_MustPawn>必须标记有效小人、生物或机械族</Overclock_Designation_FieldTeleport_Msg_MustPawn>
+
+  <!-- PlaceWorker -->
+  <Overclock_PlaceWorker_CheckFieldTrap>广域设施在一个地图只能存在一个</Overclock_PlaceWorker_CheckFieldTrap>
+
+  <!-- Universal -->
+  <Overclock_True>真</Overclock_True>
+  <Overclock_False>假</Overclock_False>
+  <Overclock_Enable>启用</Overclock_Enable>
+  <Overclock_Disable>禁用</Overclock_Disable>
+  <Overclock_MiniProduction_LabelPrefix>小型</Overclock_MiniProduction_LabelPrefix>
+</LanguageData>

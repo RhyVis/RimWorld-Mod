@@ -1,0 +1,725 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- Base -->
+  <ThingDef Name="Overclock_MiniProductionBase" ParentName="BenchBase" Abstract="True">
+    <rotatable>True</rotatable>
+    <graphicData>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(1.5,1.5)</drawSize>
+      <damageData>
+        <enabled>False</enabled>
+      </damageData>
+    </graphicData>
+    <size>(1,1)</size>
+    <designationCategory>Production</designationCategory>
+    <passability>PassThroughOnly</passability>
+    <pathCost>70</pathCost>
+    <hasInteractionCell>True</hasInteractionCell>
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <surfaceType>Item</surfaceType>
+    <altitudeLayer>Building</altitudeLayer>
+    <fillPercent>0.5</fillPercent>
+    <useHitPoints>True</useHitPoints>
+    <uiIconScale>0.7</uiIconScale>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <statBases>
+      <WorkToBuild>4000</WorkToBuild>
+      <MaxHitPoints>50</MaxHitPoints>
+      <Flammability>1.0</Flammability>
+      <WorkTableWorkSpeedFactor>0.85</WorkTableWorkSpeedFactor>
+      <Mass>8</Mass>
+    </statBases>
+    <inspectorTabs>
+      <li>ITab_Bills</li>
+    </inspectorTabs>
+    <building>
+      <spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
+      <paintable>True</paintable>
+    </building>
+  </ThingDef>
+
+  <!--Vanilla-->
+
+  <ThingDef ParentName="Overclock_MiniProductionBase">
+    <defName>Overclock_MiniProduction_TableSculpting</defName>
+    <label>TableSculpting</label>
+    <description>TableSculpting</description>
+    <thingClass>Building_WorkTable</thingClass>
+    <graphicData>
+      <texPath>Overclock/Things/Building/WorkbenchMini/TableSculpting/TableSculpting</texPath>
+      <shaderType>CutoutComplex</shaderType>
+    </graphicData>
+    <stuffCategories>
+      <li>Metallic</li>
+      <li>Woody</li>
+    </stuffCategories>
+    <costStuffCount>50</costStuffCount>
+    <costList>
+      <Steel>30</Steel>
+    </costList>
+    <statBases>
+      <Cleanliness>-5</Cleanliness>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_AffectedByFacilities">
+        <linkableFacilities>
+          <li>ToolCabinet</li>
+        </linkableFacilities>
+      </li>
+    </comps>
+    <placeWorkers>
+      <li>PlaceWorker_ShowFacilitiesConnections</li>
+    </placeWorkers>
+    <designationHotKey>Misc2</designationHotKey>
+  </ThingDef>
+  <ThingDef ParentName="Overclock_MiniProductionBase">
+    <defName>Overclock_MiniProduction_TableButcher</defName>
+    <label>TableButcher</label>
+    <description>TableButcher</description>
+    <thingClass>Building_WorkTable</thingClass>
+    <graphicData>
+      <texPath>Overclock/Things/Building/WorkbenchMini/TableButcher/TableButcher</texPath>
+    </graphicData>
+    <costStuffCount>40</costStuffCount>
+    <costList>
+      <WoodLog>10</WoodLog>
+    </costList>
+    <stuffCategories>
+      <li>Metallic</li>
+      <li>Woody</li>
+    </stuffCategories>
+    <statBases>
+      <Cleanliness>-15</Cleanliness>
+    </statBases>
+    <recipes>
+      <li>ButcherCorpseFlesh</li>
+      <li>Make_Kibble</li>
+    </recipes>
+    <comps>
+      <li Class="CompProperties_AffectedByFacilities">
+        <linkableFacilities>
+          <li>ToolCabinet</li>
+        </linkableFacilities>
+      </li>
+    </comps>
+    <placeWorkers>
+      <li>PlaceWorker_ShowFacilitiesConnections</li>
+    </placeWorkers>
+    <designationHotKey>Misc3</designationHotKey>
+  </ThingDef>
+  <ThingDef ParentName="Overclock_MiniProductionBase">
+    <defName>Overclock_MiniProduction_HandTailoringBench</defName>
+    <label>HandTailoringBench</label>
+    <description>HandTailoringBench</description>
+    <thingClass>Building_WorkTable</thingClass>
+    <graphicData>
+      <texPath>Overclock/Things/Building/WorkbenchMini/HandTailoringBench/HandTailoringBench</texPath>
+      <shaderType>CutoutComplex</shaderType>
+    </graphicData>
+    <costStuffCount>50</costStuffCount>
+    <costList>
+      <Steel>30</Steel>
+    </costList>
+    <stuffCategories>
+      <li>Metallic</li>
+      <li>Woody</li>
+    </stuffCategories>
+    <comps>
+      <li Class="CompProperties_AffectedByFacilities">
+        <linkableFacilities>
+          <li>ToolCabinet</li>
+        </linkableFacilities>
+      </li>
+    </comps>
+    <placeWorkers>
+      <li>PlaceWorker_ShowFacilitiesConnections</li>
+    </placeWorkers>
+    <researchPrerequisites>
+      <li>ComplexClothing</li>
+    </researchPrerequisites>
+  </ThingDef>
+  <ThingDef ParentName="Overclock_MiniProductionBase">
+    <defName>Overclock_MiniProduction_ElectricTailoringBench</defName>
+    <label>ElectricTailoringBench</label>
+    <description>ElectricTailoringBench</description>
+    <thingClass>Building_WorkTable</thingClass>
+    <graphicData>
+      <texPath>Overclock/Things/Building/WorkbenchMini/ElectricTailoringBench/ElectricTailoringBench</texPath>
+      <shaderType>CutoutComplex</shaderType>
+    </graphicData>
+    <costStuffCount>50</costStuffCount>
+    <costList>
+      <Steel>30</Steel>
+      <ComponentIndustrial>1</ComponentIndustrial>
+    </costList>
+    <stuffCategories>
+      <li>Metallic</li>
+      <li>Woody</li>
+    </stuffCategories>
+    <building>
+      <unpoweredWorkTableWorkSpeedFactor>0.3</unpoweredWorkTableWorkSpeedFactor>
+    </building>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <shortCircuitInRain>True</shortCircuitInRain>
+        <basePowerConsumption>120</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_AffectedByFacilities">
+        <linkableFacilities>
+          <li>ToolCabinet</li>
+        </linkableFacilities>
+      </li>
+      <li Class="CompProperties_Breakdownable"/>
+    </comps>
+    <placeWorkers>
+      <li>PlaceWorker_ShowFacilitiesConnections</li>
+    </placeWorkers>
+    <researchPrerequisites>
+      <li>ComplexClothing</li>
+      <li>Electricity</li>
+    </researchPrerequisites>
+  </ThingDef>
+  <ThingDef ParentName="Overclock_MiniProductionBase">
+    <defName>Overclock_MiniProduction_FueledSmithy</defName>
+    <label>FueledSmithy</label>
+    <description>FueledSmithy</description>
+    <thingClass>Building_WorkTable</thingClass>
+    <graphicData>
+      <texPath>Overclock/Things/Building/WorkbenchMini/FueledSmithy/FueledSmithy</texPath>
+    </graphicData>
+    <costList>
+      <Steel>50</Steel>
+    </costList>
+    <constructEffect>ConstructWood</constructEffect>
+    <statBases>
+      <Cleanliness>-3</Cleanliness>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_Refuelable">
+        <fuelConsumptionRate>80.0</fuelConsumptionRate>
+        <fuelCapacity>50.0</fuelCapacity>
+        <fuelFilter>
+          <thingDefs>
+            <li>WoodLog</li>
+          </thingDefs>
+        </fuelFilter>
+        <consumeFuelOnlyWhenUsed>True</consumeFuelOnlyWhenUsed>
+      </li>
+      <li Class="CompProperties_AffectedByFacilities">
+        <linkableFacilities>
+          <li>ToolCabinet</li>
+        </linkableFacilities>
+      </li>
+    </comps>
+    <placeWorkers>
+      <li>PlaceWorker_ShowFacilitiesConnections</li>
+    </placeWorkers>
+    <researchPrerequisites>
+      <li>Smithing</li>
+    </researchPrerequisites>
+  </ThingDef>
+  <ThingDef ParentName="Overclock_MiniProductionBase">
+    <defName>Overclock_MiniProduction_ElectricSmithy</defName>
+    <label>ElectricSmithy</label>
+    <description>ElectricSmithy</description>
+    <thingClass>Building_WorkTable</thingClass>
+    <graphicData>
+      <texPath>Overclock/Things/Building/WorkbenchMini/ElectricSmithy/ElectricSmithy</texPath>
+    </graphicData>
+    <costList>
+      <Steel>50</Steel>
+      <ComponentIndustrial>1</ComponentIndustrial>
+    </costList>
+    <constructEffect>ConstructWood</constructEffect>
+    <statBases>
+      <Cleanliness>-3</Cleanliness>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <shortCircuitInRain>True</shortCircuitInRain>
+        <basePowerConsumption>210</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_AffectedByFacilities">
+        <linkableFacilities>
+          <li>ToolCabinet</li>
+        </linkableFacilities>
+      </li>
+    </comps>
+    <placeWorkers>
+      <li>PlaceWorker_ShowFacilitiesConnections</li>
+    </placeWorkers>
+    <researchPrerequisites>
+      <li>Smithing</li>
+      <li>Electricity</li>
+    </researchPrerequisites>
+  </ThingDef>
+  <ThingDef ParentName="Overclock_MiniProductionBase">
+    <defName>Overclock_MiniProduction_TableMachining</defName>
+    <label>TableMachining</label>
+    <description>TableMachining</description>
+    <thingClass>Building_WorkTable</thingClass>
+    <graphicData>
+      <texPath>Overclock/Things/Building/WorkbenchMini/TableMachining/TableMachining</texPath>
+    </graphicData>
+    <costList>
+      <Steel>90</Steel>
+      <ComponentIndustrial>3</ComponentIndustrial>
+    </costList>
+    <statBases>
+      <Cleanliness>-2</Cleanliness>
+    </statBases>
+    <recipes>
+      <li>ButcherCorpseMechanoid</li>
+    </recipes>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <shortCircuitInRain>True</shortCircuitInRain>
+        <basePowerConsumption>350</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_Glower">
+        <glowRadius>5</glowRadius>
+        <glowColor>(73,123,138,0)</glowColor>
+      </li>
+      <li Class="CompProperties_AffectedByFacilities">
+        <linkableFacilities>
+          <li>ToolCabinet</li>
+        </linkableFacilities>
+      </li>
+      <li Class="CompProperties_Breakdownable"/>
+    </comps>
+    <placeWorkers>
+      <li>PlaceWorker_ShowFacilitiesConnections</li>
+    </placeWorkers>
+    <constructEffect>ConstructMetal</constructEffect>
+    <researchPrerequisites>
+      <li>Machining</li>
+    </researchPrerequisites>
+    <designationHotKey>Misc7</designationHotKey>
+  </ThingDef>
+  <ThingDef ParentName="Overclock_MiniProductionBase">
+    <defName>Overclock_MiniProduction_FueledStove</defName>
+    <label>FueledStove</label>
+    <description>FueledStove</description>
+    <thingClass>Building_WorkTable_HeatPush</thingClass>
+    <graphicData>
+      <drawSize>(1.2,1.0)</drawSize>
+      <texPath>Overclock/Things/Building/WorkbenchMini/FueledStove/FueledStove</texPath>
+      <shaderType>CutoutComplex</shaderType>
+    </graphicData>
+    <constructEffect>ConstructMetal</constructEffect>
+    <costList>
+      <Steel>30</Steel>
+      <ComponentIndustrial>1</ComponentIndustrial>
+    </costList>
+    <recipes>
+      <li>CookMealSimple</li>
+      <li>CookMealFine</li>
+      <li>CookMealLavish</li>
+      <li>CookMealSurvival</li>
+      <li>Make_Pemmican</li>
+    </recipes>
+    <comps>
+      <li Class="CompProperties_Refuelable">
+        <fuelConsumptionRate>160.0</fuelConsumptionRate>
+        <fuelCapacity>50.0</fuelCapacity>
+        <fuelFilter>
+          <thingDefs>
+            <li>WoodLog</li>
+          </thingDefs>
+        </fuelFilter>
+        <consumeFuelOnlyWhenUsed>True</consumeFuelOnlyWhenUsed>
+      </li>
+      <li Class="CompProperties_HeatPusher">
+        <compClass>CompHeatPusherPowered</compClass>
+        <heatPerSecond>4</heatPerSecond>
+      </li>
+    </comps>
+    <building>
+      <isMealSource>True</isMealSource>
+      <heatPerTickWhileWorking>0.10</heatPerTickWhileWorking>
+    </building>
+  </ThingDef>
+  <ThingDef ParentName="Overclock_MiniProductionBase">
+    <defName>Overclock_MiniProduction_ElectricStove</defName>
+    <label>ElectricStove</label>
+    <description>ElectricStove</description>
+    <thingClass>Building_WorkTable_HeatPush</thingClass>
+    <graphicData>
+      <drawSize>(1,1)</drawSize>
+      <texPath>Overclock/Things/Building/WorkbenchMini/ElectricStove/ElectricStove</texPath>
+      <shaderType>CutoutComplex</shaderType>
+    </graphicData>
+    <constructEffect>ConstructMetal</constructEffect>
+    <costList>
+      <Steel>30</Steel>
+      <ComponentIndustrial>1</ComponentIndustrial>
+    </costList>
+    <recipes>
+      <li>CookMealSimple</li>
+      <li>CookMealFine</li>
+      <li>CookMealLavish</li>
+      <li>CookMealSurvival</li>
+      <li>Make_Pemmican</li>
+    </recipes>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <shortCircuitInRain>True</shortCircuitInRain>
+        <basePowerConsumption>350</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_Breakdownable"/>
+    </comps>
+    <building>
+      <isMealSource>True</isMealSource>
+      <heatPerTickWhileWorking>0.10</heatPerTickWhileWorking>
+    </building>
+    <researchPrerequisites>
+      <li>Electricity</li>
+    </researchPrerequisites>
+    <designationHotKey>Misc8</designationHotKey>
+  </ThingDef>
+  <ThingDef ParentName="Overclock_MiniProductionBase">
+    <defName>Overclock_MiniProduction_TableStonecutter</defName>
+    <label>TableStonecutter</label>
+    <description>TableStonecutter</description>
+    <thingClass>Building_WorkTable_HeatPush</thingClass>
+    <graphicData>
+      <texPath>Overclock/Things/Building/WorkbenchMini/TableStonecutter/TableStonecutter</texPath>
+      <shaderType>CutoutComplex</shaderType>
+    </graphicData>
+    <costStuffCount>50</costStuffCount>
+    <costList>
+      <Steel>15</Steel>
+    </costList>
+    <stuffCategories>
+      <li>Metallic</li>
+      <li>Woody</li>
+    </stuffCategories>
+    <statBases>
+      <Cleanliness>-5</Cleanliness>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_AffectedByFacilities">
+        <linkableFacilities>
+          <li>ToolCabinet</li>
+        </linkableFacilities>
+      </li>
+    </comps>
+    <researchPrerequisites>
+      <li>Stonecutting</li>
+    </researchPrerequisites>
+    <designationHotKey>Misc9</designationHotKey>
+    <placeWorkers>
+      <li>PlaceWorker_ShowFacilitiesConnections</li>
+    </placeWorkers>
+  </ThingDef>
+  <ThingDef ParentName="Overclock_MiniProductionBase">
+    <defName>Overclock_MiniProduction_Brewery</defName>
+    <label>Brewery</label>
+    <description>Brewery</description>
+    <thingClass>Building_WorkTable</thingClass>
+    <graphicData>
+      <texPath>Overclock/Things/Building/WorkbenchMini/Brewery/Brewery</texPath>
+    </graphicData>
+    <costList>
+      <WoodLog>70</WoodLog>
+      <Steel>16</Steel>
+    </costList>
+    <recipes>
+      <li>Make_Wort</li>
+    </recipes>
+    <researchPrerequisites>
+      <li>Brewing</li>
+    </researchPrerequisites>
+    <placeWorkers>
+      <li>PlaceWorker_PreventInteractionSpotOverlap</li>
+    </placeWorkers>
+  </ThingDef>
+  <ThingDef ParentName="Overclock_MiniProductionBase">
+    <defName>Overclock_MiniProduction_DrugLab</defName>
+    <label>DrugLab</label>
+    <description>DrugLab</description>
+    <thingClass>Building_WorkTable</thingClass>
+    <graphicData>
+      <texPath>Overclock/Things/Building/WorkbenchMini/DrugLab/DrugLab</texPath>
+      <shaderType>CutoutComplex</shaderType>
+    </graphicData>
+    <costStuffCount>30</costStuffCount>
+    <stuffCategories>
+      <li>Metallic</li>
+      <li>Woody</li>
+    </stuffCategories>
+    <costList>
+      <Steel>40</Steel>
+      <ComponentIndustrial>4</ComponentIndustrial>
+    </costList>
+    <comps>
+      <li Class="CompProperties_AffectedByFacilities">
+        <linkableFacilities>
+          <li>ToolCabinet</li>
+        </linkableFacilities>
+      </li>
+    </comps>
+    <placeWorkers>
+      <li>PlaceWorker_ShowFacilitiesConnections</li>
+    </placeWorkers>
+    <researchPrerequisites>
+      <li>DrugProduction</li>
+    </researchPrerequisites>
+  </ThingDef>
+  <ThingDef ParentName="Overclock_MiniProductionBase">
+    <defName>Overclock_MiniProduction_ElectricSmelter</defName>
+    <label>ElectricSmelter</label>
+    <description>ElectricSmelter</description>
+    <thingClass>Building_WorkTable_HeatPush</thingClass>
+    <graphicData>
+      <drawSize>(1,1)</drawSize>
+      <texPath>Overclock/Things/Building/WorkbenchMini/ElectricSmelter/ElectricSmelter</texPath>
+    </graphicData>
+    <constructEffect>ConstructMetal</constructEffect>
+    <costList>
+      <Steel>115</Steel>
+      <ComponentIndustrial>1</ComponentIndustrial>
+    </costList>
+    <recipes>
+      <li>ExtractMetalFromSlag</li>
+      <li>SmeltWeapon</li>
+      <li>SmeltApparel</li>
+      <li>DestroyWeapon</li>
+      <li>DestroyApparel</li>
+    </recipes>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>700</basePowerConsumption>
+        <shortCircuitInRain>True</shortCircuitInRain>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_Glower">
+        <glowRadius>6</glowRadius>
+        <glowColor>(217,112,33,0)</glowColor>
+      </li>
+      <li Class="CompProperties_HeatPusher">
+        <compClass>CompHeatPusherPowered</compClass>
+        <heatPerSecond>12</heatPerSecond>
+      </li>
+      <li Class="CompProperties_Breakdownable"/>
+    </comps>
+    <building>
+      <heatPerTickWhileWorking>0.32</heatPerTickWhileWorking>
+    </building>
+    <researchPrerequisites>
+      <li>Electricity</li>
+    </researchPrerequisites>
+    <designationHotKey>Misc10</designationHotKey>
+  </ThingDef>
+  <ThingDef ParentName="Overclock_MiniProductionBase">
+    <defName>Overclock_MiniProduction_SimpleResearchBench</defName>
+    <label>SimpleResearchBench</label>
+    <description>SimpleResearchBench</description>
+    <thingClass>Building_ResearchBench</thingClass>
+    <stuffCategories>
+      <li>Metallic</li>
+      <li>Woody</li>
+      <li>Stony</li>
+    </stuffCategories>
+    <costStuffCount>45</costStuffCount>
+    <costList>
+      <Steel>15</Steel>
+    </costList>
+    <graphicData>
+      <texPath>Overclock/Things/Building/WorkbenchMini/SimpleResearchBench/SimpleResearchBench</texPath>
+      <shaderType>CutoutComplex</shaderType>
+    </graphicData>
+    <statBases>
+      <ResearchSpeedFactor>0.6</ResearchSpeedFactor>
+    </statBases>
+    <inspectorTabs Inherit="False"/>
+  </ThingDef>
+
+  <!--VFE-->
+
+  <ThingDef ParentName="Overclock_MiniProductionBase" MayRequire="vanillaexpanded.vfeproduction">
+    <defName>Overclock_MiniProduction_VFE_TableButcherElectric</defName>
+    <thingClass>Building_WorkTable</thingClass>
+    <label>VFE_TableButcherElectric</label>
+    <description>VFE_TableButcherElectric</description>
+    <graphicData>
+      <texPath>Overclock/Things/Building/WorkbenchMini/VFE_TableButcherElectric/VFE_TableButcherElectric</texPath>
+    </graphicData>
+    <stuffCategories>
+      <li>Metallic</li>
+      <li>Woody</li>
+    </stuffCategories>
+    <costStuffCount>40</costStuffCount>
+    <costList>
+      <Steel>15</Steel>
+      <ComponentIndustrial>2</ComponentIndustrial>
+    </costList>
+    <statBases>
+      <Cleanliness>-15</Cleanliness>
+      <WorkTableWorkSpeedFactor>1.5</WorkTableWorkSpeedFactor>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>250</basePowerConsumption>
+        <shortCircuitInRain>True</shortCircuitInRain>
+      </li>
+      <li Class="CompProperties_Flickable" />
+      <li Class="CompProperties_AffectedByFacilities">
+        <linkableFacilities>
+          <li>ToolCabinet</li>
+        </linkableFacilities>
+      </li>
+      <li Class="CompProperties_Breakdownable" />
+    </comps>
+    <placeWorkers>
+      <li>PlaceWorker_ShowFacilitiesConnections</li>
+    </placeWorkers>
+    <constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+    <researchPrerequisites>
+      <li>Electricity</li>
+    </researchPrerequisites>
+  </ThingDef>
+  <ThingDef ParentName="Overclock_MiniProductionBase" MayRequire="vanillaexpanded.vfeproduction">
+    <defName>Overclock_MiniProduction_VFE_TableDrugLabElectric</defName>
+    <thingClass>Building_WorkTable</thingClass>
+    <label>VFE_TableDrugLabElectric</label>
+    <description>VFE_TableDrugLabElectric</description>
+    <graphicData>
+      <texPath>Overclock/Things/Building/WorkbenchMini/VFE_TableDrugLabElectric/VFE_TableDrugLabElectric</texPath>
+      <shaderType>CutoutComplex</shaderType>
+    </graphicData>
+    <stuffCategories>
+      <li>Metallic</li>
+      <li>Woody</li>
+    </stuffCategories>
+    <costStuffCount>60</costStuffCount>
+    <costList>
+      <Steel>95</Steel>
+      <ComponentIndustrial>6</ComponentIndustrial>
+    </costList>
+    <statBases>
+      <WorkTableWorkSpeedFactor>1.5</WorkTableWorkSpeedFactor>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>275</basePowerConsumption>
+        <shortCircuitInRain>True</shortCircuitInRain>
+      </li>
+      <li Class="CompProperties_Flickable" />
+      <li Class="CompProperties_AffectedByFacilities">
+        <linkableFacilities>
+          <li>ToolCabinet</li>
+        </linkableFacilities>
+      </li>
+      <li Class="CompProperties_Breakdownable" />
+    </comps>
+    <placeWorkers>
+      <li>PlaceWorker_ShowFacilitiesConnections</li>
+    </placeWorkers>
+    <constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+    <researchPrerequisites>
+      <li>Electricity</li>
+      <li>DrugProduction</li>
+    </researchPrerequisites>
+  </ThingDef>
+  <ThingDef ParentName="Overclock_MiniProductionBase" MayRequire="vanillaexpanded.vfeproduction">
+    <defName>Overclock_MiniProduction_VFE_FueledSmelter</defName>
+    <thingClass>Building_WorkTable_HeatPush</thingClass>
+    <label>VFE_FueledSmelter</label>
+    <description>VFE_FueledSmelter</description>
+    <graphicData>
+      <texPath>Overclock/Things/Building/WorkbenchMini/VFE_FueledSmelter/VFE_FueledSmelter</texPath>
+    </graphicData>
+    <costList>
+      <Steel>120</Steel>
+    </costList>
+    <constructionSkillPrerequisite>3</constructionSkillPrerequisite>
+    <recipes>
+      <li>ExtractMetalFromSlag</li>
+      <li>SmeltWeapon</li>
+      <li>DestroyWeapon</li>
+    </recipes>
+    <comps>
+      <li Class="CompProperties_Refuelable">
+        <fuelConsumptionRate>140.0</fuelConsumptionRate>
+        <fuelCapacity>40.0</fuelCapacity>
+        <fuelFilter>
+          <thingDefs>
+            <li>WoodLog</li>
+          </thingDefs>
+        </fuelFilter>
+        <consumeFuelOnlyWhenUsed>True</consumeFuelOnlyWhenUsed>
+      </li>
+      <li Class="CompProperties_HeatPusher">
+        <compClass>CompHeatPusherPowered</compClass>
+        <heatPerSecond>7</heatPerSecond>
+      </li>
+    </comps>
+    <building>
+      <spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
+      <heatPerTickWhileWorking>0.75</heatPerTickWhileWorking>
+    </building>
+    <researchPrerequisites>
+      <li>Smithing</li>
+    </researchPrerequisites>
+  </ThingDef>
+  <ThingDef ParentName="Overclock_MiniProductionBase" MayRequire="vanillaexpanded.vfeproduction">
+    <defName>Overclock_MiniProduction_VFE_TableStonecutterElectric</defName>
+    <thingClass>Building_WorkTable_HeatPush</thingClass>
+    <label>VFE_TableStonecutterElectric</label>
+    <description>VFE_TableStonecutterElectric</description>
+    <graphicData>
+      <texPath>Overclock/Things/Building/WorkbenchMini/VFE_TableStonecutterElectric/VFE_TableStonecutterElectric</texPath>
+      <shaderType>CutoutComplex</shaderType>
+    </graphicData>
+    <stuffCategories>
+      <li>Metallic</li>
+      <li>Woody</li>
+    </stuffCategories>
+    <costStuffCount>90</costStuffCount>
+    <costList>
+      <Steel>45</Steel>
+      <ComponentIndustrial>3</ComponentIndustrial>
+    </costList>
+    <statBases>
+      <WorkTableWorkSpeedFactor>1.5</WorkTableWorkSpeedFactor>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>150</basePowerConsumption>
+        <shortCircuitInRain>True</shortCircuitInRain>
+      </li>
+      <li Class="CompProperties_Flickable" />
+      <li Class="CompProperties_AffectedByFacilities">
+        <linkableFacilities>
+          <li>ToolCabinet</li>
+        </linkableFacilities>
+      </li>
+      <li Class="CompProperties_Breakdownable" />
+    </comps>
+    <placeWorkers>
+      <li>PlaceWorker_ShowFacilitiesConnections</li>
+    </placeWorkers>
+    <building>
+      <spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
+      <paintable>True</paintable>
+    </building>
+    <constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+    <researchPrerequisites>
+      <li>Stonecutting</li>
+      <li>Electricity</li>
+    </researchPrerequisites>
+  </ThingDef>
+</Defs>

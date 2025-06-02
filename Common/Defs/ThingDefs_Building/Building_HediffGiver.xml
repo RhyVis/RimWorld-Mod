@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <DesignatorDropdownGroupDef>
+    <defName>Overclock_HediffGiverGood</defName>
+    <label>正向装置</label>
+  </DesignatorDropdownGroupDef>
+
+  <DesignatorDropdownGroupDef>
+    <defName>Overclock_HediffGiverBad</defName>
+    <label>负向装置</label>
+  </DesignatorDropdownGroupDef>
+
+  <ThingDef Name="Overclock_HediffGiverBase" ParentName="BuildingBase" Abstract="True">
+    <castEdgeShadows>False</castEdgeShadows>
+    <blockWind>False</blockWind>
+    <blockLight>False</blockLight>
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1.2)</drawSize>
+      <damageData>
+        <enabled>False</enabled>
+      </damageData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>Standable</passability>
+    <fillPercent>0.1</fillPercent>
+    <rotatable>False</rotatable>
+    <statBases>
+      <MaxHitPoints>300</MaxHitPoints>
+      <WorkToBuild>0</WorkToBuild>
+      <Mass>15</Mass>
+      <Flammability>0</Flammability>
+    </statBases>
+    <size>(1,1)</size>
+    <costList Inherit="False"/>
+    <tickerType>Normal</tickerType>
+    <useHitPoints>False</useHitPoints>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <designationCategory>Overclock_MainCategory</designationCategory>
+    <thingCategories>
+      <li>BuildingsMisc</li>
+    </thingCategories>
+    <building>
+      <expandHomeArea>False</expandHomeArea>
+    </building>
+    <specialDisplayRadius>4.9</specialDisplayRadius>
+  </ThingDef>
+
+  <ThingDef Name="Overclock_HediffGiverBaseGood" ParentName="Overclock_HediffGiverBase" Abstract="True">
+    <graphicData>
+      <texPath>Overclock/Things/Building/Security/HediffGiverGreen</texPath>
+    </graphicData>
+    <designatorDropdown>Overclock_HediffGiverGood</designatorDropdown>
+  </ThingDef>
+
+  <ThingDef Name="Overclock_HediffGiverBaseBad" ParentName="Overclock_HediffGiverBase" Abstract="True">
+    <graphicData>
+      <texPath>Overclock/Things/Building/Security/HediffGiverRed</texPath>
+    </graphicData>
+    <designatorDropdown>Overclock_HediffGiverBad</designatorDropdown>
+  </ThingDef>
+
+  <!-- Good Givers -->
+
+  <ThingDef ParentName="Overclock_HediffGiverBaseGood">
+    <defName>Overclock_HediffGiver_Immortal</defName>
+    <label>不朽装置</label>
+    <description>这个装置向周围所有生物释放不死效果，不受心灵敏感度影响。</description>
+    <specialDisplayRadius>1</specialDisplayRadius>
+    <comps>
+      <li Class="Overclock.CompProperties_HediffGiver">
+        <hediffDef>Overclock_ImmortalHediff</hediffDef>
+        <severityAdjust>1.0</severityAdjust>
+        <radius>1</radius>
+        <checkInterval>60</checkInterval>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="Overclock_HediffGiverBaseGood">
+    <defName>Overclock_HediffGiver_NoDamage</defName>
+    <label>无伤装置</label>
+    <description>这个装置向周围所有生物释放无伤效果，不受心灵敏感度影响。</description>
+    <specialDisplayRadius>2.9</specialDisplayRadius>
+    <comps>
+      <li Class="Overclock.CompProperties_HediffGiver">
+        <hediffDef>Overclock_NoDamageHediff</hediffDef>
+        <severityAdjust>1.0</severityAdjust>
+        <radius>2.9</radius>
+        <checkInterval>60</checkInterval>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="Overclock_HediffGiverBaseGood">
+    <defName>Overclock_HediffGiver_Recover</defName>
+    <label>复生装置</label>
+    <description>这个装置向周围所有生物释放无伤效果，不受心灵敏感度影响。</description>
+    <comps>
+      <li Class="Overclock.CompProperties_HediffGiver">
+        <hediffDef>Overclock_RecoverHediff</hediffDef>
+        <severityAdjust>1.0</severityAdjust>
+        <radius>4.9</radius>
+        <checkInterval>60</checkInterval>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="Overclock_HediffGiverBaseGood">
+    <defName>Overclock_HediffGiver_Regenration</defName>
+    <label>再生装置</label>
+    <description>这个装置向周围所有生物释放再生效果，受心灵敏感度影响。</description>
+    <comps>
+      <li Class="Overclock.CompProperties_HediffGiver">
+        <hediffDef>Overclock_RegenerationGreatHediff</hediffDef>
+        <severityAdjust>1.0</severityAdjust>
+        <radius>4.9</radius>
+        <stats>
+          <li>PsychicSensitivity</li>
+        </stats>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="Overclock_HediffGiverBaseGood">
+    <defName>Overclock_HediffGiver_GoJuice</defName>
+    <label>活力装置</label>
+    <description>这个装置向周围所有生物释放活力水效果，受心灵敏感度影响。</description>
+    <comps>
+      <li Class="Overclock.CompProperties_HediffGiver">
+        <hediffDef>GoJuiceHigh</hediffDef>
+        <severityAdjust>0.7</severityAdjust>
+        <radius>4.9</radius>
+        <checkInterval>60</checkInterval>
+        <stats>
+          <li>PsychicSensitivity</li>
+        </stats>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="Overclock_HediffGiverBaseGood">
+    <defName>Overclock_HediffGiver_Temperature</defName>
+    <label>恒温装置</label>
+    <description>这个装置向周围所有生物释放恒温效果，不受心灵敏感度影响。</description>
+    <comps>
+      <li Class="Overclock.CompProperties_HediffGiver">
+        <hediffDef>Overclock_TemperatureHediff</hediffDef>
+        <severityAdjust>1.0</severityAdjust>
+        <radius>4.9</radius>
+        <checkInterval>60</checkInterval>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="Overclock_HediffGiverBaseGood">
+    <defName>Overclock_HediffGiver_ToxicResistence</defName>
+    <label>抗毒装置</label>
+    <description>这个装置向周围所有生物释放抗毒效果，不受心灵敏感度影响。</description>
+    <comps>
+      <li Class="Overclock.CompProperties_HediffGiver">
+        <hediffDef>Overclock_ToxicResistenceHediff</hediffDef>
+        <severityAdjust>1.0</severityAdjust>
+        <radius>4.9</radius>
+        <checkInterval>60</checkInterval>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="Overclock_HediffGiverBaseGood">
+    <defName>Overclock_HediffGiver_OverNeeded</defName>
+    <label>免需装置</label>
+    <description>这个装置向周围所有生物释放免需效果，不受心灵敏感度影响。</description>
+    <comps>
+      <li Class="Overclock.CompProperties_HediffGiver">
+        <hediffDef>Overclock_OverNeededHediff</hediffDef>
+        <severityAdjust>1.0</severityAdjust>
+        <radius>4.9</radius>
+        <checkInterval>600</checkInterval>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="Overclock_HediffGiverBaseGood">
+    <defName>Overclock_HediffGiver_ConsciousnessUp</defName>
+    <label>超感装置</label>
+    <description>这个装置向周围所有生物释放超感效果，不受心灵敏感度影响。</description>
+    <comps>
+      <li Class="Overclock.CompProperties_HediffGiver">
+        <hediffDef>Overclock_ConsciousnessUpHediff</hediffDef>
+        <severityAdjust>1.0</severityAdjust>
+        <radius>4.9</radius>
+        <checkInterval>60</checkInterval>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="Overclock_HediffGiverBaseGood">
+    <defName>Overclock_HediffGiver_Pregnant</defName>
+    <label>怀孕装置</label>
+    <description>这个装置让周围所有生物怀孕，不受心灵敏感度影响。</description>
+    <specialDisplayRadius>1</specialDisplayRadius>
+    <comps>
+      <li Class="Overclock.CompProperties_HediffGiver">
+        <hediffDef>Pregnant</hediffDef>
+        <radius>1</radius>
+        <severityAdjust>0.3</severityAdjust>
+        <checkInterval>60</checkInterval>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <!-- Bad Givers -->
+
+  <ThingDef ParentName="Overclock_HediffGiverBaseBad">
+    <defName>Overclock_HediffGiver_BloodLoss</defName>
+    <label>失血装置</label>
+    <description>这个装置向周围所有生物释放失血效果，受心灵敏感度影响。</description>
+    <comps>
+      <li Class="Overclock.CompProperties_HediffGiver">
+        <hediffDef>BloodLoss</hediffDef>
+        <severityAdjust>0.3</severityAdjust>
+        <radius>4.9</radius>
+        <checkInterval>60</checkInterval>
+        <stats>
+          <li>PsychicSensitivity</li>
+        </stats>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="Overclock_HediffGiverBaseBad">
+    <defName>Overclock_HediffGiver_SpecialMeal</defName>
+    <label>扭曲装置</label>
+    <description>这个装置向周围所有生物释放扭曲效果，受心灵敏感度影响。</description>
+    <comps>
+      <li Class="Overclock.CompProperties_HediffGiver">
+        <hediffDef>Overclock_RegenerationGreatHediff</hediffDef>
+        <severityAdjust>1.0</severityAdjust>
+        <radius>4.9</radius>
+        <checkInterval>3600</checkInterval>
+        <stats>
+          <li>PsychicSensitivity</li>
+        </stats>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="Overclock_HediffGiverBaseBad">
+    <defName>Overclock_HediffGiver_Hunger</defName>
+    <label>饥饿装置</label>
+    <description>这个装置向周围所有生物释放失血效果，受心灵敏感度影响。</description>
+    <comps>
+      <li Class="Overclock.CompProperties_HediffGiver">
+        <hediffDef>Overclock_HungerHediff</hediffDef>
+        <severityAdjust>1.0</severityAdjust>
+        <radius>4.9</radius>
+        <checkInterval>60</checkInterval>
+        <stats>
+          <li>PsychicSensitivity</li>
+        </stats>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="Overclock_HediffGiverBaseBad">
+    <defName>Overclock_HediffGiver_Berserk</defName>
+    <label>狂躁装置</label>
+    <description>这个装置向周围所有生物释放失血效果，受心灵敏感度影响。</description>
+    <comps>
+      <li Class="Overclock.CompProperties_HediffGiver">
+        <hediffDef>Overclock_BerserkHediff</hediffDef>
+        <severityAdjust>1.0</severityAdjust>
+        <radius>4.9</radius>
+        <checkInterval>60</checkInterval>
+        <stats>
+          <li>PsychicSensitivity</li>
+        </stats>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="Overclock_HediffGiverBaseBad">
+    <defName>Overclock_HediffGiver_Vomit</defName>
+    <label>呕吐装置</label>
+    <description>这个装置向周围所有生物释放失血效果，受心灵敏感度影响。</description>
+    <comps>
+      <li Class="Overclock.CompProperties_HediffGiver">
+        <hediffDef>Overclock_VomitHediff</hediffDef>
+        <severityAdjust>1.0</severityAdjust>
+        <radius>4.9</radius>
+        <checkInterval>60</checkInterval>
+        <stats>
+          <li>PsychicSensitivity</li>
+        </stats>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="Overclock_HediffGiverBaseBad">
+    <defName>Overclock_HediffGiver_Breakdown</defName>
+    <label>冲击装置</label>
+    <description>这个装置向周围所有生物释放心灵冲击效果，受心灵敏感度影响。</description>
+    <comps>
+      <li Class="Overclock.CompProperties_HediffGiver">
+        <hediffDef>CatatonicBreakdown</hediffDef>
+        <severityAdjust>0.5</severityAdjust>
+        <radius>4.9</radius>
+        <checkInterval>60</checkInterval>
+        <stats>
+          <li>PsychicSensitivity</li>
+        </stats>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="Overclock_HediffGiverBaseBad">
+    <defName>Overclock_HediffGiver_Anesthetic</defName>
+    <label>麻醉装置</label>
+    <description>这个装置向周围所有生物释放麻醉效果，不受心灵敏感度影响。</description>
+    <comps>
+      <li Class="Overclock.CompProperties_HediffGiver">
+        <hediffDef>Anesthetic</hediffDef>
+        <severityAdjust>0.3</severityAdjust>
+        <radius>4.9</radius>
+        <checkInterval>60</checkInterval>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="Overclock_HediffGiverBaseBad">
+    <defName>Overclock_HediffGiver_Toxic</defName>
+    <label>毒害装置</label>
+    <description>这个装置向周围所有生物释放剧毒效果，不受心灵敏感度影响。</description>
+    <comps>
+      <li Class="Overclock.CompProperties_HediffGiver">
+        <hediffDef>ToxicBuildup</hediffDef>
+        <severityAdjust>0.3</severityAdjust>
+        <radius>4.9</radius>
+        <checkInterval>60</checkInterval>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="Overclock_HediffGiverBaseBad">
+    <defName>Overclock_HediffGiver_Suppress</defName>
+    <label>压制装置</label>
+    <description>这个装置向周围所有生物释放压制效果，不受心灵敏感度影响。</description>
+    <comps>
+      <li Class="Overclock.CompProperties_HediffGiver">
+        <hediffDef>Overclock_SuppressedHediff</hediffDef>
+        <severityAdjust>1.0</severityAdjust>
+        <radius>4.9</radius>
+        <checkInterval>60</checkInterval>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="Overclock_HediffGiverBaseBad">
+    <defName>Overclock_HediffGiver_Death</defName>
+    <label>死亡装置</label>
+    <description>这个装置通过降低意识使周围生物死亡，不受心灵敏感度影响。</description>
+    <specialDisplayRadius>2.9</specialDisplayRadius>
+    <comps>
+      <li Class="Overclock.CompProperties_HediffGiver">
+        <hediffDef>Overclock_DeathHediff</hediffDef>
+        <severityAdjust>2.0</severityAdjust>
+        <radius>2.9</radius>
+        <checkInterval>60</checkInterval>
+      </li>
+    </comps>
+  </ThingDef>
+</Defs>

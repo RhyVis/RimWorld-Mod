@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+  <ThoughtDef>
+    <defName>Overclock_AteVomitPackage</defName>
+    <durationDays>1</durationDays>
+    <stackLimit>3</stackLimit>
+    <stackedEffectMultiplier>0.8</stackedEffectMultiplier>
+    <stages>
+      <li>
+        <label>吃了呕吐物</label>
+        <description>我吃了什么东西！真恶心！</description>
+        <baseMoodEffect>-20</baseMoodEffect>
+      </li>
+    </stages>
+    <replaceThoughts>
+      <li>AteFineMeal</li>
+      <li>AteLavishMeal</li>
+    </replaceThoughts>
+  </ThoughtDef>
+</Defs>

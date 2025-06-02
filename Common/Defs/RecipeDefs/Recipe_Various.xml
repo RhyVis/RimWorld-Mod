@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+  <!-- Base -->
+
+  <RecipeDef Name="Overclock_WorkSiteRecipeBase" Abstract="True">
+    <description>应用聚合微械技术来合成物品。</description>
+    <jobString>正在构造聚合微械。</jobString>
+    <workAmount>1</workAmount>
+    <workSkill>Crafting</workSkill>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Cremate</effectWorking>
+    <soundWorking>Recipe_Cremate</soundWorking>
+    <allowMixingIngredients>True</allowMixingIngredients>
+    <skillRequirements>
+      <Crafting>1</Crafting>
+    </skillRequirements>
+    <recipeUsers>
+      <li>Overclock_CraftingSpot</li>
+    </recipeUsers>
+  </RecipeDef>
+
+  <RecipeDef Name="Overclock_WorkSiteCostRecipeBase" ParentName="Overclock_WorkSiteRecipeBase" Abstract="True">
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Overclock_NanoAssembly</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Overclock_NanoAssembly</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+  </RecipeDef>
+
+  <!-- No Cost -->
+
+  <RecipeDef ParentName="Overclock_WorkSiteRecipeBase">
+    <defName>Overclock_NanoChipRecipe</defName>
+    <label>构造聚合微械 x100</label>
+    <products>
+      <Overclock_NanoAssembly>100</Overclock_NanoAssembly>
+    </products>
+  </RecipeDef>
+
+</Defs>

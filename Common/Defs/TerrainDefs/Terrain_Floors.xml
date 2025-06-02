@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+  <TerrainDef Abstract="True" ParentName="FloorBase" Name="Overclock_TileMetalBase">
+    <texturePath>Terrain/Surfaces/GenericFloorTile</texturePath>
+    <constructEffect>ConstructMetal</constructEffect>
+    <isPaintable>True</isPaintable>
+    <tags>
+      <li>FineFloor</li>
+    </tags>
+    <affordances>
+      <li>Light</li>
+      <li>Medium</li>
+      <li>Heavy</li>
+    </affordances>
+    <researchPrerequisites>
+      <li>Smithing</li>
+    </researchPrerequisites>
+    <constructionSkillPrerequisite>3</constructionSkillPrerequisite>
+    <designationCategory>Overclock_MainCategory</designationCategory>
+  </TerrainDef>
+
+  <TerrainDef ParentName="Overclock_TileMetalBase">
+    <defName>Overclock_MetaMetalTile</defName>
+    <label>超净金属地砖</label>
+    <renderPrecedence>240</renderPrecedence>
+    <description>类似钢制地砖的金属地砖，其上无法生成污渍，无法落雪，相当美观。</description>
+    <color>(0.369, 0.369, 0.369)</color>
+    <statBases>
+      <WorkToBuild>1000</WorkToBuild>
+      <Beauty>1</Beauty>
+      <FilthMultiplier>0</FilthMultiplier>
+      <Cleanliness>1.2</Cleanliness>
+      <CleaningTimeFactor>0.6</CleaningTimeFactor>
+    </statBases>
+    <costList>
+      <Steel>5</Steel>
+      <Silver>2</Silver>
+      <ComponentIndustrial>1</ComponentIndustrial>
+    </costList>
+    <filthAcceptanceMask>
+      <li>None</li>
+    </filthAcceptanceMask>
+    <holdSnow>False</holdSnow>
+    <extraDeteriorationFactor>0</extraDeteriorationFactor>
+  </TerrainDef>
+</Defs>

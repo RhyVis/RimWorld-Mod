@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+  <HediffDef Name="Overclock_MiscHediffBase" Abstract="True">
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(0.11, 0.56, 1)</defaultLabelColor>
+    <isBad>False</isBad>
+    <alwaysAllowMothball>True</alwaysAllowMothball>
+    <alwaysAllowMothballCached>True</alwaysAllowMothballCached>
+  </HediffDef>
+
+  <HediffDef Name="Overclock_MiscHediffBaseWithHour" ParentName="Overclock_MiscHediffBase" Abstract="True">
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>1250~1250</disappearsAfterTicks>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <HediffDef Name="Overclock_MiscHediffBaseWithSecond" ParentName="Overclock_MiscHediffBase" Abstract="True">
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>60~60</disappearsAfterTicks>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <!-- Good Hediffs -->
+
+  <HediffDef ParentName="Overclock_MiscHediffBase">
+    <defName>Overclock_ImmortalHediff</defName>
+    <label>不死</label>
+    <description>不会死亡。</description>
+    <preventsDeath>True</preventsDeath>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>900~900</disappearsAfterTicks>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <HediffDef ParentName="Overclock_MiscHediffBase">
+    <defName>Overclock_BodyPartWorking</defName>
+    <label>身体部件移除</label>
+    <description>不会死亡。</description>
+    <preventsDeath>True</preventsDeath>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>900~900</disappearsAfterTicks>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <HediffDef ParentName="Overclock_MiscHediffBase">
+    <defName>Overclock_NoDamageHediff</defName>
+    <label>无伤</label>
+    <description>不再受到任何伤害。</description>
+    <preventsDeath>True</preventsDeath>
+    <stages>
+      <li>
+        <statFactors>
+          <IncomingDamageFactor>0</IncomingDamageFactor>
+        </statFactors>
+      </li>
+    </stages>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>900~900</disappearsAfterTicks>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <HediffDef ParentName="Overclock_MiscHediffBase">
+    <defName>Overclock_RecoverHediff</defName>
+    <label>复生</label>
+    <description>大幅增强再生能力，并定期产生治愈机械液的效果。</description>
+    <stages>
+      <li>
+        <statOffsets>
+          <PainShockThreshold>10</PainShockThreshold>
+        </statOffsets>
+        <regeneration>10</regeneration>
+      </li>
+    </stages>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>900~900</disappearsAfterTicks>
+      </li>
+      <li Class="Overclock.HediffCompProperties_FixWorstCycle"/>
+    </comps>
+  </HediffDef>
+
+  <HediffDef ParentName="Overclock_MiscHediffBase">
+    <defName>Overclock_RegenerationHediff</defName>
+    <label>再生</label>
+    <description>大幅增强再生能力。</description>
+    <stages>
+      <li>
+        <statOffsets>
+          <PainShockThreshold>10</PainShockThreshold>
+        </statOffsets>
+        <regeneration>100000</regeneration>
+      </li>
+    </stages>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>900~900</disappearsAfterTicks>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <HediffDef ParentName="Overclock_MiscHediffBase">
+    <defName>Overclock_RegenerationGreatHediff</defName>
+    <label>再生</label>
+    <description>大幅增强再生能力，并避免死亡。</description>
+    <preventsDeath>True</preventsDeath>
+    <keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+    <stages>
+      <li>
+        <statOffsets>
+          <PainShockThreshold>10</PainShockThreshold>
+        </statOffsets>
+        <regeneration>100000</regeneration>
+      </li>
+    </stages>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>300~300</disappearsAfterTicks>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <HediffDef ParentName="Overclock_MiscHediffBaseWithHour">
+    <defName>Overclock_ImmuneHediff</defName>
+    <label>免疫</label>
+    <description>完全免疫常见疾病。</description>
+    <stages>
+      <li>
+        <makeImmuneTo>
+          <li>Flu</li>
+          <li>Malaria</li>
+          <li>SleepingSickness</li>
+          <li>Plague</li>
+          <li>WoundInfection</li>
+          <li>LungRot</li>
+          <li>GutWorms</li>
+          <li>MuscleParasites</li>
+          <li>OrganDecay</li>
+          <li>FibrousMechanites</li>
+          <li>SensoryMechanites</li>
+        </makeImmuneTo>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <HediffDef ParentName="Overclock_MiscHediffBaseWithHour">
+    <defName>Overclock_OverNeededHediff</defName>
+    <label>免需</label>
+    <description>移除大部分需求。</description>
+    <disablesNeeds>
+      <li>Food</li>
+      <li>Joy</li>
+      <li>Rest</li>
+      <li>Comfort</li>
+      <li>Beauty</li>
+      <li>Outdoors</li>
+      <li>Indoors</li>
+      <li>DrugDesire</li>
+      <li>RoomSize</li>
+      <li>Mood</li>
+    </disablesNeeds>
+  </HediffDef>
+
+  <HediffDef ParentName="Overclock_MiscHediffBaseWithHour">
+    <defName>Overclock_AntibioticsHediff</defName>
+    <label>抗疫</label>
+    <description>增幅血液过滤来增强免疫力。</description>
+    <stages>
+      <li>
+        <foodPoisoningChanceFactor>0</foodPoisoningChanceFactor>
+        <capMods>
+          <li>
+            <capacity>BloodFiltration</capacity>
+            <offset>0.40</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <HediffDef ParentName="Overclock_MiscHediffBaseWithHour">
+    <defName>Overclock_HealEnhanceHediff</defName>
+    <label>愈合</label>
+    <description>增幅自然愈合能力。</description>
+    <stages>
+      <li>
+        <naturalHealingFactor>3.5</naturalHealingFactor>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <HediffDef ParentName="Overclock_MiscHediffBaseWithHour">
+    <defName>Overclock_PainkillerHediff</defName>
+    <label>止痛</label>
+    <description>降低疼痛幅度。</description>
+    <stages>
+      <li>
+        <painFactor>0.1</painFactor>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <HediffDef ParentName="Overclock_MiscHediffBaseWithSecond">
+    <defName>Overclock_TemperatureHediff</defName>
+    <label>恒温</label>
+    <description>不再被任何温度影响。</description>
+    <stages>
+      <li>
+        <statOffsets>
+          <ComfyTemperatureMin>-3000</ComfyTemperatureMin>
+          <ComfyTemperatureMax>3000</ComfyTemperatureMax>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <HediffDef ParentName="Overclock_MiscHediffBaseWithSecond">
+    <defName>Overclock_ToxicResistenceHediff</defName>
+    <label>抗毒</label>
+    <description>不再被毒性物质影响。</description>
+    <stages>
+      <li>
+        <statOffsets>
+          <ToxicResistance>1</ToxicResistance>
+          <ToxicEnvironmentResistance>1</ToxicEnvironmentResistance>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <HediffDef ParentName="Overclock_MiscHediffBaseWithSecond">
+    <defName>Overclock_ConsciousnessUpHediff</defName>
+    <label>超感</label>
+    <description>意识大幅上升。</description>
+    <stages>
+      <li>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>3.0</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <!-- Bad Hediffs -->
+
+  <HediffDef ParentName="Overclock_MiscHediffBaseWithSecond">
+    <defName>Overclock_BerserkHediff</defName>
+    <label>狂躁</label>
+    <description>大幅增加狂暴与打架概率，并免疫疼痛。</description>
+    <stages>
+      <li>
+        <socialFightChanceFactor>20.0</socialFightChanceFactor>
+        <painFactor>0</painFactor>
+        <mentalStateGivers>
+          <li>
+            <mentalState>Berserk</mentalState>
+            <mtbDays>0.01</mtbDays>
+          </li>
+        </mentalStateGivers>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <HediffDef ParentName="Overclock_MiscHediffBaseWithSecond">
+    <defName>Overclock_HungerHediff</defName>
+    <label>饥饿</label>
+    <description>大幅增加饥饿程度。</description>
+    <stages>
+      <li>
+        <hungerRateFactor>50.0</hungerRateFactor>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <HediffDef ParentName="Overclock_MiscHediffBaseWithSecond">
+    <defName>Overclock_VomitHediff</defName>
+    <label>呕吐</label>
+    <description>大幅增加呕吐概率。</description>
+    <stages>
+      <li>
+        <vomitMtbDays>0.01</vomitMtbDays>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <HediffDef ParentName="Overclock_MiscHediffBaseWithHour">
+    <defName>Overclock_UpsetHediff</defName>
+    <label>悲伤</label>
+    <description>极致降低心情。</description>
+    <stages>
+      <li>
+        <painFactor>1.05</painFactor>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <HediffDef ParentName="Overclock_MiscHediffBaseWithSecond">
+    <defName>Overclock_SuppressedHediff</defName>
+    <label>压制</label>
+    <description>暴力者应当躺下。</description>
+    <stages>
+      <li>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <setMax>0.01</setMax>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <HediffDef ParentName="Overclock_MiscHediffBase">
+    <defName>Overclock_SlowHediff</defName>
+    <label>缓慢</label>
+    <description>你不得移动。</description>
+    <stages>
+      <li>
+        <statFactors>
+          <MoveSpeed>0.01</MoveSpeed>
+        </statFactors>
+      </li>
+    </stages>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>300~300</disappearsAfterTicks>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <HediffDef ParentName="Overclock_MiscHediffBase">
+    <defName>Overclock_DepletingSkillsHediff</defName>
+    <label>忘却</label>
+    <description>逐渐忘却技能。</description>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>3600~3600</disappearsAfterTicks>
+      </li>
+      <li Class="Overclock.HediffCompProperties_SkillDeplete">
+        <checkInterval>1250</checkInterval>
+        <depleteAmount>10000</depleteAmount>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>Overclock_DeathHediff</defName>
+    <label>死亡</label>
+    <description>丧失意识而死。</description>
+    <defaultLabelColor>(100,0,0)</defaultLabelColor>
+    <lethalSeverity>0</lethalSeverity>
+    <maxSeverity>1</maxSeverity>
+    <alwaysAllowMothball>True</alwaysAllowMothball>
+    <alwaysAllowMothballCached>True</alwaysAllowMothballCached>
+    <isBad>False</isBad>
+    <stages>
+      <li>
+        <minSeverity>0.1</minSeverity>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-1000000</offset>
+            <setMax>0</setMax>
+            <postFactor>0</postFactor>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+</Defs>

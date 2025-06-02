@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+  <DesignatorDropdownGroupDef>
+    <defName>Overclock_GasEmitDropdown</defName>
+  </DesignatorDropdownGroupDef>
+
+  <ThingDef Name="Overclock_GasEmitBase" ParentName="Overclock_FloorStructureBase" Abstract="True">
+    <graphicData>
+      <texPath>Overclock/Things/Building/Various/Well</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1,1)</drawSize>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>120</MaxHitPoints>
+      <WorkToBuild>500</WorkToBuild>
+      <Mass>10</Mass>
+      <Flammability>0</Flammability>
+    </statBases>
+    <size>(1,1)</size>
+    <costList Inherit="False">
+      <Steel>20</Steel>
+      <ComponentIndustrial>1</ComponentIndustrial>
+    </costList>
+    <tickerType>Normal</tickerType>
+    <useHitPoints>False</useHitPoints>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <designationCategory>Overclock_MainCategory</designationCategory>
+    <designatorDropdown>Overclock_GasEmitDropdown</designatorDropdown>
+    <thingCategories>
+      <li>BuildingsMisc</li>
+    </thingCategories>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <shortCircuitInRain>False</shortCircuitInRain>
+        <basePowerConsumption>250</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="Overclock_GasEmitBase">
+    <defName>Overclock_GasEmit_BlindSmoke</defName>
+    <label>瓦斯释放装置</label>
+    <description>这个排气口定期向外释放瓦斯。</description>
+    <comps>
+      <li Class="Overclock.CompProperties_GasEmit">
+        <gas>0</gas>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="Overclock_GasEmitBase">
+    <defName>Overclock_GasEmit_ToxicGas</defName>
+    <label>毒气释放装置</label>
+    <description>这个排气口定期向外释放毒气。</description>
+    <comps>
+      <li Class="Overclock.CompProperties_GasEmit">
+        <gas>1</gas>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="Overclock_GasEmitBase">
+    <defName>Overclock_GasEmit_RotStink</defName>
+    <label>腐气释放装置</label>
+    <description>这个排气口定期向外释放腐气。</description>
+    <comps>
+      <li Class="Overclock.CompProperties_GasEmit">
+        <gas>2</gas>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="Overclock_GasEmitBase">
+    <defName>Overclock_GasEmit_DeadlifeDust</defName>
+    <label>死灵尘释放装置</label>
+    <description>这个排气口定期向外释放死灵尘。</description>
+    <comps>
+      <li Class="Overclock.CompProperties_GasEmit">
+        <gas>3</gas>
+      </li>
+    </comps>
+  </ThingDef>
+</Defs>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+  <ThingDef Name="Overclock_FoodMiscBase" ParentName="MealBase" Abstract="True">
+    <statBases>
+      <Flammability>0</Flammability>
+      <DeteriorationRate>0</DeteriorationRate>
+    </statBases>
+    <useHitPoints>False</useHitPoints>
+  </ThingDef>
+
+  <ThingDef ParentName="Overclock_FoodMiscBase">
+    <defName>Overclock_VomitPackage</defName>
+    <label>包装呕吐物</label>
+    <description>这玩意真是太邪恶了，里面包装的呕吐物比营养膏还恶心！</description>
+    <graphicData>
+      <texPath>Overclock/Things/Item/Meal/SpecialMeal</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>1</MarketValue>
+      <Nutrition>0.8</Nutrition>
+      <Mass>0.15</Mass>
+    </statBases>
+    <ingestible>
+      <preferability>MealAwful</preferability>
+      <ingestEffect>EatVegetarian</ingestEffect>
+      <ingestSound>Meal_Eat</ingestSound>
+      <baseIngestTicks>1500</baseIngestTicks>
+      <tasteThought>Overclock_AteVomitPackage</tasteThought>
+    </ingestible>
+  </ThingDef>
+</Defs>

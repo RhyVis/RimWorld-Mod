@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+  <WorkGiverDef>
+    <defName>Overclock_WorkProduce</defName>
+    <label>应用特制工业</label>
+    <giverClass>WorkGiver_DoBill</giverClass>
+    <workType>Crafting</workType>
+    <priorityInType>250</priorityInType>
+    <fixedBillGiverDefs>
+      <li>Overclock_CraftingSpot</li>
+    </fixedBillGiverDefs>
+    <verb>craft</verb>
+    <gerund>正在构造。</gerund>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+    <prioritizeSustains>True</prioritizeSustains>
+  </WorkGiverDef>
+</Defs>

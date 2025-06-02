@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+  <ThingDef Name="Overclock_FortressWallBase" ParentName="BuildingBase" Abstract="True">
+    <thingClass>Building</thingClass>
+    <category>Building</category>
+    <designationCategory>Overclock_MainCategory</designationCategory>
+    <graphicData>
+      <graphicClass>Graphic_Appearances</graphicClass>
+      <linkType>CornerFiller</linkType>
+      <linkFlags>
+        <li>Wall</li>
+        <li>Rock</li>
+      </linkFlags>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+        <edgeTop>Damage/Edge</edgeTop>
+        <edgeBot>Damage/Edge</edgeBot>
+        <edgeLeft>Damage/Edge</edgeLeft>
+        <edgeRight>Damage/Edge</edgeRight>
+      </damageData>
+      <color>(255,255,255)</color>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>30000</MaxHitPoints>
+      <WorkToBuild>50</WorkToBuild>
+      <Flammability>0</Flammability>
+      <MeditationFocusStrength>0.50</MeditationFocusStrength>
+      <Cleanliness>0.3</Cleanliness>
+      <Beauty>20</Beauty>
+      <MarketValue>10</MarketValue>
+    </statBases>
+    <leaveResourcesWhenKilled>False</leaveResourcesWhenKilled>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>Impassable</passability>
+    <blockWind>True</blockWind>
+    <castEdgeShadows>True</castEdgeShadows>
+    <useHitPoints>False</useHitPoints>
+    <coversFloor>True</coversFloor>
+    <placingDraggableDimensions>1</placingDraggableDimensions>
+    <tickerType>Never</tickerType>
+    <rotatable>False</rotatable>
+    <selectable>True</selectable>
+    <neverMultiSelect>True</neverMultiSelect>
+    <holdsRoof>True</holdsRoof>
+    <uiOrder>2000</uiOrder>
+    <staticSunShadowHeight>1.0</staticSunShadowHeight>
+    <blockLight>True</blockLight>
+    <canOverlapZones>False</canOverlapZones>
+    <fertility>0</fertility>
+    <costList>
+      <Plasteel>4</Plasteel>
+      <ComponentIndustrial>1</ComponentIndustrial>
+    </costList>
+    <building>
+      <paintable>True</paintable>
+      <isInert>True</isInert>
+      <isPlaceOverableWall>True</isPlaceOverableWall>
+      <ai_chillDestination>False</ai_chillDestination>
+      <supportsWallAttachments>True</supportsWallAttachments>
+      <relatedBuildCommands>
+        <li>Overclock_FortressDoorRegular</li>
+        <li>Overclock_FortressDoorAuto</li>
+        <li MayRequire="rebuild.cotr.doorsandcorners">Overclock_FortressDoubleDoor</li>
+      </relatedBuildCommands>
+    </building>
+  </ThingDef>
+
+  <ThingDef ParentName="Overclock_FortressWallBase">
+    <defName>Overclock_FortressWallRegular</defName>
+    <label>要塞墙</label>
+    <description>不可被通常方式摧毁的要塞墙。</description>
+    <graphicData>
+      <texPath>Overclock/Things/Building/Fortress/FortressWall</texPath>
+    </graphicData>
+    <uiIconPath>Overclock/Things/Building/Fortress/FortressWallIcon</uiIconPath>
+    <fillPercent>1</fillPercent>
+    <building>
+      <blueprintGraphicData>
+        <texPath>Things/Building/Linked/Wall_Blueprint_Atlas</texPath>
+      </blueprintGraphicData>
+    </building>
+  </ThingDef>
+
+  <ThingDef ParentName="Overclock_FortressWallBase">
+    <defName>Overclock_FortressWallEmbrasure</defName>
+    <label>要塞射击墙</label>
+    <description>不可被通常方式摧毁的要塞墙，允许子弹通过。</description>
+    <graphicData>
+      <texPath>Overclock/Things/Building/Fortress/FortressEmbrasure</texPath>
+    </graphicData>
+    <uiIconPath>Overclock/Things/Building/Fortress/FortressEmbrasureIcon</uiIconPath>
+    <fillPercent>0.75</fillPercent>
+    <disableImpassableShotOverConfigError>True</disableImpassableShotOverConfigError>
+    <building>
+      <blueprintGraphicData>
+        <texPath>Things/Building/Linked/Wall_Blueprint_Atlas</texPath>
+      </blueprintGraphicData>
+    </building>
+  </ThingDef>
+
+  <ThingDef Name="Overclock_FortressDoorBase" ParentName="DoorBase" Abstract="True">
+    <useHitPoints>False</useHitPoints>
+    <stuffCategories Inherit="False" />
+    <useStuffTerrainAffordance>False</useStuffTerrainAffordance>
+    <statBases>
+      <MaxHitPoints>30000</MaxHitPoints>
+      <Flammability>0</Flammability>
+      <Cleanliness>0.3</Cleanliness>
+      <Beauty>20</Beauty>
+      <MarketValue>10</MarketValue>
+    </statBases>
+    <designationCategory>Overclock_MainCategory</designationCategory>
+    <graphicData>
+      <color>(255,255,255)</color>
+    </graphicData>
+  </ThingDef>
+
+  <ThingDef ParentName="Overclock_FortressDoorBase">
+    <defName>Overclock_FortressDoorRegular</defName>
+    <label>要塞门</label>
+    <description>不可被通常方式摧毁的要塞门。</description>
+    <statBases>
+      <MaxHitPoints>30000</MaxHitPoints>
+      <WorkToBuild>500</WorkToBuild>
+    </statBases>
+    <graphicData>
+      <texPath>Things/Building/Door/DoorSimple_Mover</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <damageData>
+        <enabled>False</enabled>
+      </damageData>
+    </graphicData>
+    <uiIconPath>Things/Building/Door/DoorSimple_MenuIcon</uiIconPath>
+    <costList>
+      <Plasteel>6</Plasteel>
+      <Steel>4</Steel>
+      <ComponentIndustrial>1</ComponentIndustrial>
+    </costList>
+  </ThingDef>
+
+  <ThingDef ParentName="Overclock_FortressDoorBase">
+    <defName>Overclock_FortressDoorAuto</defName>
+    <label>要塞自动门</label>
+    <description>不可被通常方式摧毁的要塞自动门。</description>
+    <statBases>
+      <MaxHitPoints>30000</MaxHitPoints>
+      <WorkToBuild>800</WorkToBuild>
+    </statBases>
+    <graphicData>
+      <texPath>Things/Building/Door/Autodoor_Mover</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <damageData>
+        <enabled>False</enabled>
+      </damageData>
+    </graphicData>
+    <uiIconPath>Things/Building/Door/Autodoor_MenuIcon</uiIconPath>
+    <costList>
+      <Plasteel>8</Plasteel>
+      <Steel>4</Steel>
+      <ComponentIndustrial>2</ComponentIndustrial>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>20</basePowerConsumption>
+      </li>
+    </comps>
+    <researchPrerequisites>
+      <li>Autodoors</li>
+    </researchPrerequisites>
+    <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+  </ThingDef>
+
+  <ThingDef ParentName="Overclock_FortressDoorBase">
+    <defName>FortressDoorRemote</defName>
+    <label>要塞遥控门</label>
+    <description>不可被通常方式摧毁的要塞遥控门，在通电时可以远程控制开关。</description>
+    <statBases>
+      <MaxHitPoints>30000</MaxHitPoints>
+      <WorkToBuild>1400</WorkToBuild>
+    </statBases>
+    <graphicData>
+      <texPath>Things/Building/Door/Autodoor_Mover</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <damageData>
+        <enabled>False</enabled>
+      </damageData>
+    </graphicData>
+    <uiIconPath>Things/Building/Door/Autodoor_MenuIcon</uiIconPath>
+    <costList>
+      <Plasteel>18</Plasteel>
+      <Steel>20</Steel>
+      <ComponentSpacer>2</ComponentSpacer>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>20</basePowerConsumption>
+      </li>
+      <li Class="Overclock.CompProperties_RemoteDoor"/>
+    </comps>
+    <researchPrerequisites>
+      <li>Autodoors</li>
+    </researchPrerequisites>
+    <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+  </ThingDef>
+
+  <ThingDef ParentName="DoorBase" MayRequire="rebuild.cotr.doorsandcorners">
+    <defName>Overclock_FortressDoubleDoor</defName>
+    <label>要塞大门</label>
+    <description>不可被通常方式摧毁的要塞大门。</description>
+    <thingClass>Building_MultiTileDoor</thingClass>
+    <useHitPoints>False</useHitPoints>
+    <stuffCategories Inherit="False" />
+    <useStuffTerrainAffordance>False</useStuffTerrainAffordance>
+    <statBases>
+      <MaxHitPoints>30000</MaxHitPoints>
+      <Flammability>0</Flammability>
+      <Cleanliness>0.3</Cleanliness>
+      <Beauty>20</Beauty>
+      <MarketValue>10</MarketValue>
+      <WorkToBuild>1700</WorkToBuild>
+    </statBases>
+    <graphicData>
+      <texPath>Things/Building/RB_Door/RB_DoubleDoor_Mover</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1.05, 1)</drawSize>
+      <damageData>
+        <enabled>False</enabled>
+      </damageData>
+      <color>(255,255,255)</color>
+    </graphicData>
+    <size>(2, 1)</size>
+    <uiIconPath>Things/Building/RB_Door/RB_DoubleDoor_VanillaMenuIcon</uiIconPath>
+    <useBlueprintGraphicAsGhost>True</useBlueprintGraphicAsGhost>
+    <rotatable>True</rotatable>
+    <costList>
+      <Plasteel>48</Plasteel>
+      <Steel>60</Steel>
+      <ComponentSpacer>1</ComponentSpacer>
+    </costList>
+    <building>
+      <blueprintGraphicData>
+        <texPath>Things/Building/RB_Door/RB_DoubleDoor_VanillaMenuIcon</texPath>
+        <graphicClass>Graphic_Multi</graphicClass>
+        <shaderType>EdgeDetect</shaderType>
+        <drawSize>(2, 2)</drawSize>
+      </blueprintGraphicData>
+    </building>
+    <placeWorkers>
+      <li>PlaceWorker_MultiCellDoor</li>
+    </placeWorkers>
+    <designationCategory>Overclock_MainCategory</designationCategory>
+  </ThingDef>
+
+</Defs>

@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <DesignatorDropdownGroupDef>
+    <defName>Overclock_Fridge</defName>
+  </DesignatorDropdownGroupDef>
+
+  <ThingDef Name="Overclock_FridgeBase" ParentName="AdaptiveStorageMinifiableBase" Abstract="True">
+    <graphicData>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawOffsetNorth>(0,0,-0.1)</drawOffsetNorth>
+      <drawOffsetSouth>(0,0,0.1)</drawOffsetSouth>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+    <drawGUIOverlay>True</drawGUIOverlay>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.4</fillPercent>
+    <castEdgeShadows>True</castEdgeShadows>
+    <pathCost>50</pathCost>
+    <defaultPlacingRot>South</defaultPlacingRot>
+    <staticSunShadowHeight>0.5</staticSunShadowHeight>
+    <surfaceType>Item</surfaceType>
+    <canOverlapZones>False</canOverlapZones>
+    <researchPrerequisites>
+      <li>AirConditioning</li>
+    </researchPrerequisites>
+    <building>
+      <preventDeteriorationOnTop>True</preventDeteriorationOnTop>
+      <ignoreStoredThingsBeauty>True</ignoreStoredThingsBeauty>
+      <maxItemsInCell>24</maxItemsInCell>
+      <storageGroupTag>Fridge</storageGroupTag>
+      <blueprintClass>Blueprint_Storage</blueprintClass>
+      <fixedStorageSettings>
+        <filter>
+          <categories>
+            <li>Foods</li>
+            <li>PlantMatter</li>
+            <li>BodyPartsNatural</li>
+            <li>Drugs</li>
+            <li MayRequire="vanillaexpanded.vbrewe">VBE_Musts</li>
+            <li MayRequire="vanillaexpanded.recycling">VRecyclingE_SpecializedPacks</li>
+          </categories>
+          <thingDefs>
+            <li>MedicineHerbal</li>
+            <li>Wort</li>
+            <li>Hay</li>
+            <li MayRequire="oskarpotocki.vanillafactionsexpanded.medievalmodule">VFEM_Must</li>
+            <li MayRequire="oskarpotocki.vfe.insectoid">VFEI_DroneGenome</li>
+            <li MayRequire="oskarpotocki.vfe.insectoid">VFEI_WarriorGenome</li>
+            <li MayRequire="oskarpotocki.vfe.insectoid">VFEI_RoyalGenome</li>
+            <li MayRequire="sarg.alphaanimals">AA_CactipineQuill</li>
+            <li MayRequire="ludeon.rimworld.biotech">Wastepack</li>
+            <li MayRequire="aoba.deadmanswitch.synthetic">Artifuscle</li>
+          </thingDefs>
+          <specialFiltersToDisallow>
+            <li>AllowRotten</li>
+          </specialFiltersToDisallow>
+          <disallowedThingDefs>
+            <li MayRequire="ludeon.rimworld.ideology">Dye</li>
+            <li>Hay</li>
+            <li>Kibble</li>
+          </disallowedThingDefs>
+        </filter>
+      </fixedStorageSettings>
+      <defaultStorageSettings>
+        <priority>Important</priority>
+        <filter>
+          <categories>
+            <li>FoodMeals</li>
+          </categories>
+          <disallowedThingDefs>
+            <li>MealSurvivalPack</li>
+          </disallowedThingDefs>
+        </filter>
+      </defaultStorageSettings>
+      <paintable>True</paintable>
+    </building>
+    <constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+    <comps>
+      <li>
+        <compClass>CompColorable</compClass>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+    </comps>
+    <modExtensions>
+      <li Class="Overclock.DefModExt_Fridge" />
+    </modExtensions>
+    <designationCategory>Temperature</designationCategory>
+    <designatorDropdown>Overclock_Fridge</designatorDropdown>
+    <clearBuildingArea>True</clearBuildingArea>
+  </ThingDef>
+
+  <ThingDef ParentName="Overclock_FridgeBase">
+    <defName>Overclock_Refrigerator</defName>
+    <label>冰箱</label>
+    <description>用于冷冻食物或其它易腐烂的物品。</description>
+    <graphicData>
+      <texPath>Overclock/Things/Building/Storage/Fridge_1</texPath>
+      <drawSize>(1.2,1.2)</drawSize>
+    </graphicData>
+    <uiIconScale>0.8</uiIconScale>
+    <costList>
+      <Steel>40</Steel>
+      <ComponentIndustrial>2</ComponentIndustrial>
+    </costList>
+    <statBases>
+      <MaxHitPoints>70</MaxHitPoints>
+      <Mass>15</Mass>
+      <WorkToBuild>1500</WorkToBuild>
+      <Flammability>0.5</Flammability>
+    </statBases>
+    <size>(1,1)</size>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>80</basePowerConsumption>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <AdaptiveStorage.GraphicsDef>
+    <defName>Overclock_Refrigerator_Graphics</defName>
+    <targetDef>Overclock_Refrigerator</targetDef>
+    <showContainedItems>False</showContainedItems>
+    <graphics>
+      <li>
+        <graphicData>
+          <texPath>Overclock/Things/Building/Storage/Fridge_1</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawOffsetNorth>(0,0,-0.1)</drawOffsetNorth>
+          <drawOffsetSouth>(0,0,0.1)</drawOffsetSouth>
+          <drawSize>(1.2,1.2)</drawSize>
+          <damageData>
+            <cornerTL>Damage/Corner</cornerTL>
+            <cornerTR>Damage/Corner</cornerTR>
+            <cornerBL>Damage/Corner</cornerBL>
+            <cornerBR>Damage/Corner</cornerBR>
+          </damageData>
+        </graphicData>
+      </li>
+    </graphics>
+  </AdaptiveStorage.GraphicsDef>
+
+  <ThingDef ParentName="Overclock_FridgeBase">
+    <defName>Overclock_RefrigeratorDouble</defName>
+    <label>大型冰箱</label>
+    <description>用于冷冻食物或其它易腐烂的物品。这个版本的容量翻倍。</description>
+    <graphicData>
+      <texPath>Overclock/Things/Building/Storage/Fridge_2</texPath>
+      <drawSize>(2.4,1.2)</drawSize>
+    </graphicData>
+    <costList>
+      <Steel>75</Steel>
+      <ComponentIndustrial>4</ComponentIndustrial>
+    </costList>
+    <statBases>
+      <MaxHitPoints>140</MaxHitPoints>
+      <Mass>20</Mass>
+      <WorkToBuild>2800</WorkToBuild>
+      <Flammability>0.5</Flammability>
+    </statBases>
+    <size>(2,1)</size>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>150</basePowerConsumption>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <AdaptiveStorage.GraphicsDef>
+    <defName>Overclock_RefrigeratorDouble_Graphics</defName>
+    <targetDef>Overclock_RefrigeratorDouble</targetDef>
+    <showContainedItems>False</showContainedItems>
+    <graphics>
+      <li>
+        <graphicData>
+          <texPath>Overclock/Things/Building/Storage/Fridge_2</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawOffsetNorth>(0,0,-0.1)</drawOffsetNorth>
+          <drawOffsetSouth>(0,0,0.1)</drawOffsetSouth>
+          <drawSize>(2.4,1.2)</drawSize>
+          <damageData>
+            <cornerTL>Damage/Corner</cornerTL>
+            <cornerTR>Damage/Corner</cornerTR>
+            <cornerBL>Damage/Corner</cornerBL>
+            <cornerBR>Damage/Corner</cornerBR>
+          </damageData>
+        </graphicData>
+      </li>
+    </graphics>
+  </AdaptiveStorage.GraphicsDef>
+</Defs>

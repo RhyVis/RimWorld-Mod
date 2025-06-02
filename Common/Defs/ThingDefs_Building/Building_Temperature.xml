@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+  <!--<ThingDef ParentName="Overclock_FurnBase">
+    <defName>Overclock_TempControlUnit</defName>
+    <label>量子温控单元</label>
+    <description>高效控制所在房间的温度。</description>
+    <graphicData>
+      <texPath>Overclock/Things/Building/Various/PT</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <pathCost>30</pathCost>
+    <rotatable>False</rotatable>
+    <fillPercent>0.4</fillPercent>
+    <thingCategories>
+      <li>BuildingsTemperature</li>
+    </thingCategories>
+    <statBases>
+      <MarketValue>4200</MarketValue>
+      <WorkToBuild>4000</WorkToBuild>
+      <MaxHitPoints>1000</MaxHitPoints>
+      <Mass>16</Mass>
+      <Flammability>0</Flammability>
+    </statBases>
+    <tickerType>Normal</tickerType>
+    <building>
+      <destroySound>BuildingDestroyed_Metal_Small</destroySound>
+    </building>
+    <costList>
+      <Plasteel>50</Plasteel>
+      <ComponentSpacer>10</ComponentSpacer>
+    </costList>
+    <placeWorkers>
+      <li>Overclock.PlaceWorker_RoomEdgePurple</li>
+    </placeWorkers>
+    <drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+    <comps>
+      <li Class="Overclock.CompProperties_TempSet"/>
+      <li Class="CompProperties_Glower">
+        <glowRadius>5</glowRadius>
+        <glowColor>(255,255,255,0)</glowColor>
+      </li>
+    </comps>
+    <constructionSkillPrerequisite>15</constructionSkillPrerequisite>
+  </ThingDef>-->
+</Defs>

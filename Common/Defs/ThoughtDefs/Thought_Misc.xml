@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+  <ThoughtDef>
+    <defName>R_UpsetThought</defName>
+    <thoughtClass>VanillaCookingExpanded.Thought_Hediff</thoughtClass>
+    <hediff>Overclock_UpsetHediff</hediff>
+    <durationDays>0.05</durationDays>
+    <stages>
+      <li>
+        <label>悲伤</label>
+        <description>那台机器真是令人不安...</description>
+        <baseMoodEffect>-200</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+</Defs>

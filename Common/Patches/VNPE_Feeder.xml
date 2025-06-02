@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+  <Operation Class="PatchOperationConditional">
+    <xpath>/Defs/ThingDef[defName = "Hopper"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>/Defs/ThingDef[defName = "Hopper"]</xpath>
+      <value>
+        <comps>
+          <li Class="Overclock.CompProperties_StopDeterioration"/>
+        </comps>
+      </value>
+    </nomatch>
+    <match Class="PatchOperationAdd">
+      <xpath>/Defs/ThingDef[defName = "Hopper"]/comps</xpath>
+      <value>
+        <li Class="Overclock.CompProperties_StopDeterioration"/>
+      </value>
+    </match>
+  </Operation>
+</Patch>
